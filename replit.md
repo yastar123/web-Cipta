@@ -49,16 +49,30 @@ pnpm run start  # production start on port 5000
 
 ## Replit Configuration
 - Dev server: port 5000, host 0.0.0.0
-- `allowedDevOrigins` set in next.config.mjs to allow `*.replit.dev` and `*.riker.replit.dev` for HMR in Replit preview
+- `allowedDevOrigins` set in next.config.mjs to allow `*.replit.dev`, `*.riker.replit.dev`, and `*.kirk.replit.dev` for HMR in Replit preview
 - Workflow: "Start application" runs `pnpm run dev`
 
 ## UI/UX Notes
 - Dark theme only (no light/dark toggle)
 - Custom cursor visible on desktop (pointer:fine) only
 - Floating parallax icons in hero hidden on mobile/tablet (xl+ only) to prevent overlap
-- All sections have responsive padding: mobile (py-20) → tablet (md:py-28) → desktop (lg:py-40+)
+- All sections have responsive padding: mobile (py-20) → tablet (md:py-28) → desktop (lg:py-36+)
 - Portfolio cards use min-height to prevent content overflow on small screens
 - body has overflow-x:hidden to prevent horizontal scroll
 - scroll-padding-top:80px set for smooth anchor nav with fixed navbar
 - Newsletter form stacks vertically on mobile (flex-col sm:flex-row)
 - Tech stack marquee at bottom of hero uses reduced padding on mobile
+
+## Design System (Updated)
+- Background: `oklch(0.07 0.005 240)` — very deep blue-black for more depth and richness
+- Card: `oklch(0.11 0.005 240)` — slightly warm dark card
+- Border: `oklch(0.22 0.005 240)` — slightly cool tint on borders
+- Primary: `oklch(0.72 0.17 195)` — vivid cyan (brand color)
+- Gradient pattern: `from-primary via-cyan-400 to-emerald-400` used consistently across all CTAs and headings
+- All CTA buttons use animated gradient (from-primary to-emerald-500) for brand consistency
+- Navbar "Konsultasi Gratis" button uses the same gradient as CTAs
+- Service cards: each has per-color top border line, corner glow on hover, icon-matching check colors
+- Section headers: consistent label → heading → subtitle hierarchy across all sections
+- All section label lines use gradient fade: `bg-gradient-to-r from-primary to-transparent`
+- Footer: social links as icon buttons; year updated to 2025
+- Scrollbar thumb hover: glows with primary color

@@ -12,7 +12,9 @@ const services = [
     description: "Website yang cepat, SEO-friendly, dan scalable. Dari landing page hingga web app kompleks dengan Next.js dan teknologi modern.",
     features: ["Server-side Rendering", "SEO Optimization", "Progressive Web App", "API Development"],
     gradient: "from-cyan-500 to-blue-600",
-    accent: "cyan",
+    borderGlow: "hover:border-cyan-500/30",
+    bgGlow: "bg-cyan-500/[0.03]",
+    checkColor: "text-cyan-400",
   },
   {
     icon: Smartphone,
@@ -21,7 +23,9 @@ const services = [
     description: "Aplikasi cross-platform yang powerful dengan React Native dan Flutter. Native performance di semua device.",
     features: ["Cross Platform", "Push Notifications", "Offline Mode", "In-App Payments"],
     gradient: "from-emerald-500 to-teal-600",
-    accent: "emerald",
+    borderGlow: "hover:border-emerald-500/30",
+    bgGlow: "bg-emerald-500/[0.03]",
+    checkColor: "text-emerald-400",
   },
   {
     icon: Palette,
@@ -30,7 +34,9 @@ const services = [
     description: "Design intuitif yang tidak hanya cantik tapi juga user-friendly berdasarkan riset mendalam.",
     features: ["User Research", "Wireframing", "High-Fidelity Design", "Design System"],
     gradient: "from-violet-500 to-purple-600",
-    accent: "violet",
+    borderGlow: "hover:border-violet-500/30",
+    bgGlow: "bg-violet-500/[0.03]",
+    checkColor: "text-violet-400",
   },
   {
     icon: Gauge,
@@ -39,7 +45,9 @@ const services = [
     description: "Optimasi performa untuk Core Web Vitals sempurna dan loading super cepat yang meningkatkan konversi.",
     features: ["Core Web Vitals", "Image Optimization", "Code Splitting", "Lighthouse Audit"],
     gradient: "from-orange-500 to-amber-600",
-    accent: "orange",
+    borderGlow: "hover:border-orange-500/30",
+    bgGlow: "bg-orange-500/[0.03]",
+    checkColor: "text-orange-400",
   },
   {
     icon: ShieldCheck,
@@ -48,7 +56,9 @@ const services = [
     description: "Pemeliharaan berkala, monitoring real-time, backup otomatis, dan perlindungan dari ancaman cyber.",
     features: ["24/7 Monitoring", "Automated Backup", "Security Patches", "DDoS Protection"],
     gradient: "from-rose-500 to-pink-600",
-    accent: "rose",
+    borderGlow: "hover:border-rose-500/30",
+    bgGlow: "bg-rose-500/[0.03]",
+    checkColor: "text-rose-400",
   },
   {
     icon: Headphones,
@@ -57,7 +67,9 @@ const services = [
     description: "Kami bantu Anda merencanakan arsitektur sistem yang scalable dan memilih tech stack optimal.",
     features: ["Tech Stack Advisory", "System Architecture", "Scalability Planning", "Budget Estimation"],
     gradient: "from-blue-500 to-indigo-600",
-    accent: "blue",
+    borderGlow: "hover:border-blue-500/30",
+    bgGlow: "bg-blue-500/[0.03]",
+    checkColor: "text-blue-400",
   },
 ]
 
@@ -66,18 +78,18 @@ export function Services() {
 
   return (
     <section id="layanan" className="py-20 md:py-28 lg:py-36 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <FadeIn className="max-w-2xl mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-5">
-            <span className="w-4 h-px bg-primary" />
+            <span className="w-5 h-px bg-gradient-to-r from-primary to-transparent" />
             Layanan Kami
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
             Solusi lengkap untuk{" "}
-            <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
               transformasi digital
             </span>
           </h2>
@@ -91,36 +103,46 @@ export function Services() {
           {services.map((service, i) => (
             <FadeIn key={i} delay={i * 60}>
               <div
-                className="group relative rounded-2xl border border-border/20 bg-card/20 backdrop-blur-sm p-6 transition-all duration-500 hover:border-border/50 hover:bg-card/40 overflow-hidden cursor-default"
+                className={`group relative rounded-2xl border border-border/20 ${service.bgGlow} backdrop-blur-sm p-6 transition-all duration-500 ${service.borderGlow} hover:bg-card/40 hover:shadow-xl hover:shadow-background/50 overflow-hidden cursor-default`}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
               >
-                {/* Subtle top glow on hover */}
-                <div className={`absolute top-0 left-6 right-6 h-px bg-gradient-to-r ${service.gradient} transition-opacity duration-500 ${hovered === i ? "opacity-100" : "opacity-0"}`} />
+                {/* Top gradient line — always slightly visible, stronger on hover */}
+                <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${service.gradient} transition-opacity duration-500 ${hovered === i ? "opacity-100" : "opacity-20"}`} />
+
+                {/* Corner glow on hover */}
+                <div className={`absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br ${service.gradient} rounded-full blur-2xl transition-opacity duration-500 ${hovered === i ? "opacity-20" : "opacity-0"}`} />
 
                 <div className="relative z-10">
                   {/* Icon + arrow */}
                   <div className="flex items-start justify-between mb-5">
-                    <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${service.gradient} shadow-md transition-transform duration-500 group-hover:scale-105`}>
+                    <div className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${service.gradient} shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-xl`}>
                       <service.icon className="h-5 w-5 text-white" />
                     </div>
-                    <ArrowUpRight className={`h-4 w-4 text-primary transition-all duration-300 ${hovered === i ? "opacity-100 translate-x-0 -translate-y-0" : "opacity-0 translate-x-1 -translate-y-1"}`} />
+                    <div className={`flex h-7 w-7 items-center justify-center rounded-full bg-card/60 border border-border/30 transition-all duration-300 ${hovered === i ? "opacity-100 scale-100 border-primary/30 bg-primary/5" : "opacity-0 scale-75"}`}>
+                      <ArrowUpRight className="h-3.5 w-3.5 text-primary" />
+                    </div>
                   </div>
 
                   {/* Title */}
                   <div className="mb-3">
-                    <p className="text-[10px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-1">{service.subtitle}</p>
-                    <h3 className="text-base font-bold text-foreground">{service.title}</h3>
+                    <p className="text-[10px] font-semibold tracking-[0.15em] uppercase text-muted-foreground/60 mb-1">{service.subtitle}</p>
+                    <h3 className="text-base font-bold text-foreground group-hover:text-white transition-colors duration-300">{service.title}</h3>
                   </div>
 
                   {/* Description */}
                   <p className="text-sm text-muted-foreground leading-relaxed mb-5">{service.description}</p>
 
+                  {/* Divider */}
+                  <div className="w-full h-px bg-border/20 mb-4" />
+
                   {/* Features */}
-                  <div className="flex flex-col gap-1.5">
+                  <div className="flex flex-col gap-2">
                     {service.features.map((f, j) => (
                       <div key={j} className="flex items-center gap-2">
-                        <Check className="h-3 w-3 text-primary flex-shrink-0" />
+                        <div className={`flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-br ${service.gradient} opacity-80 flex-shrink-0`}>
+                          <Check className="h-2.5 w-2.5 text-white" />
+                        </div>
                         <span className="text-xs text-muted-foreground">{f}</span>
                       </div>
                     ))}
@@ -132,16 +154,16 @@ export function Services() {
         </div>
 
         {/* Bottom link */}
-        <FadeIn delay={400} className="mt-10 text-center">
+        <FadeIn delay={400} className="mt-12 text-center">
           <a
             href="#kontak"
             className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <span className="relative">
               Tidak menemukan layanan yang Anda cari? Hubungi kami
-              <span className="absolute -bottom-px left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-500" />
+              <span className="absolute -bottom-px left-0 w-0 h-px bg-gradient-to-r from-primary to-emerald-400 group-hover:w-full transition-all duration-500" />
             </span>
-            <ArrowUpRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="h-3.5 w-3.5 text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </FadeIn>
       </div>

@@ -1,9 +1,8 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { MessageSquare, Lightbulb, Code2, Rocket, Check, ArrowRight } from "lucide-react"
 import { FadeIn } from "./text-reveal"
-import { Button } from "./ui/button"
 
 const steps = [
   {
@@ -15,6 +14,7 @@ const steps = [
     duration: "1–2 Minggu",
     deliverables: ["Business Requirements", "Competitor Analysis", "User Persona & Journey", "Project Scope"],
     gradient: "from-cyan-500 to-blue-600",
+    color: "cyan",
   },
   {
     icon: Lightbulb,
@@ -25,6 +25,7 @@ const steps = [
     duration: "2–3 Minggu",
     deliverables: ["Wireframes & Sitemap", "High-Fidelity UI Design", "Interactive Prototype", "Design System"],
     gradient: "from-emerald-500 to-teal-600",
+    color: "emerald",
   },
   {
     icon: Code2,
@@ -35,6 +36,7 @@ const steps = [
     duration: "4–8 Minggu",
     deliverables: ["Fully Functional App", "Clean Documented Code", "API Documentation", "QA Test Reports"],
     gradient: "from-violet-500 to-purple-600",
+    color: "violet",
   },
   {
     icon: Rocket,
@@ -45,6 +47,7 @@ const steps = [
     duration: "Ongoing",
     deliverables: ["Live Production App", "Deployment Docs", "Team Training", "24/7 Support"],
     gradient: "from-orange-500 to-amber-600",
+    color: "orange",
   },
 ]
 
@@ -67,18 +70,18 @@ export function Process() {
 
   return (
     <section id="proses" className="py-20 md:py-28 lg:py-36 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <FadeIn className="max-w-2xl mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-5">
-            <span className="w-4 h-px bg-primary" />
+            <span className="w-5 h-px bg-gradient-to-r from-primary to-transparent" />
             Cara Kami Bekerja
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
             Proses yang{" "}
-            <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
               transparan
             </span>{" "}
             dan terstruktur
@@ -99,28 +102,34 @@ export function Process() {
                     onClick={() => { setActive(i); setProgress(0) }}
                     className={`group w-full text-left px-5 py-4 rounded-xl border transition-all duration-500 relative overflow-hidden ${
                       active === i
-                        ? "bg-card/50 border-primary/20 backdrop-blur-sm"
+                        ? "bg-card/60 border-primary/25 backdrop-blur-sm shadow-lg shadow-background/30"
                         : "bg-transparent border-border/15 hover:border-border/30 hover:bg-card/20"
                     }`}
                   >
+                    {/* Progress bar */}
                     {active === i && (
                       <div
-                        className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-emerald-500 transition-all duration-100"
+                        className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r ${step.gradient} transition-all duration-100`}
                         style={{ width: `${progress}%` }}
                       />
                     )}
+                    {/* Active side indicator */}
+                    {active === i && (
+                      <div className={`absolute left-0 top-3 bottom-3 w-0.5 bg-gradient-to-b ${step.gradient} rounded-full`} />
+                    )}
+
                     <div className="flex items-center gap-4">
-                      <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${step.gradient} transition-all duration-500 flex-shrink-0 ${active === i ? "shadow-md" : "opacity-50 scale-90"}`}>
+                      <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${step.gradient} transition-all duration-500 flex-shrink-0 ${active === i ? "shadow-lg" : "opacity-40 scale-90"}`}>
                         <step.icon className="h-5 w-5 text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-0.5">
-                          <span className={`text-[10px] font-bold tracking-wider ${active === i ? "text-primary" : "text-muted-foreground"}`}>{step.number}</span>
-                          <span className="text-[10px] text-muted-foreground/60 px-1.5 py-0.5 rounded-full bg-muted/40">{step.duration}</span>
+                          <span className={`text-[10px] font-bold tracking-wider ${active === i ? "text-primary" : "text-muted-foreground/60"}`}>{step.number}</span>
+                          <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${active === i ? "bg-primary/10 text-primary/80" : "bg-muted/40 text-muted-foreground/60"}`}>{step.duration}</span>
                         </div>
                         <h3 className={`text-sm font-semibold transition-colors ${active === i ? "text-foreground" : "text-muted-foreground"}`}>{step.title}</h3>
                       </div>
-                      <ArrowRight className={`h-3.5 w-3.5 flex-shrink-0 transition-all duration-300 ${active === i ? "opacity-100 text-primary" : "opacity-0"}`} />
+                      <ArrowRight className={`h-3.5 w-3.5 flex-shrink-0 text-primary transition-all duration-300 ${active === i ? "opacity-100" : "opacity-0"}`} />
                     </div>
                   </button>
                 </FadeIn>
@@ -131,12 +140,16 @@ export function Process() {
           {/* Right detail */}
           <div className="lg:col-span-7">
             <FadeIn delay={200}>
-              <div className="relative rounded-2xl border border-border/20 bg-card/30 backdrop-blur-sm p-6 md:p-8 overflow-hidden">
-                <div className={`absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br ${steps[active].gradient} opacity-[0.04] blur-[80px] transition-all duration-1000`} />
+              <div className="relative rounded-2xl border border-border/25 bg-card/40 backdrop-blur-md p-6 md:p-8 overflow-hidden shadow-xl shadow-background/30">
+                {/* Background glow */}
+                <div className={`absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br ${steps[active].gradient} opacity-[0.05] blur-[100px] transition-all duration-1000`} />
+                {/* Top line */}
+                <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${steps[active].gradient} opacity-60`} />
+
                 <div className="relative z-10">
                   {/* Header */}
                   <div className="flex items-start gap-4 mb-6">
-                    <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${steps[active].gradient} shadow-lg flex-shrink-0`}>
+                    <div className={`flex h-13 w-13 items-center justify-center rounded-xl bg-gradient-to-br ${steps[active].gradient} shadow-xl flex-shrink-0 p-3`}>
                       {(() => { const Icon = steps[active].icon; return <Icon className="h-6 w-6 text-white" /> })()}
                     </div>
                     <div>
@@ -151,14 +164,14 @@ export function Process() {
 
                   {/* Deliverables */}
                   <div className="mb-6">
-                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Yang Akan Anda Dapatkan</p>
+                    <p className="text-xs font-semibold text-muted-foreground/70 uppercase tracking-wider mb-3">Yang Akan Anda Dapatkan</p>
                     <div className="grid sm:grid-cols-2 gap-2">
                       {steps[active].deliverables.map((d, j) => (
-                        <div key={j} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-background/50 border border-border/20 hover:border-primary/20 transition-colors group">
-                          <div className={`flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br ${steps[active].gradient} flex-shrink-0`}>
+                        <div key={j} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-background/60 border border-border/20 hover:border-primary/20 transition-all duration-300 group">
+                          <div className={`flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br ${steps[active].gradient} flex-shrink-0 shadow-sm`}>
                             <Check className="h-3.5 w-3.5 text-white" />
                           </div>
-                          <span className="text-xs font-medium text-foreground">{d}</span>
+                          <span className="text-xs font-medium text-foreground/90">{d}</span>
                         </div>
                       ))}
                     </div>
@@ -167,13 +180,17 @@ export function Process() {
                   {/* Footer */}
                   <div className="pt-5 border-t border-border/20 flex items-center justify-between gap-4">
                     <div>
-                      <p className="text-xs text-muted-foreground mb-1">Estimasi Waktu</p>
+                      <p className="text-xs text-muted-foreground/60 mb-1">Estimasi Waktu</p>
                       <p className={`text-2xl font-bold bg-gradient-to-r ${steps[active].gradient} bg-clip-text text-transparent`}>{steps[active].duration}</p>
                     </div>
-                    <Button size="sm" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 h-10 text-sm font-medium">
-                      Mulai Proyek
-                      <ArrowRight className="h-3.5 w-3.5 ml-2" />
-                    </Button>
+                    <a
+                      href="#kontak"
+                      className="relative inline-flex items-center gap-2 rounded-full px-6 h-10 text-sm font-semibold overflow-hidden hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transition-all"
+                    >
+                      <span className={`absolute inset-0 bg-gradient-to-r ${steps[active].gradient}`} />
+                      <span className="relative text-white">Mulai Proyek</span>
+                      <ArrowRight className="relative h-3.5 w-3.5 text-white" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -183,17 +200,17 @@ export function Process() {
 
         {/* Stats banner */}
         <FadeIn delay={400} className="mt-12 md:mt-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-border/20 rounded-2xl border border-border/20 bg-card/20 backdrop-blur-sm overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-border/20 rounded-2xl border border-border/20 bg-card/30 backdrop-blur-md overflow-hidden shadow-lg shadow-background/30">
             {[
               { val: "2–4", unit: "Minggu", desc: "Rata-rata MVP" },
               { val: "100%", unit: "Transparan", desc: "Update rutin" },
               { val: "∞", unit: "Revisi", desc: "Unlimited" },
               { val: "24/7", unit: "Support", desc: "Setelah launch" },
             ].map((s, i) => (
-              <div key={i} className="p-5 md:p-6 text-center">
+              <div key={i} className="p-5 md:p-6 text-center group hover:bg-primary/5 transition-colors">
                 <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">{s.val}</p>
-                <p className="text-xs font-semibold text-foreground mt-1">{s.unit}</p>
-                <p className="text-[11px] text-muted-foreground mt-0.5">{s.desc}</p>
+                <p className="text-xs font-semibold text-foreground/90 mt-1">{s.unit}</p>
+                <p className="text-[11px] text-muted-foreground/60 mt-0.5">{s.desc}</p>
               </div>
             ))}
           </div>

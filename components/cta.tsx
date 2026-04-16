@@ -1,8 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ArrowRight, Mail, Phone, MapPin, Clock, CheckCircle2, Send } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ArrowRight, Mail, Phone, MapPin, Clock, CheckCircle2, Send, Sparkles } from "lucide-react"
 import { FadeIn } from "./text-reveal"
 
 const benefits = [
@@ -30,20 +29,22 @@ export function CTA() {
 
   return (
     <section id="kontak" className="py-20 md:py-28 lg:py-36 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-500/4 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <FadeIn className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-5">
-            <span className="w-4 h-px bg-primary" />
+            <span className="w-4 h-px bg-gradient-to-r from-primary to-transparent" />
             Mulai Hari Ini
-            <span className="w-4 h-px bg-primary" />
+            <Sparkles className="h-3 w-3 text-primary/60" />
+            <span className="w-4 h-px bg-gradient-to-l from-primary to-transparent" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
             Siap membangun{" "}
-            <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
               produk impian Anda?
             </span>
           </h2>
@@ -57,13 +58,18 @@ export function CTA() {
           <div className="lg:col-span-2 space-y-4">
             {/* Benefits */}
             <FadeIn>
-              <div className="rounded-2xl border border-border/20 bg-card/30 backdrop-blur-sm p-6">
-                <h3 className="text-sm font-semibold text-foreground mb-4">Mengapa webCipta?</h3>
-                <div className="space-y-3">
+              <div className="rounded-2xl border border-border/25 bg-card/40 backdrop-blur-sm p-6 shadow-lg shadow-background/20">
+                <div className="flex items-center gap-2 mb-5">
+                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  <h3 className="text-sm font-semibold text-foreground">Mengapa webCipta?</h3>
+                </div>
+                <div className="space-y-3.5">
                   {benefits.map((b, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-xs text-muted-foreground leading-relaxed">{b}</span>
+                    <div key={i} className="flex items-start gap-3 group">
+                      <div className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/15 border border-primary/25 flex-shrink-0 mt-0.5 group-hover:bg-primary/25 transition-colors">
+                        <CheckCircle2 className="h-3 w-3 text-primary" />
+                      </div>
+                      <span className="text-xs text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">{b}</span>
                     </div>
                   ))}
                 </div>
@@ -72,20 +78,23 @@ export function CTA() {
 
             {/* Contact details */}
             <FadeIn delay={80}>
-              <div className="rounded-2xl border border-border/20 bg-card/30 backdrop-blur-sm p-6">
-                <h3 className="text-sm font-semibold text-foreground mb-4">Hubungi kami</h3>
-                <div className="space-y-3">
+              <div className="rounded-2xl border border-border/25 bg-card/40 backdrop-blur-sm p-6 shadow-lg shadow-background/20">
+                <div className="flex items-center gap-2 mb-5">
+                  <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <h3 className="text-sm font-semibold text-foreground">Hubungi kami</h3>
+                </div>
+                <div className="space-y-4">
                   {contactDetails.map((c, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                    <div key={i} className="flex items-center gap-3 group">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 border border-primary/15 flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                         <c.icon className="h-3.5 w-3.5 text-primary" />
                       </div>
                       <div>
-                        <p className="text-[10px] text-muted-foreground">{c.label}</p>
+                        <p className="text-[10px] text-muted-foreground/60 mb-0.5">{c.label}</p>
                         {c.href ? (
                           <a href={c.href} className="text-xs font-medium text-foreground hover:text-primary transition-colors">{c.value}</a>
                         ) : (
-                          <p className="text-xs font-medium text-foreground">{c.value}</p>
+                          <p className="text-xs font-medium text-foreground/90">{c.value}</p>
                         )}
                       </div>
                     </div>
@@ -97,69 +106,73 @@ export function CTA() {
 
           {/* Right: form */}
           <FadeIn delay={150} className="lg:col-span-3">
-            <div className="rounded-2xl border border-border/20 bg-card/30 backdrop-blur-sm p-6 md:p-8 h-full">
+            <div className="rounded-2xl border border-border/25 bg-card/40 backdrop-blur-md p-6 md:p-8 h-full shadow-xl shadow-background/30 relative overflow-hidden">
+              {/* Top accent line */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 opacity-60" />
+
               {submitted ? (
-                <div className="h-full flex flex-col items-center justify-center text-center py-8">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 mb-5">
-                    <CheckCircle2 className="h-7 w-7 text-primary" />
+                <div className="h-full flex flex-col items-center justify-center text-center py-10">
+                  <div className="relative mb-6">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
+                      <CheckCircle2 className="h-8 w-8 text-primary" />
+                    </div>
+                    <div className="absolute inset-0 rounded-full bg-primary/10 blur-xl" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">Pesan Terkirim!</h3>
-                  <p className="text-sm text-muted-foreground max-w-xs leading-relaxed mb-6">
+                  <h3 className="text-xl font-bold text-foreground mb-3">Pesan Terkirim!</h3>
+                  <p className="text-sm text-muted-foreground max-w-xs leading-relaxed mb-8">
                     Terima kasih telah menghubungi kami. Tim kami akan menghubungi Anda dalam 24 jam.
                   </p>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="rounded-full h-9 px-5 text-xs border-border/40"
+                  <button
+                    className="inline-flex items-center gap-2 rounded-full h-9 px-5 text-xs border border-border/40 hover:border-primary/40 hover:bg-primary/5 transition-all text-muted-foreground hover:text-foreground"
                     onClick={() => setSubmitted(false)}
                   >
                     Kirim pesan lain
-                  </Button>
+                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-foreground mb-2">Nama Lengkap *</label>
+                      <label className="block text-xs font-medium text-foreground/80 mb-2">Nama Lengkap *</label>
                       <input
                         required
                         type="text"
                         value={form.name}
                         onChange={e => setForm(p => ({ ...p, name: e.target.value }))}
                         placeholder="Budi Santoso"
-                        className="w-full rounded-xl bg-background/50 border border-border/30 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all"
+                        className="w-full rounded-xl bg-background/70 border border-border/30 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all hover:border-border/50"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-medium text-foreground mb-2">Email *</label>
+                      <label className="block text-xs font-medium text-foreground/80 mb-2">Email *</label>
                       <input
                         required
                         type="email"
                         value={form.email}
                         onChange={e => setForm(p => ({ ...p, email: e.target.value }))}
                         placeholder="budi@perusahaan.com"
-                        className="w-full rounded-xl bg-background/50 border border-border/30 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all"
+                        className="w-full rounded-xl bg-background/70 border border-border/30 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all hover:border-border/50"
                       />
                     </div>
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-foreground mb-2">Perusahaan</label>
+                      <label className="block text-xs font-medium text-foreground/80 mb-2">Perusahaan</label>
                       <input
                         type="text"
                         value={form.company}
                         onChange={e => setForm(p => ({ ...p, company: e.target.value }))}
                         placeholder="Nama perusahaan Anda"
-                        className="w-full rounded-xl bg-background/50 border border-border/30 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all"
+                        className="w-full rounded-xl bg-background/70 border border-border/30 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all hover:border-border/50"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-medium text-foreground mb-2">Anggaran</label>
+                      <label className="block text-xs font-medium text-foreground/80 mb-2">Anggaran</label>
                       <select
                         value={form.budget}
                         onChange={e => setForm(p => ({ ...p, budget: e.target.value }))}
-                        className="w-full rounded-xl bg-background/50 border border-border/30 px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer"
+                        className="w-full rounded-xl bg-background/70 border border-border/30 px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all hover:border-border/50 appearance-none cursor-pointer"
                       >
                         <option value="">Pilih range anggaran</option>
                         <option value="5-15">Rp 5 – 15 juta</option>
@@ -171,29 +184,30 @@ export function CTA() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-foreground mb-2">Deskripsi Proyek *</label>
+                    <label className="block text-xs font-medium text-foreground/80 mb-2">Deskripsi Proyek *</label>
                     <textarea
                       required
                       rows={4}
                       value={form.message}
                       onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
                       placeholder="Ceritakan tentang proyek Anda — jenis aplikasi, fitur utama, dan target pengguna..."
-                      className="w-full rounded-xl bg-background/50 border border-border/30 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all resize-none leading-relaxed"
+                      className="w-full rounded-xl bg-background/70 border border-border/30 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all hover:border-border/50 resize-none leading-relaxed"
                     />
                   </div>
 
-                  <Button
+                  <button
                     type="submit"
-                    className="w-full gap-2.5 h-11 text-sm font-medium bg-foreground text-background hover:bg-foreground/90 rounded-xl transition-all hover:scale-[1.01] hover:shadow-lg shadow-foreground/10"
+                    className="group relative w-full inline-flex items-center justify-center gap-2.5 h-12 text-sm font-semibold rounded-xl overflow-hidden transition-all hover:scale-[1.01] hover:shadow-xl hover:shadow-primary/25"
                   >
-                    <Send className="h-4 w-4" />
-                    Kirim Pesan Sekarang
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </Button>
+                    <span className="absolute inset-0 bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-[length:200%_100%] animate-[gradientMove_4s_ease-in-out_infinite]" />
+                    <Send className="relative h-4 w-4 text-primary-foreground" />
+                    <span className="relative text-primary-foreground">Kirim Pesan Sekarang</span>
+                    <ArrowRight className="relative h-3.5 w-3.5 text-primary-foreground group-hover:translate-x-0.5 transition-transform" />
+                  </button>
 
-                  <p className="text-center text-[10px] text-muted-foreground/50">
+                  <p className="text-center text-[10px] text-muted-foreground/40">
                     Dengan mengirim form ini, Anda menyetujui{" "}
-                    <a href="#" className="text-primary hover:underline">Kebijakan Privasi</a> kami
+                    <a href="#" className="text-primary/70 hover:text-primary underline underline-offset-2 transition-colors">Kebijakan Privasi</a> kami
                   </p>
                 </form>
               )}
