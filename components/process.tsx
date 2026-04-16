@@ -1,135 +1,153 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { MessageSquare, Lightbulb, Code2, Rocket, Check, ArrowRight } from "lucide-react"
+import { useState } from "react"
+import { Search, Lightbulb, PenTool, Code, TestTube, Rocket, ArrowRight } from "lucide-react"
 import { FadeIn } from "./text-reveal"
 
 const steps = [
   {
-    icon: MessageSquare,
+    icon: Search,
     number: "01",
-    title: "Discovery & Research",
-    subtitle: "Memahami Visi Anda",
-    description: "Deep-dive session untuk memahami bisnis Anda — goals, target audience, hingga pain points. Riset kompetitor dan market analysis untuk positioning yang tepat.",
-    duration: "1–2 Minggu",
-    deliverables: ["Business Requirements", "Competitor Analysis", "User Persona & Journey", "Project Scope"],
+    title: "Discovery & Analisis",
+    duration: "1–2 minggu",
+    description: "Kami mendengarkan, memahami, dan menganalisis bisnis Anda secara mendalam. Riset pasar, kompetitor, dan user persona dilakukan untuk memastikan solusi yang tepat sasaran.",
+    details: ["Stakeholder Interview", "Market & Competitor Research", "User Persona Mapping", "Tech Stack Planning"],
     gradient: "from-cyan-500 to-blue-600",
-    color: "cyan",
+    accent: "text-cyan-400",
+    border: "border-cyan-500/30",
+    bg: "bg-cyan-500/5",
   },
   {
     icon: Lightbulb,
     number: "02",
-    title: "Design & Prototype",
-    subtitle: "Visualisasi Konsep",
-    description: "Tim designer kami mengubah requirements menjadi wireframe, mockup high-fidelity, dan prototype interaktif — Anda merasakan produk sebelum satu baris kode ditulis.",
-    duration: "2–3 Minggu",
-    deliverables: ["Wireframes & Sitemap", "High-Fidelity UI Design", "Interactive Prototype", "Design System"],
+    title: "Strategi & Perencanaan",
+    duration: "1 minggu",
+    description: "Menyusun roadmap yang jelas, milestones terukur, dan strategi teknis optimal. Anda selalu tahu apa yang dikerjakan, kapan, dan berapa biayanya.",
+    details: ["Project Roadmap", "Feature Prioritization", "Timeline & Milestones", "Budget Breakdown"],
     gradient: "from-emerald-500 to-teal-600",
-    color: "emerald",
+    accent: "text-emerald-400",
+    border: "border-emerald-500/30",
+    bg: "bg-emerald-500/5",
   },
   {
-    icon: Code2,
+    icon: PenTool,
     number: "03",
-    title: "Development",
-    subtitle: "Membangun Impian",
-    description: "Implementasi dengan teknologi modern dan best practices. Agile methodology dengan sprint reviews reguler — Anda selalu tahu progress dan bisa memberi feedback.",
-    duration: "4–8 Minggu",
-    deliverables: ["Fully Functional App", "Clean Documented Code", "API Documentation", "QA Test Reports"],
+    title: "UI/UX Design",
+    duration: "2–3 minggu",
+    description: "Dari wireframe hingga high-fidelity prototype yang bisa Anda rasakan sebelum satu baris kode pun ditulis.",
+    details: ["Wireframing & Flow", "Visual Design", "Interactive Prototype", "User Testing"],
     gradient: "from-violet-500 to-purple-600",
-    color: "violet",
+    accent: "text-violet-400",
+    border: "border-violet-500/30",
+    bg: "bg-violet-500/5",
+  },
+  {
+    icon: Code,
+    number: "04",
+    title: "Development",
+    duration: "4–8 minggu",
+    description: "Kode yang bersih, terstruktur, dan scalable. Development iteratif dengan weekly update dan akses ke staging environment.",
+    details: ["Sprint-based Dev", "Clean Code & Review", "Weekly Progress Update", "Staging Environment"],
+    gradient: "from-orange-500 to-amber-600",
+    accent: "text-orange-400",
+    border: "border-orange-500/30",
+    bg: "bg-orange-500/5",
+  },
+  {
+    icon: TestTube,
+    number: "05",
+    title: "Testing & QA",
+    duration: "1–2 minggu",
+    description: "Pengujian menyeluruh di berbagai device dan browser. Bug-free guarantee sebelum produk live.",
+    details: ["Cross-browser Testing", "Performance Audit", "Security Testing", "User Acceptance Test"],
+    gradient: "from-rose-500 to-pink-600",
+    accent: "text-rose-400",
+    border: "border-rose-500/30",
+    bg: "bg-rose-500/5",
   },
   {
     icon: Rocket,
-    number: "04",
-    title: "Launch & Growth",
-    subtitle: "Go Live & Beyond",
-    description: "Zero-downtime deployment, monitoring tools, dan training untuk tim Anda. Kami tetap support untuk memastikan produk terus berkembang bersama bisnis Anda.",
+    number: "06",
+    title: "Launch & Dukungan",
     duration: "Ongoing",
-    deliverables: ["Live Production App", "Deployment Docs", "Team Training", "24/7 Support"],
-    gradient: "from-orange-500 to-amber-600",
-    color: "orange",
+    description: "Peluncuran yang mulus diikuti monitoring 24/7. Kami hadir untuk update, optimasi, dan scaling saat bisnis Anda berkembang.",
+    details: ["Zero-downtime Deploy", "24/7 Monitoring", "Performance Tracking", "Ongoing Maintenance"],
+    gradient: "from-blue-500 to-indigo-600",
+    accent: "text-blue-400",
+    border: "border-blue-500/30",
+    bg: "bg-blue-500/5",
   },
 ]
 
 export function Process() {
   const [active, setActive] = useState(0)
-  const [progress, setProgress] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress(prev => {
-        if (prev >= 100) {
-          setActive(current => (current + 1) % steps.length)
-          return 0
-        }
-        return prev + 0.6
-      })
-    }, 50)
-    return () => clearInterval(interval)
-  }, [active])
+  const step = steps[active]
 
   return (
     <section id="proses" className="py-20 md:py-28 lg:py-36 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
 
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <FadeIn className="max-w-2xl mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-5">
-            <span className="w-5 h-px bg-gradient-to-r from-primary to-transparent" />
-            Cara Kami Bekerja
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-14 xl:px-20">
+
+        <FadeIn className="mb-16 md:mb-20">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2.5 text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-5">
+                <span className="w-5 h-px bg-gradient-to-r from-primary to-transparent" />
+                Proses Kerja
+              </div>
+              <h2
+                className="font-black tracking-tighter leading-[0.9]"
+                style={{ fontSize: "clamp(40px, 7vw, 96px)" }}
+              >
+                <span className="block text-foreground">Cara Kami</span>
+                <span
+                  className="block"
+                  style={{ WebkitTextStroke: "1.5px oklch(0.97 0 0 / 0.2)", color: "transparent" }}
+                >
+                  Bekerja
+                </span>
+              </h2>
+            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+              Proses yang transparan dan terukur — Anda selalu tahu perkembangan proyek Anda.
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
-            Proses yang{" "}
-            <span className="bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-              transparan
-            </span>{" "}
-            dan terstruktur
-          </h2>
-          <p className="mt-4 text-sm md:text-base text-muted-foreground leading-relaxed">
-            Metodologi yang teruji untuk hasil maksimal. Anda selalu tahu progress dan terlibat dalam setiap keputusan.
-          </p>
         </FadeIn>
 
-        {/* Steps */}
-        <div className="grid lg:grid-cols-12 gap-6 lg:gap-10">
-          {/* Left nav */}
-          <div className="lg:col-span-5">
-            <div className="lg:sticky lg:top-28 space-y-2">
-              {steps.map((step, i) => (
-                <FadeIn key={i} delay={i * 80}>
-                  <button
-                    onClick={() => { setActive(i); setProgress(0) }}
-                    className={`group w-full text-left px-5 py-4 rounded-xl border transition-all duration-500 relative overflow-hidden ${
-                      active === i
-                        ? "bg-card/60 border-primary/25 backdrop-blur-sm shadow-lg shadow-background/30"
-                        : "bg-transparent border-border/15 hover:border-border/30 hover:bg-card/20"
-                    }`}
-                  >
-                    {/* Progress bar */}
-                    {active === i && (
-                      <div
-                        className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r ${step.gradient} transition-all duration-100`}
-                        style={{ width: `${progress}%` }}
-                      />
-                    )}
-                    {/* Active side indicator */}
-                    {active === i && (
-                      <div className={`absolute left-0 top-3 bottom-3 w-0.5 bg-gradient-to-b ${step.gradient} rounded-full`} />
-                    )}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
 
+          {/* Step list */}
+          <div className="lg:col-span-5">
+            <div className="space-y-1">
+              {steps.map((s, i) => (
+                <FadeIn key={i} delay={i * 50}>
+                  <button
+                    className={`w-full text-left group transition-all duration-300 rounded-xl px-4 py-3.5 relative overflow-hidden ${
+                      active === i
+                        ? `${s.bg} ${s.border} border`
+                        : "hover:bg-card/30 border border-transparent"
+                    }`}
+                    onClick={() => setActive(i)}
+                  >
+                    <div className={`absolute left-0 top-1/2 -translate-y-1/2 w-0.5 rounded-full bg-gradient-to-b ${s.gradient} transition-all duration-500 ${active === i ? "h-3/5" : "h-0"}`} />
                     <div className="flex items-center gap-4">
-                      <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${step.gradient} transition-all duration-500 flex-shrink-0 ${active === i ? "shadow-lg" : "opacity-40 scale-90"}`}>
-                        <step.icon className="h-5 w-5 text-white" />
+                      <span className={`text-[10px] font-bold tracking-widest flex-shrink-0 transition-colors ${active === i ? s.accent : "text-muted-foreground/30"}`}>
+                        {s.number}
+                      </span>
+                      <div className={`flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br ${s.gradient} flex-shrink-0 transition-all duration-300 ${active === i ? "opacity-100 scale-100" : "opacity-30 scale-90"}`}>
+                        <s.icon className="h-3.5 w-3.5 text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-0.5">
-                          <span className={`text-[10px] font-bold tracking-wider ${active === i ? "text-primary" : "text-muted-foreground/60"}`}>{step.number}</span>
-                          <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${active === i ? "bg-primary/10 text-primary/80" : "bg-muted/40 text-muted-foreground/60"}`}>{step.duration}</span>
-                        </div>
-                        <h3 className={`text-sm font-semibold transition-colors ${active === i ? "text-foreground" : "text-muted-foreground"}`}>{step.title}</h3>
+                        <p className={`text-sm font-semibold transition-colors ${active === i ? "text-foreground" : "text-muted-foreground/60"}`}>
+                          {s.title}
+                        </p>
                       </div>
-                      <ArrowRight className={`h-3.5 w-3.5 flex-shrink-0 text-primary transition-all duration-300 ${active === i ? "opacity-100" : "opacity-0"}`} />
+                      <span className={`text-[10px] flex-shrink-0 rounded-full px-2 py-0.5 transition-all duration-300 ${
+                        active === i ? `bg-gradient-to-r ${s.gradient} text-white` : "text-muted-foreground/30"
+                      }`}>
+                        {s.duration}
+                      </span>
                     </div>
                   </button>
                 </FadeIn>
@@ -137,84 +155,83 @@ export function Process() {
             </div>
           </div>
 
-          {/* Right detail */}
+          {/* Detail panel */}
           <div className="lg:col-span-7">
             <FadeIn delay={200}>
-              <div className="relative rounded-2xl border border-border/25 bg-card/40 backdrop-blur-md p-6 md:p-8 overflow-hidden shadow-xl shadow-background/30">
-                {/* Background glow */}
-                <div className={`absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br ${steps[active].gradient} opacity-[0.05] blur-[100px] transition-all duration-1000`} />
-                {/* Top line */}
-                <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${steps[active].gradient} opacity-60`} />
+              <div
+                key={active}
+                className="rounded-2xl border border-border/20 bg-card/30 backdrop-blur-md p-8 relative overflow-hidden"
+                style={{ animation: "scale-in 0.3s ease-out forwards" }}
+              >
+                <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${step.gradient}`} />
+                <div className={`absolute -top-24 -right-24 w-48 h-48 ${step.bg} rounded-full blur-[60px] opacity-60`} />
 
                 <div className="relative z-10">
-                  {/* Header */}
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className={`flex h-13 w-13 items-center justify-center rounded-xl bg-gradient-to-br ${steps[active].gradient} shadow-xl flex-shrink-0 p-3`}>
-                      {(() => { const Icon = steps[active].icon; return <Icon className="h-6 w-6 text-white" /> })()}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <div className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${step.gradient} shadow-xl flex-shrink-0`}>
+                        <step.icon className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <p className={`text-[10px] font-bold uppercase tracking-[0.2em] mb-0.5 ${step.accent}`}>
+                          Langkah {step.number}
+                        </p>
+                        <h3 className="text-xl md:text-2xl font-bold text-foreground">{step.title}</h3>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-1">{steps[active].subtitle}</p>
-                      <h3 className="text-xl md:text-2xl font-bold text-foreground">{steps[active].title}</h3>
-                    </div>
+                    <span className={`flex-shrink-0 rounded-full px-3 py-1.5 text-xs font-bold bg-gradient-to-r ${step.gradient} text-white`}>
+                      {step.duration}
+                    </span>
                   </div>
 
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
-                    {steps[active].description}
-                  </p>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">{step.description}</p>
 
-                  {/* Deliverables */}
-                  <div className="mb-6">
-                    <p className="text-xs font-semibold text-muted-foreground/70 uppercase tracking-wider mb-3">Yang Akan Anda Dapatkan</p>
-                    <div className="grid sm:grid-cols-2 gap-2">
-                      {steps[active].deliverables.map((d, j) => (
-                        <div key={j} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-background/60 border border-border/20 hover:border-primary/20 transition-all duration-300 group">
-                          <div className={`flex h-6 w-6 items-center justify-center rounded-lg bg-gradient-to-br ${steps[active].gradient} flex-shrink-0 shadow-sm`}>
-                            <Check className="h-3.5 w-3.5 text-white" />
-                          </div>
-                          <span className="text-xs font-medium text-foreground/90">{d}</span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    {step.details.map((d, j) => (
+                      <div key={j} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-background/60 border border-border/15">
+                        <div className={`flex h-5 w-5 items-center justify-center rounded-lg bg-gradient-to-br ${step.gradient} flex-shrink-0 text-white text-[10px] font-bold`}>
+                          {j + 1}
                         </div>
+                        <span className="text-xs text-foreground/80">{d}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 pt-5 border-t border-border/15 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      {steps.map((_, j) => (
+                        <button
+                          key={j}
+                          onClick={() => setActive(j)}
+                          className={`rounded-full transition-all duration-300 ${j === active ? `w-6 h-1.5 bg-gradient-to-r ${step.gradient}` : "w-1.5 h-1.5 bg-border/40 hover:bg-border/60"}`}
+                        />
                       ))}
                     </div>
-                  </div>
-
-                  {/* Footer */}
-                  <div className="pt-5 border-t border-border/20 flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-xs text-muted-foreground/60 mb-1">Estimasi Waktu</p>
-                      <p className={`text-2xl font-bold bg-gradient-to-r ${steps[active].gradient} bg-clip-text text-transparent`}>{steps[active].duration}</p>
-                    </div>
-                    <a
-                      href="#kontak"
-                      className="relative inline-flex items-center gap-2 rounded-full px-6 h-10 text-sm font-semibold overflow-hidden hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transition-all"
-                    >
-                      <span className={`absolute inset-0 bg-gradient-to-r ${steps[active].gradient}`} />
-                      <span className="relative text-white">Mulai Proyek</span>
-                      <ArrowRight className="relative h-3.5 w-3.5 text-white" />
-                    </a>
+                    {active < steps.length - 1 ? (
+                      <button
+                        onClick={() => setActive(active + 1)}
+                        className="relative inline-flex items-center gap-2 rounded-full px-5 h-9 text-xs font-semibold overflow-hidden hover:scale-105 transition-all"
+                      >
+                        <span className={`absolute inset-0 bg-gradient-to-r ${step.gradient} opacity-80`} />
+                        <span className="relative text-white">Berikutnya</span>
+                        <ArrowRight className="relative h-3.5 w-3.5 text-white" />
+                      </button>
+                    ) : (
+                      <a
+                        href="#kontak"
+                        className="relative inline-flex items-center gap-2 rounded-full px-5 h-9 text-xs font-semibold overflow-hidden hover:scale-105 transition-all"
+                      >
+                        <span className={`absolute inset-0 bg-gradient-to-r ${step.gradient}`} />
+                        <span className="relative text-white">Mulai Proyek</span>
+                        <ArrowRight className="relative h-3.5 w-3.5 text-white" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
             </FadeIn>
           </div>
         </div>
-
-        {/* Stats banner */}
-        <FadeIn delay={400} className="mt-12 md:mt-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-border/20 rounded-2xl border border-border/20 bg-card/30 backdrop-blur-md overflow-hidden shadow-lg shadow-background/30">
-            {[
-              { val: "2–4", unit: "Minggu", desc: "Rata-rata MVP" },
-              { val: "100%", unit: "Transparan", desc: "Update rutin" },
-              { val: "∞", unit: "Revisi", desc: "Unlimited" },
-              { val: "24/7", unit: "Support", desc: "Setelah launch" },
-            ].map((s, i) => (
-              <div key={i} className="p-5 md:p-6 text-center group hover:bg-primary/5 transition-colors">
-                <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">{s.val}</p>
-                <p className="text-xs font-semibold text-foreground/90 mt-1">{s.unit}</p>
-                <p className="text-[11px] text-muted-foreground/60 mt-0.5">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </FadeIn>
       </div>
     </section>
   )

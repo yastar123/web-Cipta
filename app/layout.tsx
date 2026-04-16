@@ -37,6 +37,8 @@ export default function RootLayout({
   return (
     <html lang="id" className="bg-background">
       <body className="font-sans antialiased">
+        {/* Film grain / noise overlay — gives premium texture */}
+        <div className="noise-overlay" aria-hidden="true" />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
