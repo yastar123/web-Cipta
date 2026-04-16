@@ -71,15 +71,15 @@ export function Portfolio() {
         </FadeIn>
 
         {/* ── Masonry-style grid ── */}
-        <div className="columns-1 sm:columns-2 gap-4 space-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {filtered.map((project, i) => (
-            <FadeIn key={project.title} delay={i * 70} className="break-inside-avoid mb-4">
+            <FadeIn key={project.title} delay={i * 70}>
               <div
                 className="group relative rounded-2xl overflow-hidden cursor-pointer"
                 style={{
                   height: project.featured
-                    ? "clamp(260px, 36vw, 420px)"
-                    : "clamp(210px, 26vw, 310px)",
+                    ? "clamp(240px, 30vw, 400px)"
+                    : "clamp(200px, 24vw, 300px)",
                 }}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}

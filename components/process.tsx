@@ -115,10 +115,10 @@ export function Process() {
           </div>
         </FadeIn>
 
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-10">
 
           {/* Step list */}
-          <div className="lg:col-span-5">
+          <div className="md:col-span-1 lg:col-span-5">
             <div className="space-y-1">
               {steps.map((s, i) => (
                 <FadeIn key={i} delay={i * 50}>
@@ -156,7 +156,7 @@ export function Process() {
           </div>
 
           {/* Detail panel */}
-          <div className="lg:col-span-7">
+          <div className="md:col-span-1 lg:col-span-7">
             <FadeIn delay={200}>
               <div
                 key={active}
