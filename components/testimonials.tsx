@@ -87,20 +87,20 @@ export function Testimonials() {
   }
 
   return (
-    <section id="testimonial" className="py-32 lg:py-40 relative overflow-hidden">
+    <section id="testimonial" className="py-20 md:py-28 lg:py-40 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-card/20 via-background to-card/20" />
       <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[200px]" />
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <FadeIn className="text-center mb-20">
+        <FadeIn className="text-center mb-12 md:mb-16 lg:mb-20">
           <span className="inline-flex items-center gap-2 text-sm font-medium text-primary uppercase tracking-widest mb-6">
             <span className="w-12 h-px bg-primary" />
             Testimonial
             <span className="w-12 h-px bg-primary" />
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
             Kata mereka tentang{" "}
             <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
               kami
@@ -114,7 +114,7 @@ export function Testimonials() {
             {/* Quote Icon */}
             <Quote className="absolute -top-8 left-8 lg:left-16 h-24 w-24 text-primary/10" />
             
-            <div className="relative rounded-[2.5rem] border border-border/30 bg-card/20 backdrop-blur-sm p-8 lg:p-16 overflow-hidden">
+            <div className="relative rounded-2xl sm:rounded-[2.5rem] border border-border/30 bg-card/20 backdrop-blur-sm p-6 sm:p-8 md:p-10 lg:p-16 overflow-hidden">
               {/* Background Gradient */}
               <div className={`absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br ${testimonials[activeIndex].gradient} opacity-5 blur-3xl transition-all duration-700`} />
               
@@ -130,7 +130,7 @@ export function Testimonials() {
                     </div>
                     
                     {/* Quote */}
-                    <blockquote className="text-2xl lg:text-3xl xl:text-4xl text-foreground leading-relaxed font-light mb-10">
+                    <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-foreground leading-relaxed font-light mb-8 lg:mb-10">
                       &ldquo;{testimonials[activeIndex].content}&rdquo;
                     </blockquote>
                     
@@ -210,9 +210,9 @@ export function Testimonials() {
         </FadeIn>
 
         {/* Client Logos */}
-        <FadeIn delay={200} className="mt-20">
+        <FadeIn delay={200} className="mt-12 md:mt-16 lg:mt-20">
           <p className="text-center text-sm text-muted-foreground uppercase tracking-widest mb-8">Dipercaya oleh 150+ perusahaan</p>
-          <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-5 gap-3 sm:gap-4">
             {testimonials.map((testimonial, index) => (
               <button
                 key={index}
@@ -220,7 +220,7 @@ export function Testimonials() {
                   setIsAutoPlaying(false)
                   setActiveIndex(index)
                 }}
-                className={`p-6 rounded-2xl border transition-all duration-300 ${
+                className={`p-4 sm:p-6 rounded-2xl border transition-all duration-300 ${
                   activeIndex === index
                     ? "border-primary/40 bg-primary/5"
                     : "border-border/20 bg-card/10 hover:border-border/40 hover:bg-card/30"

@@ -81,20 +81,20 @@ export function Services() {
   const containerRef = useRef<HTMLDivElement>(null)
 
   return (
-    <section id="layanan" className="py-32 lg:py-48 relative overflow-hidden">
+    <section id="layanan" className="py-20 md:py-28 lg:py-40 xl:py-48 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-primary/5 rounded-full blur-[200px]" />
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" ref={containerRef}>
         {/* Header */}
-        <FadeIn className="max-w-4xl mb-20 lg:mb-28">
+        <FadeIn className="max-w-4xl mb-12 md:mb-20 lg:mb-28">
           <div className="inline-flex items-center gap-3 text-sm font-medium text-primary uppercase tracking-[0.2em] mb-8">
             <Sparkles className="w-4 h-4" />
             <span>Layanan Kami</span>
             <span className="w-16 h-px bg-gradient-to-r from-primary to-transparent" />
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.05] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.05] tracking-tight">
             Solusi lengkap untuk{" "}
             <span className="relative inline-block">
               <span className="relative z-10 bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
@@ -119,7 +119,7 @@ export function Services() {
             >
               <TiltCard intensity={5} glare={true}>
                 <div
-                  className="group relative h-full rounded-3xl border border-border/30 bg-card/30 backdrop-blur-xl p-8 lg:p-10 transition-all duration-700 hover:border-border/60 hover:bg-card/50 overflow-hidden cursor-pointer"
+                  className="group relative h-full rounded-3xl border border-border/30 bg-card/30 backdrop-blur-xl p-6 md:p-8 lg:p-10 transition-all duration-700 hover:border-border/60 hover:bg-card/50 overflow-hidden cursor-pointer"
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
@@ -188,7 +188,7 @@ export function Services() {
         </div>
 
         {/* Bottom CTA */}
-        <FadeIn delay={600} className="mt-20 text-center">
+        <FadeIn delay={600} className="mt-12 md:mt-20 text-center">
           <p className="text-lg text-muted-foreground mb-6">
             Tidak menemukan layanan yang Anda cari?
           </p>

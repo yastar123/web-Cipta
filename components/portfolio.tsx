@@ -94,7 +94,7 @@ export function Portfolio() {
     : projects.filter(p => p.category === activeCategory)
 
   return (
-    <section id="portfolio" className="py-32 lg:py-48 relative overflow-hidden">
+    <section id="portfolio" className="py-20 md:py-28 lg:py-40 xl:py-48 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-background to-card/30" />
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[200px]" />
@@ -102,14 +102,14 @@ export function Portfolio() {
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" ref={containerRef}>
         {/* Header */}
-        <FadeIn className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-16 lg:mb-20">
+        <FadeIn className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-10 mb-10 md:mb-16 lg:mb-20">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-3 text-sm font-medium text-primary uppercase tracking-[0.2em] mb-8">
               <Sparkles className="w-4 h-4" />
               <span>Portfolio</span>
               <span className="w-16 h-px bg-gradient-to-r from-primary to-transparent" />
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.05] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.05] tracking-tight">
               Karya terbaik yang{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
@@ -161,7 +161,7 @@ export function Portfolio() {
             >
               <TiltCard intensity={3} glare={true}>
                 <div
-                  className={`group relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ${project.featured ? "h-[500px] lg:h-[600px]" : "h-[450px] lg:h-[500px]"}`}
+                  className={`group relative rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ${project.featured ? "min-h-[380px] md:h-[480px] lg:h-[600px]" : "min-h-[340px] md:h-[420px] lg:h-[500px]"}`}
                   onMouseEnter={() => setHoveredProject(index)}
                   onMouseLeave={() => setHoveredProject(null)}
                 >
@@ -180,14 +180,14 @@ export function Portfolio() {
                   </div>
 
                   {/* Content Container */}
-                  <div className="absolute inset-0 p-8 lg:p-12 flex flex-col justify-between">
+                  <div className="absolute inset-0 p-5 sm:p-8 lg:p-12 flex flex-col justify-between">
                     {/* Top Row */}
                     <div className="flex items-start justify-between">
-                      <div className="flex gap-2">
-                        <span className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-xl text-sm font-medium text-white border border-white/10">
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-xl text-xs sm:text-sm font-medium text-white border border-white/10">
                           {project.year}
                         </span>
-                        <span className="px-4 py-2 rounded-full bg-white/20 backdrop-blur-xl text-sm font-medium text-white border border-white/10">
+                        <span className="px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-xl text-xs sm:text-sm font-medium text-white border border-white/10 max-w-[180px] truncate">
                           {project.client}
                         </span>
                       </div>
@@ -205,7 +205,7 @@ export function Portfolio() {
                       </div>
 
                       {/* Title & Description */}
-                      <h3 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 group-hover:translate-x-2 transition-transform duration-500">{project.title}</h3>
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-3 sm:mb-4 group-hover:translate-x-2 transition-transform duration-500">{project.title}</h3>
                       <p className={`text-white/80 text-base lg:text-lg leading-relaxed max-w-2xl transition-all duration-500 ${hoveredProject === index ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
                         {project.description}
                       </p>
@@ -233,7 +233,7 @@ export function Portfolio() {
         </div>
 
         {/* View All CTA */}
-        <FadeIn delay={400} className="mt-20 text-center">
+        <FadeIn delay={400} className="mt-12 md:mt-20 text-center">
           <MagneticButton strength={0.3}>
             <Button 
               size="lg"

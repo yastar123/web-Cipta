@@ -75,7 +75,7 @@ export function Process() {
   }, [activeStep])
 
   return (
-    <section id="proses" className="py-32 lg:py-48 relative overflow-hidden">
+    <section id="proses" className="py-20 md:py-28 lg:py-40 xl:py-48 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
       <div className="absolute top-1/2 left-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[200px] -translate-y-1/2 -translate-x-1/2" />
@@ -83,13 +83,13 @@ export function Process() {
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <FadeIn className="max-w-4xl mb-20 lg:mb-28">
+        <FadeIn className="max-w-4xl mb-12 md:mb-20 lg:mb-28">
           <div className="inline-flex items-center gap-3 text-sm font-medium text-primary uppercase tracking-[0.2em] mb-8">
             <Sparkles className="w-4 h-4" />
             <span>Cara Kami Bekerja</span>
             <span className="w-16 h-px bg-gradient-to-r from-primary to-transparent" />
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.05] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.05] tracking-tight">
             Proses yang{" "}
             <span className="relative inline-block">
               <span className="relative z-10 bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
@@ -154,7 +154,7 @@ export function Process() {
           {/* Right - Step Details */}
           <div className="lg:col-span-7">
             <FadeIn delay={200}>
-              <div className="relative rounded-3xl border border-border/30 bg-card/40 backdrop-blur-xl p-8 lg:p-12 overflow-hidden">
+              <div className="relative rounded-3xl border border-border/30 bg-card/40 backdrop-blur-xl p-6 md:p-8 lg:p-12 overflow-hidden">
                 {/* Background Gradient */}
                 <div className={`absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br ${steps[activeStep].gradient} opacity-5 blur-[100px] transition-all duration-1000`} />
                 
@@ -169,7 +169,7 @@ export function Process() {
                     </div>
                     <div>
                       <span className="text-sm font-semibold text-primary uppercase tracking-wider">{steps[activeStep].subtitle}</span>
-                      <h3 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mt-2">{steps[activeStep].title}</h3>
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mt-2">{steps[activeStep].title}</h3>
                     </div>
                   </div>
 
@@ -219,8 +219,8 @@ export function Process() {
         </div>
 
         {/* Stats Banner */}
-        <FadeIn delay={400} className="mt-24 lg:mt-32">
-          <div className="rounded-3xl border border-border/30 bg-gradient-to-br from-card/60 to-card/30 backdrop-blur-xl p-10 lg:p-16 overflow-hidden relative">
+        <FadeIn delay={400} className="mt-14 md:mt-24 lg:mt-32">
+          <div className="rounded-3xl border border-border/30 bg-gradient-to-br from-card/60 to-card/30 backdrop-blur-xl p-8 md:p-10 lg:p-16 overflow-hidden relative">
             {/* Background Elements */}
             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[150px]" />
             <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-emerald-500/10 rounded-full blur-[120px]" />

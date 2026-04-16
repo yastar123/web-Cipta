@@ -13,12 +13,12 @@ const benefits = [
 
 export function CTA() {
   return (
-    <section id="kontak" className="py-32 lg:py-40 relative overflow-hidden">
+    <section id="kontak" className="py-20 md:py-28 lg:py-40 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[3rem] border border-border/30 bg-card/20 backdrop-blur-sm">
+        <div className="relative overflow-hidden rounded-3xl lg:rounded-[3rem] border border-border/30 bg-card/20 backdrop-blur-sm">
           {/* Animated Background */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-[150px] animate-pulse" />
@@ -28,8 +28,8 @@ export function CTA() {
           {/* Grid Pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_80%)]" />
           
-          <div className="relative z-10 p-10 lg:p-20">
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+          <div className="relative z-10 p-7 sm:p-10 lg:p-20">
+            <div className="grid lg:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-center">
               {/* Content */}
               <FadeIn>
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-primary uppercase tracking-widest mb-6">
@@ -37,7 +37,7 @@ export function CTA() {
                   Mari Berdiskusi
                 </span>
                 
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] tracking-tight mb-8">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] tracking-tight mb-6 md:mb-8">
                   Siap wujudkan{" "}
                   <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
                     ide Anda?
@@ -61,7 +61,7 @@ export function CTA() {
                 </div>
 
                 {/* Contact Info */}
-                <div className="flex flex-wrap gap-6">
+                <div className="flex flex-wrap gap-4 md:gap-6">
                   <a href="mailto:hello@webcipta.id" className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-card border border-border/40 group-hover:border-primary/40 group-hover:bg-primary/5 transition-all">
                       <Mail className="h-5 w-5 text-primary" />
@@ -85,7 +85,7 @@ export function CTA() {
               
               {/* Form Card */}
               <FadeIn delay={200}>
-                <div className="rounded-3xl bg-background/80 backdrop-blur-2xl border border-border/30 p-8 lg:p-10 shadow-2xl">
+                <div className="rounded-3xl bg-background/80 backdrop-blur-2xl border border-border/30 p-6 sm:p-8 lg:p-10 shadow-2xl">
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     Mulai Proyek Baru
                   </h3>

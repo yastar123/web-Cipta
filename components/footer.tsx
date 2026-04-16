@@ -88,7 +88,7 @@ export function Footer() {
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Newsletter Section */}
-        <FadeIn className="py-20 border-b border-border/30">
+        <FadeIn className="py-12 md:py-16 lg:py-20 border-b border-border/30">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
             <div className="text-center lg:text-left max-w-lg">
               <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -99,7 +99,7 @@ export function Footer() {
               </p>
             </div>
             <div className="w-full max-w-md">
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <div className="flex-1 relative">
                   <input
                     type="email"
@@ -120,7 +120,7 @@ export function Footer() {
         </FadeIn>
 
         {/* Main Footer Content */}
-        <div className="py-20 grid gap-12 md:grid-cols-2 lg:grid-cols-12">
+        <div className="py-12 md:py-16 lg:py-20 grid gap-10 md:grid-cols-2 lg:grid-cols-12">
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <Link href="/" className="group inline-flex items-center gap-3 mb-6">
