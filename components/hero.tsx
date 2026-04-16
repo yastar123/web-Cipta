@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { Marquee } from "./marquee"
 import { AnimatedCounter } from "./animated-counter"
 
@@ -51,7 +51,6 @@ export function Hero() {
       {/* ── Background ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_-5%,oklch(0.14_0.06_200)_0%,transparent_65%)]" />
-        {/* Mouse-follow glow — only on devices that support hover */}
         <div
           className="absolute rounded-full opacity-15 transition-[left,top] duration-[2500ms] ease-out hidden md:block"
           style={{
@@ -70,7 +69,6 @@ export function Hero() {
           className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/5 rounded-full blur-[100px]"
           style={{ transform: `translate(-20%, 20%) translateY(${scrollY * -0.04}px)` }}
         />
-        {/* Subtle grid — masked radially */}
         <div
           className="absolute inset-0 opacity-[0.022]"
           style={{
@@ -83,7 +81,7 @@ export function Hero() {
       </div>
 
       {/* ── Main layout ── */}
-      <div className="relative z-10 flex flex-col flex-1 px-5 sm:px-8 lg:px-14 xl:px-20 pt-24 sm:pt-28 md:pt-32 pb-0 max-w-[100vw]">
+      <div className="relative z-10 flex flex-col flex-1 px-4 sm:px-8 lg:px-14 xl:px-20 pt-24 sm:pt-28 md:pt-32 pb-0 max-w-[100vw]">
 
         {/* ── Top bar ── */}
         <div
@@ -116,7 +114,7 @@ export function Hero() {
               <span
                 className="block"
                 style={{
-                  fontSize: "clamp(38px, 10vw, 165px)",
+                  fontSize: "clamp(36px, 9.5vw, 165px)",
                   WebkitTextStroke: "1.5px oklch(0.97 0 0 / 0.22)",
                   color: "transparent",
                   transform: loaded ? "translateY(0)" : "translateY(110%)",
@@ -133,7 +131,7 @@ export function Hero() {
               <span
                 className="block text-foreground"
                 style={{
-                  fontSize: "clamp(38px, 10vw, 165px)",
+                  fontSize: "clamp(36px, 9.5vw, 165px)",
                   transform: loaded ? "translateY(0)" : "translateY(110%)",
                   transition: "transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s",
                   display: "block",
@@ -143,28 +141,42 @@ export function Hero() {
               </span>
             </div>
 
-            {/* Line 3+4: Digital Experience — gradient (wraps naturally to 2 lines) */}
+            {/* Line 3+4: Digital Experience — gradient */}
             <div className="overflow-hidden">
               <span
                 className="block bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent bg-[length:200%_100%] animate-[gradientMove_6s_ease-in-out_infinite]"
                 style={{
-                  fontSize: "clamp(38px, 10vw, 165px)",
+                  fontSize: "clamp(36px, 9.5vw, 165px)",
                   transform: loaded ? "translateY(0)" : "translateY(110%)",
                   transition: "transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.32s",
                   display: "block",
                 }}
               >
-                Digital Experience
+                Digital
+              </span>
+            </div>
+            <div className="overflow-hidden">
+              <span
+                className="block bg-gradient-to-r from-cyan-400 via-emerald-400 to-primary bg-clip-text text-transparent bg-[length:200%_100%] animate-[gradientMove_6s_ease-in-out_infinite]"
+                style={{
+                  fontSize: "clamp(36px, 9.5vw, 165px)",
+                  transform: loaded ? "translateY(0)" : "translateY(110%)",
+                  transition: "transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.44s",
+                  display: "block",
+                  animationDelay: "1s",
+                }}
+              >
+                Experience
               </span>
             </div>
           </h1>
 
           {/* ── Bottom row: description + stats ── */}
           <div
-            className={`flex flex-col lg:flex-row lg:items-end gap-7 sm:gap-8 transition-all duration-700 delay-500 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`flex flex-col lg:flex-row lg:items-end gap-6 sm:gap-7 transition-all duration-700 delay-500 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             {/* Left: description + CTA */}
-            <div className="flex flex-col gap-5 w-full max-w-xs sm:max-w-sm">
+            <div className="flex flex-col gap-4 w-full max-w-sm">
               <p className="text-sm md:text-[15px] text-muted-foreground leading-relaxed">
                 Kami membangun{" "}
                 <span className="text-foreground/90 font-medium">website</span>,{" "}
@@ -175,7 +187,6 @@ export function Hero() {
               <div className="flex flex-wrap items-center gap-3">
                 <a
                   href="#kontak"
-                  data-cursor-label="MULAI"
                   className="group relative inline-flex items-center gap-2 rounded-full overflow-hidden px-6 h-11 text-sm font-semibold hover:scale-105 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 flex-shrink-0"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-primary via-cyan-400 to-emerald-500 bg-[length:200%_100%] animate-[gradientMove_4s_ease-in-out_infinite]" />
@@ -184,7 +195,6 @@ export function Hero() {
                 </a>
                 <a
                   href="#portfolio"
-                  data-cursor-label="LIHAT"
                   className="group inline-flex items-center gap-1.5 h-11 px-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <span className="relative">
@@ -196,8 +206,8 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Right: stats — 2-col grid on mobile, flex row on sm+ */}
-            <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-6 sm:gap-8 lg:gap-10 lg:ml-auto">
+            {/* Right: stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 lg:ml-auto">
               {stats.map((stat, i) => (
                 <div key={i} className="flex flex-col group">
                   <span className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground tracking-tight leading-none">
@@ -213,7 +223,7 @@ export function Hero() {
 
         {/* ── Scroll indicator ── */}
         <div
-          className={`flex flex-col items-center gap-2 py-6 transition-all duration-700 delay-[900ms] ${loaded ? "opacity-100" : "opacity-0"}`}
+          className={`flex flex-col items-center gap-2 py-5 sm:py-6 transition-all duration-700 delay-[900ms] ${loaded ? "opacity-100" : "opacity-0"}`}
         >
           <span className="text-[9px] tracking-[0.25em] uppercase text-muted-foreground/30">Scroll</span>
           <div className="flex h-8 w-5 items-start justify-center rounded-full border border-border/25 pt-1.5">
@@ -223,7 +233,7 @@ export function Hero() {
 
         {/* ── Tech Marquee strip ── */}
         <div
-          className={`-mx-5 sm:-mx-8 lg:-mx-14 xl:-mx-20 border-t border-border/10 bg-card/25 backdrop-blur-xl h-11 sm:h-12 flex items-center overflow-hidden transition-all duration-700 delay-700 ${loaded ? "opacity-100" : "opacity-0"}`}
+          className={`-mx-4 sm:-mx-8 lg:-mx-14 xl:-mx-20 border-t border-border/10 bg-card/25 backdrop-blur-xl h-11 sm:h-12 flex items-center overflow-hidden transition-all duration-700 delay-700 ${loaded ? "opacity-100" : "opacity-0"}`}
         >
           <Marquee speed={35} className="py-0">
             {techStack.map((tech) => (
