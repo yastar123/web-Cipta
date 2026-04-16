@@ -14,7 +14,6 @@ const testimonials = [
     text: "webCipta benar-benar mengubah bisnis kami. Conversion rate naik 180% dalam 3 bulan pertama. Tim mereka responsif, profesional, dan selalu memberikan hasil terbaik.",
     metric: "+180%", metricLabel: "Conversion Rate",
     gradient: "from-cyan-500 to-blue-600",
-    accentColor: "cyan",
   },
   {
     name: "dr. Sari Dewi",
@@ -25,7 +24,6 @@ const testimonials = [
     text: "Sebagai startup healthtech, kami butuh partner yang benar-benar mengerti kebutuhan kami. webCipta tidak hanya deliver on-time, tapi juga memberikan saran-saran strategic yang sangat valuable.",
     metric: "50K+", metricLabel: "Active Users",
     gradient: "from-emerald-500 to-teal-600",
-    accentColor: "emerald",
   },
   {
     name: "Budi Santoso",
@@ -36,7 +34,6 @@ const testimonials = [
     text: "UI/UX design dari webCipta benar-benar kelas dunia. Tim kami yang awalnya skeptis sekarang malah jadi yang paling antusias menggunakan dashboard baru tersebut.",
     metric: "+65%", metricLabel: "Team Efficiency",
     gradient: "from-violet-500 to-purple-600",
-    accentColor: "violet",
   },
   {
     name: "Rini Kusumawati",
@@ -47,7 +44,6 @@ const testimonials = [
     text: "Proses kerja mereka sangat transparan. Setiap sprint ada demo, setiap issue langsung di-handle. Produk yang dihasilkan melebihi ekspektasi kami.",
     metric: "25K+", metricLabel: "Students",
     gradient: "from-orange-500 to-amber-600",
-    accentColor: "orange",
   },
 ]
 
@@ -72,50 +68,59 @@ export function Testimonials() {
     <section id="testimonial" className="py-20 md:py-28 lg:py-36 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-background to-card/30" />
 
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <FadeIn className="max-w-2xl mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-5">
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-14 xl:px-20">
+
+        {/* ── Header ── */}
+        <FadeIn className="mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-2.5 text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-5">
             <span className="w-5 h-px bg-gradient-to-r from-primary to-transparent" />
             Testimoni
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
-            Apa kata{" "}
-            <span className="bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-              klien kami
+          <h2
+            className="font-black tracking-tighter leading-[0.9]"
+            style={{ fontSize: "clamp(40px, 7vw, 96px)" }}
+          >
+            <span className="block text-foreground">Apa Kata</span>
+            <span
+              className="block"
+              style={{ WebkitTextStroke: "1.5px oklch(0.97 0 0 / 0.2)", color: "transparent" }}
+            >
+              Klien Kami
             </span>
           </h2>
-          <p className="mt-4 text-sm md:text-base text-muted-foreground leading-relaxed">
-            Kepercayaan klien adalah aset terbesar kami. Ini bukan sekadar kata-kata — ada angka nyata di baliknya.
+          <p className="mt-4 text-sm md:text-base text-muted-foreground leading-relaxed max-w-md">
+            Kepercayaan klien adalah aset terbesar kami — dengan angka nyata di baliknya.
           </p>
         </FadeIn>
 
-        {/* Main card */}
+        {/* ── Main testimonial card ── */}
         <FadeIn delay={100}>
-          <div className="relative rounded-2xl border border-border/25 bg-card/40 backdrop-blur-md p-6 md:p-10 overflow-hidden mb-4 shadow-xl shadow-background/30">
-            {/* Top line */}
-            <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${t.gradient} opacity-70 transition-all duration-700`} />
-            {/* Background glow */}
-            <div className={`absolute -top-1/2 -right-1/4 w-3/4 h-full bg-gradient-to-br ${t.gradient} opacity-[0.05] blur-[100px] transition-all duration-1000`} />
+          <div
+            key={active}
+            className="relative rounded-2xl border border-border/25 bg-card/40 backdrop-blur-md p-6 md:p-10 overflow-hidden mb-4 shadow-xl shadow-background/30"
+            style={{ animation: "scale-in 0.35s ease-out forwards" }}
+          >
+            <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${t.gradient} opacity-75`} />
+            <div className={`absolute -top-1/2 -right-1/4 w-3/4 h-full bg-gradient-to-br ${t.gradient} opacity-[0.04] blur-[100px]`} />
 
-            <div className="relative z-10 grid lg:grid-cols-5 gap-8">
-              {/* Left: quote */}
+            <div className="relative z-10 grid lg:grid-cols-5 gap-6 md:gap-8">
+              {/* Quote side */}
               <div className="lg:col-span-3 flex flex-col">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className={`flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br ${t.gradient} opacity-60`}>
+                <div className="flex items-center gap-3 mb-5 md:mb-6">
+                  <div className={`flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br ${t.gradient} opacity-60 flex-shrink-0`}>
                     <Quote className="h-4 w-4 text-white" />
                   </div>
                   <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, j) => (
-                      <Star key={j} className="h-3.5 w-3.5 text-amber-400 fill-amber-400" />
+                    {[...Array(t.rating)].map((_, j) => (
+                      <Star key={j} className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-amber-400 fill-amber-400" />
                     ))}
                   </div>
                 </div>
-                <p className="text-base md:text-lg text-foreground/90 leading-relaxed flex-1 mb-8 italic">
+                <p className="text-sm md:text-base lg:text-lg text-foreground/90 leading-relaxed flex-1 mb-6 md:mb-8 italic">
                   &ldquo;{t.text}&rdquo;
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className={`flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br ${t.gradient} text-white text-sm font-bold flex-shrink-0 shadow-lg`}>
+                <div className="flex items-center gap-3 md:gap-4">
+                  <div className={`flex h-10 w-10 md:h-11 md:w-11 items-center justify-center rounded-full bg-gradient-to-br ${t.gradient} text-white text-xs md:text-sm font-bold flex-shrink-0 shadow-lg`}>
                     {t.avatar}
                   </div>
                   <div>
@@ -125,18 +130,18 @@ export function Testimonials() {
                 </div>
               </div>
 
-              {/* Right */}
+              {/* Metric side */}
               <div className="lg:col-span-2 flex flex-col justify-between gap-4">
-                <div className={`rounded-xl bg-gradient-to-br ${t.gradient} p-6 shadow-xl transition-all duration-700`}>
-                  <p className="text-white/60 text-[10px] font-bold uppercase tracking-[0.2em] mb-3">Hasil Nyata</p>
-                  <p className="text-4xl font-bold text-white mb-1">{t.metric}</p>
+                <div className={`rounded-xl bg-gradient-to-br ${t.gradient} p-5 md:p-6 shadow-xl`}>
+                  <p className="text-white/60 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] mb-2 md:mb-3">Hasil Nyata</p>
+                  <p className="text-3xl md:text-4xl font-bold text-white mb-1">{t.metric}</p>
                   <p className="text-white/80 text-sm font-medium">{t.metricLabel}</p>
-                  <div className="mt-3 pt-3 border-t border-white/20">
-                    <p className="text-white/50 text-[11px]">dalam 90 hari pertama</p>
+                  <div className="mt-2 md:mt-3 pt-2 md:pt-3 border-t border-white/20">
+                    <p className="text-white/50 text-[10px] md:text-[11px]">dalam 90 hari pertama</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-2 flex-wrap">
                   {testimonials.map((_, j) => (
                     <button
                       key={j}
@@ -158,8 +163,8 @@ export function Testimonials() {
           </div>
         </FadeIn>
 
-        {/* Mini cards for other testimonials */}
-        <div className="grid sm:grid-cols-3 gap-3 mb-14 md:mb-18">
+        {/* ── Mini cards for other testimonials ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-12 md:mb-16">
           {testimonials.filter((_, i) => i !== active).map((item) => (
             <FadeIn key={item.name} delay={80}>
               <button
@@ -167,28 +172,28 @@ export function Testimonials() {
                 className="w-full text-left rounded-xl border border-border/20 bg-card/25 p-4 hover:border-primary/25 hover:bg-card/50 transition-all duration-300 group"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className={`flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br ${item.gradient} text-white text-[11px] font-bold flex-shrink-0 shadow-md`}>
+                  <div className={`flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br ${item.gradient} text-white text-[10px] font-bold flex-shrink-0 shadow-md`}>
                     {item.avatar}
                   </div>
-                  <div>
-                    <p className="text-xs font-semibold text-foreground">{item.name}</p>
-                    <p className="text-[10px] text-muted-foreground/70">{item.role} · {item.company}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs font-semibold text-foreground truncate">{item.name}</p>
+                    <p className="text-[10px] text-muted-foreground/70 truncate">{item.role} · {item.company}</p>
                   </div>
-                  <div className={`ml-auto text-xs font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>{item.metric}</div>
+                  <div className={`flex-shrink-0 text-xs font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>{item.metric}</div>
                 </div>
-                <p className="text-[11px] text-muted-foreground/70 line-clamp-2 leading-relaxed">{item.text}</p>
+                <p className="text-[11px] text-muted-foreground/65 line-clamp-2 leading-relaxed">{item.text}</p>
               </button>
             </FadeIn>
           ))}
         </div>
 
-        {/* Client logos */}
+        {/* ── Client logos ── */}
         <FadeIn delay={300}>
-          <div className="rounded-2xl border border-border/15 bg-card/20 backdrop-blur-sm p-6 md:p-8">
-            <p className="text-center text-[10px] font-bold text-muted-foreground/40 uppercase tracking-[0.3em] mb-6">Dipercaya oleh perusahaan terkemuka</p>
-            <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+          <div className="rounded-2xl border border-border/15 bg-card/20 backdrop-blur-sm p-5 md:p-8">
+            <p className="text-center text-[9px] md:text-[10px] font-bold text-muted-foreground/35 uppercase tracking-[0.3em] mb-5 md:mb-6">Dipercaya oleh perusahaan terkemuka</p>
+            <div className="flex flex-wrap justify-center gap-5 md:gap-10">
               {logos.map((logo) => (
-                <span key={logo} className="text-sm font-bold text-muted-foreground/20 hover:text-muted-foreground/50 transition-all duration-300 cursor-default tracking-wide hover:scale-105">
+                <span key={logo} className="text-xs sm:text-sm font-bold text-muted-foreground/20 hover:text-muted-foreground/50 transition-all duration-300 cursor-default tracking-wide hover:scale-105">
                   {logo}
                 </span>
               ))}

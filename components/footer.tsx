@@ -50,7 +50,7 @@ export function Footer() {
       <div className="absolute inset-0 bg-gradient-to-b from-card/30 to-background" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/[0.03] rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-14 xl:px-20">
         {/* Top: brand + newsletter */}
         <div className="py-12 md:py-16 grid md:grid-cols-2 gap-10 md:gap-16 border-b border-border/15">
           {/* Brand */}

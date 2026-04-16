@@ -157,7 +157,7 @@ export function Services() {
                     </div>
 
                     {/* Mobile expand: show description inline */}
-                    <div className={`lg:hidden overflow-hidden transition-all duration-500 ${active === i ? "max-h-56 pb-4 pl-14" : "max-h-0"}`}>
+                    <div className={`lg:hidden overflow-hidden transition-all duration-500 ${active === i ? "max-h-[500px] pb-5 pl-14" : "max-h-0"}`}>
                       <p className="text-xs text-muted-foreground leading-relaxed mb-3">{service.description}</p>
                       <div className="flex flex-wrap gap-2">
                         {service.features.map((f, j) => (

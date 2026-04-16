@@ -33,23 +33,28 @@ export function CTA() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-500/4 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-14 xl:px-20">
         {/* Header */}
-        <FadeIn className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-5">
-            <span className="w-4 h-px bg-gradient-to-r from-primary to-transparent" />
+        <FadeIn className="mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-2.5 text-xs font-semibold text-primary uppercase tracking-[0.25em] mb-5">
+            <span className="w-5 h-px bg-gradient-to-r from-primary to-transparent" />
             Mulai Hari Ini
             <Sparkles className="h-3 w-3 text-primary/60" />
-            <span className="w-4 h-px bg-gradient-to-l from-primary to-transparent" />
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
-            Siap membangun{" "}
-            <span className="bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-              produk impian Anda?
+          <h2
+            className="font-black tracking-tighter leading-[0.9] mb-4"
+            style={{ fontSize: "clamp(38px, 7vw, 96px)" }}
+          >
+            <span className="block text-foreground">Mulai Proyek</span>
+            <span
+              className="block"
+              style={{ WebkitTextStroke: "1.5px oklch(0.97 0 0 / 0.2)", color: "transparent" }}
+            >
+              Impian Anda
             </span>
           </h2>
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-            Ceritakan proyek Anda, kami akan menjawab dengan proposal yang komprehensif dan harga yang transparan.
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-md">
+            Ceritakan proyek Anda — kami jawab dengan proposal komprehensif dan harga transparan dalam 24 jam.
           </p>
         </FadeIn>
 
