@@ -72,8 +72,8 @@ export function Footer() {
             <div className="space-y-2.5 mb-6">
               {[
                 { icon: Mail, text: "hello@webcipta.com", href: "mailto:hello@webcipta.com" },
-                { icon: Phone, text: "+62 812-3456-7890", href: "https://wa.me/6281234567890" },
-                { icon: MapPin, text: "Jakarta, Indonesia" },
+                { icon: Phone, text: "0853-6619-5381", href: "https://wa.me/6285366195381" },
+                { icon: MapPin, text: "Bandar Lampung, Indonesia" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2.5">
                   <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-primary/10">

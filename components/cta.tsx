@@ -13,8 +13,8 @@ const benefits = [
 
 const contactDetails = [
   { icon: Mail, label: "Email", value: "hello@webcipta.com", href: "mailto:hello@webcipta.com" },
-  { icon: Phone, label: "WhatsApp", value: "+62 812-3456-7890", href: "https://wa.me/6281234567890" },
-  { icon: MapPin, label: "Lokasi", value: "Jakarta, Indonesia" },
+  { icon: Phone, label: "WhatsApp", value: "0853-6619-5381", href: "https://wa.me/6285366195381" },
+  { icon: MapPin, label: "Lokasi", value: "Bandar Lampung, Indonesia" },
   { icon: Clock, label: "Jam Kerja", value: "Senin – Jumat, 09:00–18:00" },
 ]
 

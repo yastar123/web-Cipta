@@ -84,16 +84,19 @@ export function Portfolio() {
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
               >
-                {/* Gradient bg */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${project.gradient} transition-transform duration-700 group-hover:scale-[1.06]`}
-                />
+                {/* Background image */}
+                {project.image && (
+                  <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${project.image})` }}
+                  />
+                )}
 
                 {/* Pattern overlay */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:20px_20px] opacity-30" />
 
                 {/* Progressive dark overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
                 {/* Hover shimmer */}
                 <div
@@ -112,11 +115,22 @@ export function Portfolio() {
                         {project.client}
                       </span>
                     </div>
-                    <div
-                      className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm border border-white/20 transition-all duration-500 ${hovered === i ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 rotate-45"}`}
-                    >
-                      <ArrowUpRight className="h-4 w-4 text-white" />
-                    </div>
+                    {project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm border border-white/20 transition-all duration-500 ${hovered === i ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 rotate-45"}`}
+                      >
+                        <ArrowUpRight className="h-4 w-4 text-white" />
+                      </a>
+                    ) : (
+                      <div
+                        className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm border border-white/20 transition-all duration-500 ${hovered === i ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 rotate-45"}`}
+                      >
+                        <ArrowUpRight className="h-4 w-4 text-white" />
+                      </div>
+                    )}
                   </div>
 
                   {/* Bottom: title + metric + tags */}
