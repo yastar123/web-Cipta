@@ -1,25 +1,30 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { ArrowUpRight, ExternalLink, TrendingUp } from "lucide-react"
-import { FadeIn } from "./text-reveal"
-import { projects, categories } from "@/lib/portfolio-data"
+import { useState } from "react";
+import Link from "next/link";
+import { ArrowUpRight, ExternalLink, TrendingUp } from "lucide-react";
+import { FadeIn } from "./text-reveal";
+import { projects, categories } from "@/lib/portfolio-data";
 
-const featured = projects.filter((p) => p.featured)
+const featured = projects.filter((p) => p.featured);
 
 export function Portfolio() {
-  const [active, setActive] = useState("all")
-  const [hovered, setHovered] = useState<number | null>(null)
+  const [active, setActive] = useState("all");
+  const [hovered, setHovered] = useState<number | null>(null);
 
-  const filtered = active === "all" ? projects.slice(0, 6) : projects.filter((p) => p.category === active).slice(0, 6)
+  const filtered =
+    active === "all"
+      ? projects.slice(0, 6)
+      : projects.filter((p) => p.category === active).slice(0, 6);
 
   return (
-    <section id="portfolio" className="py-20 md:py-28 lg:py-36 relative overflow-hidden">
+    <section
+      id="portfolio"
+      className="py-20 md:py-28 lg:py-36 relative overflow-hidden"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-card/20 via-background to-card/20" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-8 lg:px-14 xl:px-20">
-
         {/* ── Header ── */}
         <FadeIn className="mb-10 md:mb-14">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
@@ -33,19 +38,12 @@ export function Portfolio() {
                 style={{ fontSize: "clamp(36px, 7vw, 96px)" }}
               >
                 <span className="block text-foreground">Karya</span>
-                <span
-                  className="block"
-                  style={{
-                    WebkitTextStroke: "1.5px oklch(0.97 0 0 / 0.2)",
-                    color: "transparent",
-                  }}
-                >
-                  Terbaik Kami
-                </span>
+                <span className="block text-primary">Terbaik Kami</span>
               </h2>
             </div>
-            <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
-              Setiap proyek adalah kisah kolaborasi dan inovasi yang menghasilkan dampak nyata.
+            <p className="text-sm text-foreground max-w-xs leading-relaxed">
+              Setiap proyek adalah kisah kolaborasi dan inovasi yang
+              menghasilkan dampak nyata.
             </p>
           </div>
         </FadeIn>
@@ -140,8 +138,12 @@ export function Portfolio() {
                       className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/40 backdrop-blur-sm border border-white/10 mb-3 transition-all duration-500 ${hovered === i ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
                     >
                       <TrendingUp className="h-3.5 w-3.5 text-white/70 flex-shrink-0" />
-                      <span className="text-base font-black text-white">{project.metric}</span>
-                      <span className="text-white/50 text-[10px] font-medium">{project.metricLabel}</span>
+                      <span className="text-base font-black text-white">
+                        {project.metric}
+                      </span>
+                      <span className="text-white/50 text-[10px] font-medium">
+                        {project.metricLabel}
+                      </span>
                     </div>
 
                     <h3
@@ -181,7 +183,10 @@ export function Portfolio() {
         </div>
 
         {/* ── CTA ── */}
-        <FadeIn delay={500} className="mt-10 sm:mt-12 flex items-center justify-center gap-4">
+        <FadeIn
+          delay={500}
+          className="mt-10 sm:mt-12 flex items-center justify-center gap-4"
+        >
           <Link
             href="/portfolio"
             className="group inline-flex items-center gap-2.5 h-11 px-6 sm:px-7 text-sm font-medium rounded-full border border-border/30 bg-card/20 hover:border-primary/35 hover:bg-primary/5 transition-all backdrop-blur-sm hover:scale-105 hover:shadow-lg hover:shadow-primary/10"
@@ -194,5 +199,5 @@ export function Portfolio() {
         </FadeIn>
       </div>
     </section>
-  )
+  );
 }

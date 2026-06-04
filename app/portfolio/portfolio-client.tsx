@@ -1,15 +1,33 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { ArrowLeft, ArrowUpRight, TrendingUp, Filter } from "lucide-react"
-import { projects, categories } from "@/lib/portfolio-data"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { ArrowLeft, ArrowUpRight, TrendingUp, Filter } from "lucide-react";
+import { projects, categories } from "@/lib/portfolio-data";
 
 export function PortfolioClient() {
-  const [active, setActive] = useState("all")
-  const [hovered, setHovered] = useState<number | null>(null)
+  const [active, setActive] = useState("all");
+  const [hovered, setHovered] = useState<number | null>(null);
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 15;
 
-  const filtered = active === "all" ? projects : projects.filter((p) => p.category === active)
+  const filtered =
+    active === "all" ? projects : projects.filter((p) => p.category === active);
+
+  useEffect(() => {
+    setPage(1);
+  }, [active]);
+
+  // Scroll to top when page changes
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [page]);
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / itemsPerPage));
+  const startIndex = (page - 1) * itemsPerPage;
+  const paginated = filtered.slice(startIndex, startIndex + itemsPerPage);
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
@@ -31,15 +49,22 @@ export function PortfolioClient() {
               <div className="flex h-8 w-8 items-center justify-center rounded-xl border border-border/30 bg-card/40 group-hover:border-primary/30 group-hover:bg-card/60 transition-all">
                 <ArrowLeft className="h-3.5 w-3.5 group-hover:-translate-x-0.5 transition-transform" />
               </div>
-              <span className="text-xs font-medium hidden sm:block">Kembali</span>
+              <span className="text-xs font-medium hidden sm:block">
+                Kembali
+              </span>
             </Link>
             <div className="w-px h-5 bg-border/30" />
             <Link href="/" className="flex items-center gap-2 group">
               <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-primary via-cyan-500 to-emerald-500 shadow-md shadow-primary/20">
-                <span className="text-[10px] font-black text-primary-foreground">W</span>
+                <span className="text-[10px] font-black text-primary-foreground">
+                  W
+                </span>
               </div>
               <span className="text-sm font-black tracking-tight text-foreground">
-                web<span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">Cipta</span>
+                web
+                <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
+                  Cipta
+                </span>
               </span>
             </Link>
             <div className="ml-auto">
@@ -48,8 +73,12 @@ export function PortfolioClient() {
                 className="relative inline-flex items-center gap-1.5 rounded-full px-3 sm:px-4 h-8 text-xs font-bold overflow-hidden hover:scale-105 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-primary to-emerald-500" />
-                <span className="relative text-primary-foreground hidden sm:inline">Konsultasi Gratis</span>
-                <span className="relative text-primary-foreground sm:hidden">Kontak</span>
+                <span className="relative text-primary-foreground hidden sm:inline">
+                  Konsultasi Gratis
+                </span>
+                <span className="relative text-primary-foreground sm:hidden">
+                  Kontak
+                </span>
                 <ArrowUpRight className="relative h-3 w-3 text-primary-foreground" />
               </Link>
             </div>
@@ -72,15 +101,11 @@ export function PortfolioClient() {
                   style={{ fontSize: "clamp(32px, 6vw, 90px)" }}
                 >
                   <span className="block text-foreground">Semua</span>
-                  <span
-                    className="block"
-                    style={{ WebkitTextStroke: "1.5px oklch(0.97 0 0 / 0.2)", color: "transparent" }}
-                  >
-                    Karya Kami
-                  </span>
+                  <span className="block text-primary">Karya Kami</span>
                 </h1>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-md">
-                  Karya-karya terbaik kami — dari startup hingga enterprise, dengan standar kualitas internasional di setiap lini.
+                <p className="text-sm md:text-base text-foreground leading-relaxed max-w-md">
+                  Karya-karya terbaik kami — dari startup hingga enterprise,
+                  dengan standar kualitas internasional di setiap lini.
                 </p>
               </div>
               <div className="flex gap-3 flex-wrap">
@@ -93,8 +118,12 @@ export function PortfolioClient() {
                     key={i}
                     className="text-center px-4 py-3 rounded-xl border border-border/20 bg-card/20 backdrop-blur-sm"
                   >
-                    <div className="text-xl sm:text-2xl font-black text-foreground tracking-tight">{stat.value}</div>
-                    <div className="text-[10px] text-muted-foreground/50 uppercase tracking-widest mt-0.5">{stat.label}</div>
+                    <div className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+                      {stat.value}
+                    </div>
+                    <div className="text-[10px] text-muted-foreground/50 uppercase tracking-widest mt-0.5">
+                      {stat.label}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -120,7 +149,9 @@ export function PortfolioClient() {
               ))}
               <div className="flex items-center gap-1.5 ml-auto text-xs text-muted-foreground/50">
                 <Filter className="h-3 w-3 flex-shrink-0" />
-                <span className="whitespace-nowrap">{filtered.length} proyek</span>
+                <span className="whitespace-nowrap">
+                  {filtered.length} proyek
+                </span>
               </div>
             </div>
           </div>
@@ -130,7 +161,7 @@ export function PortfolioClient() {
         <section className="pb-20 sm:pb-28">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-              {filtered.map((project, i) => (
+              {paginated.map((project, i) => (
                 <div
                   key={project.title}
                   className="group relative rounded-2xl overflow-hidden cursor-pointer"
@@ -194,8 +225,12 @@ export function PortfolioClient() {
                         className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-black/40 backdrop-blur-sm border border-white/10 mb-3 transition-all duration-500 ${hovered === i ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
                       >
                         <TrendingUp className="h-3 w-3 text-white/70 flex-shrink-0" />
-                        <span className="text-sm font-black text-white">{project.metric}</span>
-                        <span className="text-white/50 text-[10px]">{project.metricLabel}</span>
+                        <span className="text-sm font-black text-white">
+                          {project.metric}
+                        </span>
+                        <span className="text-white/50 text-[10px]">
+                          {project.metricLabel}
+                        </span>
                       </div>
                       <h3
                         className={`font-black text-white tracking-tight leading-tight mb-2 transition-transform duration-500 ${hovered === i ? "translate-x-0.5" : "translate-x-0"}`}
@@ -226,9 +261,49 @@ export function PortfolioClient() {
               ))}
             </div>
 
+            {/* Pagination controls */}
+            {filtered.length > itemsPerPage && (
+              <div className="mt-6 flex items-center justify-between">
+                <div className="text-sm text-muted-foreground">
+                  Menampilkan {Math.min(startIndex + 1, filtered.length)}–
+                  {Math.min(startIndex + paginated.length, filtered.length)}{" "}
+                  dari {filtered.length} proyek
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setPage((p) => Math.max(1, p - 1))}
+                    disabled={page === 1}
+                    className={`px-3 py-1 rounded-full border border-border/20 bg-card/20 text-sm ${page === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-primary/5"}`}
+                  >
+                    Sebelumnya
+                  </button>
+                  <div className="inline-flex items-center gap-1">
+                    {Array.from({ length: totalPages }).map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setPage(idx + 1)}
+                        className={`px-3 py-1 rounded-full text-sm border ${page === idx + 1 ? "bg-primary text-primary-foreground border-primary" : "bg-card/20 border-border/20"}`}
+                      >
+                        {idx + 1}
+                      </button>
+                    ))}
+                  </div>
+                  <button
+                    onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                    disabled={page === totalPages}
+                    className={`px-3 py-1 rounded-full border border-border/20 bg-card/20 text-sm ${page === totalPages ? "opacity-50 cursor-not-allowed" : "hover:bg-primary/5"}`}
+                  >
+                    Berikutnya
+                  </button>
+                </div>
+              </div>
+            )}
+
             {filtered.length === 0 && (
               <div className="text-center py-20">
-                <p className="text-muted-foreground/50 text-sm">Tidak ada proyek dalam kategori ini.</p>
+                <p className="text-muted-foreground/50 text-sm">
+                  Tidak ada proyek dalam kategori ini.
+                </p>
               </div>
             )}
           </div>
@@ -256,7 +331,8 @@ export function PortfolioClient() {
                   </span>
                 </h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-lg mx-auto mb-8">
-                  Mari wujudkan ide Anda menjadi produk digital yang luar biasa. Konsultasi gratis, proposal dalam 24 jam.
+                  Mari wujudkan ide Anda menjadi produk digital yang luar biasa.
+                  Konsultasi gratis, proposal dalam 24 jam.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
@@ -264,7 +340,9 @@ export function PortfolioClient() {
                     className="group relative inline-flex items-center gap-2 rounded-full overflow-hidden px-7 h-12 text-sm font-semibold hover:scale-105 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 w-full sm:w-auto justify-center"
                   >
                     <span className="absolute inset-0 bg-gradient-to-r from-primary via-cyan-400 to-emerald-500" />
-                    <span className="relative text-primary-foreground">Mulai Sekarang</span>
+                    <span className="relative text-primary-foreground">
+                      Mulai Sekarang
+                    </span>
                     <ArrowUpRight className="relative h-4 w-4 text-primary-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </Link>
                   <Link
@@ -280,5 +358,5 @@ export function PortfolioClient() {
         </section>
       </main>
     </div>
-  )
+  );
 }
