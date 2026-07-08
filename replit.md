@@ -49,8 +49,9 @@ pnpm run start  # production start on port 5000
 
 ## Replit Configuration
 - Dev server: port 5000, host 0.0.0.0
-- `allowedDevOrigins` set in next.config.mjs to allow `*.replit.dev`, `*.riker.replit.dev`, and `*.kirk.replit.dev` for HMR in Replit preview
+- `allowedDevOrigins` set in next.config.mjs allows `*.replit.dev`, `*.riker.replit.dev`, `*.kirk.replit.dev`, `*.pike.replit.dev`, `*.repl.co`, and dynamically includes `process.env.REPLIT_DEV_DOMAIN` so HMR works regardless of which Replit region/subdomain serves the preview
 - Workflow: "Start application" runs `pnpm run dev`
+- Dependencies installed via `pnpm install`; run `pnpm run dev` to start locally
 
 ## UI/UX Notes
 - Dark theme only (no light/dark toggle)
