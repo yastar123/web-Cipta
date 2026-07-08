@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Mail, Phone, MapPin, ArrowUpRight, Send, ArrowUp, Instagram, Linkedin, Github, Twitter } from "lucide-react"
+import { Mail, Phone, MapPin, Send, ArrowUp, Instagram, Linkedin, Github, Twitter } from "lucide-react"
 import { FadeIn } from "./text-reveal"
 import { useState } from "react"
 
@@ -14,20 +14,16 @@ const footerLinks = {
     { label: "IT Consultation", href: "#layanan" },
   ],
   perusahaan: [
-    { label: "Tentang Kami", href: "#" },
+    { label: "Layanan", href: "#layanan" },
     { label: "Portfolio", href: "#portfolio" },
-    { label: "Blog & Artikel", href: "#" },
-    { label: "Karir", href: "#" },
+    { label: "Proses Kerja", href: "#proses" },
+    { label: "Testimoni", href: "#testimonial" },
+    { label: "FAQ", href: "#faq" },
     { label: "Kontak", href: "#kontak" },
   ],
-  teknologi: [
-    { label: "Next.js & React", href: "#" },
-    { label: "React Native", href: "#" },
-    { label: "Flutter", href: "#" },
-    { label: "Node.js", href: "#" },
-    { label: "Cloud & DevOps", href: "#" },
-  ],
 }
+
+const techStack = ["Next.js & React", "React Native", "Flutter", "Node.js", "Cloud & DevOps"]
 
 const socials = [
   { label: "Instagram", icon: Instagram, href: "#" },
@@ -134,7 +130,7 @@ export function Footer() {
             <FadeIn key={title} delay={i * 60}>
               <div>
                 <h4 className="text-[10px] font-bold text-foreground/70 uppercase tracking-[0.2em] mb-4">
-                  {title === "layanan" ? "Layanan" : title === "perusahaan" ? "Perusahaan" : "Teknologi"}
+                  {title === "layanan" ? "Layanan" : "Perusahaan"}
                 </h4>
                 <ul className="space-y-2.5">
                   {links.map((link) => (
@@ -154,6 +150,20 @@ export function Footer() {
               </div>
             </FadeIn>
           ))}
+          <FadeIn delay={120}>
+            <div>
+              <h4 className="text-[10px] font-bold text-foreground/70 uppercase tracking-[0.2em] mb-4">
+                Teknologi
+              </h4>
+              <ul className="space-y-2.5">
+                {techStack.map((tech) => (
+                  <li key={tech} className="text-xs text-muted-foreground/60">
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeIn>
         </div>
 
         {/* Bottom bar */}

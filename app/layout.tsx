@@ -54,11 +54,20 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: TITLE,
     description: DESCRIPTION,
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'webCipta — Jasa Pembuatan Website & Aplikasi Mobile di Lampung',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: TITLE,
     description: DESCRIPTION,
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -104,9 +113,60 @@ const jsonLd = {
         'Search Engine Optimization',
       ],
       makesOffer: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Jasa Pembuatan Website' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Jasa Pembuatan Aplikasi Mobile' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Jasa UI/UX Design' } },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Jasa Pembuatan Website',
+            description: 'Website cepat, SEO-friendly, dan scalable menggunakan Next.js dan teknologi terdepan, dari landing page hingga web app kompleks.',
+            areaServed: 'Bandar Lampung, Lampung, Indonesia',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Jasa Pembuatan Aplikasi Mobile',
+            description: 'Aplikasi cross-platform iOS & Android dengan React Native dan Flutter, native performance di semua perangkat.',
+            areaServed: 'Bandar Lampung, Lampung, Indonesia',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Jasa UI/UX Design',
+            description: 'Design intuitif yang cantik sekaligus fungsional, berdasarkan riset user yang mendalam.',
+            areaServed: 'Bandar Lampung, Lampung, Indonesia',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Optimasi Performa Website (Core Web Vitals)',
+            description: 'Optimasi loading super cepat yang meningkatkan konversi dan ranking SEO secara signifikan.',
+            areaServed: 'Bandar Lampung, Lampung, Indonesia',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Maintenance & Keamanan Website',
+            description: 'Pemeliharaan berkala, monitoring real-time, dan proteksi terhadap ancaman cyber.',
+            areaServed: 'Bandar Lampung, Lampung, Indonesia',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Konsultasi IT & Strategi Teknologi',
+            description: 'Bantuan merencanakan arsitektur sistem yang scalable, memilih tech stack yang tepat, dan roadmap digital sesuai anggaran dan tujuan bisnis.',
+            areaServed: 'Bandar Lampung, Lampung, Indonesia',
+          },
+        },
       ],
       foundingDate: '2020',
     },
