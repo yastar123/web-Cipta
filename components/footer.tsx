@@ -8,14 +8,16 @@ import { useState } from "react"
 const footerLinks = {
   layanan: [
     { label: "Jasa Pembuatan Website", href: "/jasa-pembuatan-website" },
-    { label: "Jasa Pembuatan Toko Online", href: "/jasa-pembuatan-toko-online" },
+    { label: "Jasa Toko Online", href: "/jasa-pembuatan-toko-online" },
     { label: "Jasa Aplikasi Mobile", href: "/jasa-pembuatan-aplikasi-mobile" },
-    { label: "Jasa Desain UI/UX", href: "#layanan" },
-    { label: "Optimasi SEO & Performa", href: "#layanan" },
+    { label: "Jasa Pembuatan Bot", href: "/jasa-pembuatan-bot" },
+    { label: "Jasa Company Profile", href: "/jasa-pembuatan-company-profile" },
+    { label: "Jasa Landing Page", href: "/jasa-landing-page" },
+    { label: "Jasa Desain UI/UX", href: "/jasa-desain-ui-ux" },
   ],
   perusahaan: [
-    { label: "Layanan", href: "#layanan" },
     { label: "Portfolio", href: "/portfolio" },
+    { label: "Blog & Tips", href: "/blog" },
     { label: "Proses Kerja", href: "#proses" },
     { label: "Testimoni", href: "#testimonial" },
     { label: "FAQ", href: "#faq" },

@@ -12,42 +12,53 @@ const TITLE = 'Jasa Pembuatan Website Profesional di Lampung & Seluruh Indonesia
 const DESCRIPTION =
   'webCipta — jasa pembuatan website profesional & aplikasi mobile terpercaya di Bandar Lampung, melayani seluruh Indonesia. Spesialis Next.js, React, UI/UX Design & SEO. 150+ proyek selesai, 50+ klien puas, harga transparan. Konsultasi gratis!'
 const KEYWORDS = [
-  // Core service
+  // Core service — website
   'jasa pembuatan website',
   'jasa pembuatan website profesional',
   'jasa buat website murah',
   'jasa pembuatan website perusahaan',
   'jasa pembuatan website company profile',
   'jasa pembuatan landing page',
+  'jasa landing page',
   'jasa pembuatan toko online',
   'jasa pembuatan web app',
+  // Bot & automation
+  'jasa pembuatan bot',
+  'jasa pembuatan bot telegram',
+  'jasa pembuatan bot whatsapp',
+  'jasa pembuatan bot discord',
+  'jasa chatbot',
+  'jasa web scraping',
+  'jasa otomasi',
+  'jasa automation',
+  // Mobile & design
+  'jasa pembuatan aplikasi mobile',
+  'jasa pembuatan aplikasi android',
+  'jasa pembuatan aplikasi ios',
+  'jasa desain UI UX',
+  'jasa desain website',
   // Location-specific
   'jasa pembuatan website lampung',
   'jasa pembuatan website di lampung',
   'jasa website lampung',
   'jasa website bandar lampung',
+  'jasa pembuatan website jakarta',
   'web developer lampung',
   'web developer bandar lampung',
+  'web developer jakarta',
   'digital agency lampung',
   'digital agency bandar lampung',
-  'jasa it lampung',
-  // Mobile & design
-  'jasa pembuatan aplikasi mobile',
-  'jasa pembuatan aplikasi android',
-  'jasa desain UI UX',
-  'jasa desain website',
+  'digital agency indonesia',
   // Indonesia-wide
   'jasa pembuatan website indonesia',
   'jasa website murah indonesia',
   'web developer indonesia',
-  'digital agency indonesia',
   // Long-tail & intent
   'harga jasa pembuatan website',
   'biaya pembuatan website profesional',
+  'jasa pembuatan website seo friendly',
   'jasa website next js',
   'jasa pembuatan website react',
-  'jasa pembuatan website seo friendly',
-  'jasa website portfolio',
   'webcipta',
   'webcipta digital agency',
 ]
@@ -159,13 +170,23 @@ const jsonLd = {
       },
       knowsAbout: [
         'Jasa Pembuatan Website',
+        'Jasa Pembuatan Toko Online',
+        'Jasa Pembuatan Landing Page',
+        'Jasa Pembuatan Bot Telegram',
+        'Jasa Pembuatan Bot WhatsApp',
+        'Jasa Pembuatan Bot Discord',
+        'Jasa Web Scraping',
+        'Jasa Otomasi Bisnis',
         'Pengembangan Aplikasi Mobile',
         'UI/UX Design',
         'Search Engine Optimization',
+        'Chatbot AI',
         'Next.js',
         'React',
         'Node.js',
-        'Network Monitoring',
+        'Python',
+        'Flutter',
+        'React Native',
       ],
       makesOffer: [
         {
@@ -208,9 +229,27 @@ const jsonLd = {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Jasa UI/UX Design',
-            description: 'Design intuitif yang cantik sekaligus fungsional, berdasarkan riset user yang mendalam.',
-            areaServed: 'Bandar Lampung, Lampung, Indonesia',
+            name: 'Jasa Pembuatan Bot Telegram, WhatsApp & Discord',
+            description: 'Bot otomatis untuk bisnis — customer service 24 jam, notifikasi pesanan, web scraping, chatbot AI, dan otomasi sistem.',
+            areaServed: 'Indonesia',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Jasa Desain UI/UX',
+            description: 'Desain UI/UX intuitif dan indah — wireframe, Figma prototype, design system untuk website dan aplikasi mobile.',
+            areaServed: 'Indonesia',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Jasa Landing Page',
+            description: 'Landing page high-converting untuk Google Ads, Facebook Ads, TikTok Ads — desain CRO-optimized, loading <2 detik.',
+            areaServed: 'Indonesia',
           },
         },
         {
