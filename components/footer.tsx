@@ -7,15 +7,15 @@ import { useState } from "react"
 
 const footerLinks = {
   layanan: [
-    { label: "Jasa Pembuatan Website", href: "#layanan" },
-    { label: "Jasa Aplikasi Mobile", href: "#layanan" },
+    { label: "Jasa Pembuatan Website", href: "/jasa-pembuatan-website" },
+    { label: "Jasa Pembuatan Toko Online", href: "/jasa-pembuatan-toko-online" },
+    { label: "Jasa Aplikasi Mobile", href: "/jasa-pembuatan-aplikasi-mobile" },
     { label: "Jasa Desain UI/UX", href: "#layanan" },
     { label: "Optimasi SEO & Performa", href: "#layanan" },
-    { label: "Konsultasi IT", href: "#layanan" },
   ],
   perusahaan: [
     { label: "Layanan", href: "#layanan" },
-    { label: "Portfolio", href: "#portfolio" },
+    { label: "Portfolio", href: "/portfolio" },
     { label: "Proses Kerja", href: "#proses" },
     { label: "Testimoni", href: "#testimonial" },
     { label: "FAQ", href: "#faq" },
@@ -170,11 +170,13 @@ export function Footer() {
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[11px] text-muted-foreground/35 order-2 sm:order-1">
             © 2025 webCipta — Jasa Pembuatan Website Profesional di Lampung &amp; Indonesia.{" "}
-            <Link href="#" className="hover:text-muted-foreground/60 transition-colors">Kebijakan Privasi</Link>
+            <Link href="/jasa-pembuatan-website" className="hover:text-muted-foreground/60 transition-colors">Jasa Website</Link>
             {" · "}
-            <Link href="/lampung" className="hover:text-muted-foreground/60 transition-colors">Website Lampung</Link>
+            <Link href="/jasa-pembuatan-toko-online" className="hover:text-muted-foreground/60 transition-colors">Toko Online</Link>
             {" · "}
-            <Link href="/bandar-lampung" className="hover:text-muted-foreground/60 transition-colors">Website Bandar Lampung</Link>
+            <Link href="/lampung" className="hover:text-muted-foreground/60 transition-colors">Lampung</Link>
+            {" · "}
+            <Link href="/bandar-lampung" className="hover:text-muted-foreground/60 transition-colors">Bandar Lampung</Link>
           </p>
           <div className="flex items-center gap-2 order-1 sm:order-2">
             {socials.map((s) => (
