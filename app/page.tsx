@@ -10,6 +10,7 @@ import { CTA } from "@/components/cta"
 import { Footer } from "@/components/footer"
 import { CustomCursor } from "@/components/cursor"
 import { ScrollProgress } from "@/components/scroll-progress"
+import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { MarqueeBand, MarqueeBandLarge } from "@/components/marquee-band"
 import type { Metadata } from "next"
 
@@ -24,6 +25,7 @@ export default function Home() {
     <>
       <ScrollProgress />
       <CustomCursor />
+      <WhatsAppFloat />
       <main className="min-h-screen bg-background overflow-x-hidden">
         <Navbar />
         <Hero />

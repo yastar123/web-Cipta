@@ -24,6 +24,19 @@ export function CTA() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    const lines = [
+      `Halo webCipta, saya ingin konsultasi proyek:`,
+      ``,
+      `*Nama:* ${form.name}`,
+      `*Email:* ${form.email}`,
+      form.company ? `*Perusahaan:* ${form.company}` : null,
+      form.budget ? `*Anggaran:* ${form.budget}` : null,
+      ``,
+      `*Deskripsi Proyek:*`,
+      form.message,
+    ]
+    const text = encodeURIComponent(lines.filter((l) => l !== null).join("\n"))
+    window.open(`https://wa.me/6285366195381?text=${text}`, "_blank", "noopener,noreferrer")
     setSubmitted(true)
   }
 

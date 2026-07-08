@@ -107,7 +107,9 @@ export function Navbar() {
             {/* Desktop CTA */}
             <div className="hidden lg:block flex-shrink-0">
               <a
-                href="#kontak"
+                href="https://wa.me/6285366195381?text=Halo%20webCipta%2C%20saya%20ingin%20konsultasi%20gratis."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-1.5 rounded-full px-5 h-9 text-xs font-bold overflow-hidden hover:scale-105 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-primary to-emerald-500 bg-[length:200%_100%] animate-[gradientMove_5s_ease-in-out_infinite]" />
@@ -221,7 +223,9 @@ export function Navbar() {
           >
             <div className="h-px bg-border/15" />
             <a
-              href="#kontak"
+              href="https://wa.me/6285366195381?text=Halo%20webCipta%2C%20saya%20ingin%20konsultasi%20gratis."
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative inline-flex items-center justify-center gap-2 rounded-2xl h-13 px-8 text-sm font-bold overflow-hidden hover:scale-[1.02] transition-all duration-300 shadow-xl shadow-primary/20"
               style={{ height: 52 }}
               onClick={() => setIsOpen(false)}
