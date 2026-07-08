@@ -23,10 +23,10 @@ export function FAQ() {
             className="font-black tracking-tighter text-foreground mx-auto"
             style={{ fontSize: "clamp(30px, 5.5vw, 64px)", lineHeight: 0.95 }}
           >
-            Pertanyaan yang Sering Diajukan
+            FAQ Jasa Pembuatan Website
           </h2>
           <p className="text-sm text-muted-foreground mt-4 max-w-lg mx-auto leading-relaxed">
-            Seputar jasa pembuatan website di Lampung dan seluruh Indonesia bersama webCipta.
+            Pertanyaan yang sering ditanyakan seputar jasa pembuatan website profesional di Lampung &amp; seluruh Indonesia bersama webCipta.
           </p>
         </FadeIn>
 

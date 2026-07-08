@@ -7,11 +7,11 @@ import { useState } from "react"
 
 const footerLinks = {
   layanan: [
-    { label: "Website Development", href: "#layanan" },
-    { label: "Mobile App", href: "#layanan" },
-    { label: "UI/UX Design", href: "#layanan" },
-    { label: "Performance Optimization", href: "#layanan" },
-    { label: "IT Consultation", href: "#layanan" },
+    { label: "Jasa Pembuatan Website", href: "#layanan" },
+    { label: "Jasa Aplikasi Mobile", href: "#layanan" },
+    { label: "Jasa Desain UI/UX", href: "#layanan" },
+    { label: "Optimasi SEO & Performa", href: "#layanan" },
+    { label: "Konsultasi IT", href: "#layanan" },
   ],
   perusahaan: [
     { label: "Layanan", href: "#layanan" },
@@ -63,7 +63,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mb-6">
-              Kami membangun produk digital yang tidak hanya tampak indah, tetapi juga memberikan hasil nyata untuk bisnis Anda.
+              <strong className="text-foreground/70">Jasa pembuatan website profesional</strong> di Bandar Lampung &amp; seluruh Indonesia. Website cepat, SEO-friendly, dan memberikan hasil nyata untuk bisnis Anda.
             </p>
             <div className="space-y-2.5 mb-6">
               {[
@@ -169,10 +169,12 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[11px] text-muted-foreground/35 order-2 sm:order-1">
-            © 2025 webCipta. Semua hak dilindungi.{" "}
+            © 2025 webCipta — Jasa Pembuatan Website Profesional di Lampung &amp; Indonesia.{" "}
             <Link href="#" className="hover:text-muted-foreground/60 transition-colors">Kebijakan Privasi</Link>
             {" · "}
-            <Link href="#" className="hover:text-muted-foreground/60 transition-colors">Syarat & Ketentuan</Link>
+            <Link href="/lampung" className="hover:text-muted-foreground/60 transition-colors">Website Lampung</Link>
+            {" · "}
+            <Link href="/bandar-lampung" className="hover:text-muted-foreground/60 transition-colors">Website Bandar Lampung</Link>
           </p>
           <div className="flex items-center gap-2 order-1 sm:order-2">
             {socials.map((s) => (

@@ -112,14 +112,17 @@ export function Services() {
                 className="font-black tracking-tighter"
                 style={{ fontSize: "clamp(34px, 6.5vw, 90px)", lineHeight: 0.88 }}
               >
-                <span className="block text-foreground">Solusi Digital</span>
+                <span className="block text-foreground">Jasa Pembuatan</span>
                 <span
                   className="block"
                   style={{ WebkitTextStroke: "1.5px oklch(0.97 0 0 / 0.18)", color: "transparent" }}
                 >
-                  Lengkap
+                  Website & App
                 </span>
               </h2>
+              <p className="sr-only">
+                Layanan jasa pembuatan website profesional, aplikasi mobile, UI/UX design, optimasi performa, dan konsultasi IT di Bandar Lampung & seluruh Indonesia.
+              </p>
             </div>
             <div className="flex flex-col gap-3 lg:text-right">
               <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">

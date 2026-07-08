@@ -14,7 +14,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/portfolio`,
       lastModified,
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/lampung`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/bandar-lampung`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.85,
     },
   ]
 }
