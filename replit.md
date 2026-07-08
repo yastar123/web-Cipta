@@ -64,6 +64,19 @@ pnpm run start  # production start on port 5000
 - Newsletter form stacks vertically on mobile (flex-col sm:flex-row)
 - Tech stack marquee at bottom of hero uses reduced padding on mobile
 
+## SEO
+Target keywords: "jasa pembuatan website", "jasa pembuatan website di lampung" (local SEO — business is based in Bandar Lampung, Indonesia).
+- `app/layout.tsx`: full `Metadata` (title template, description, keywords, OpenGraph, Twitter card, robots directives, `metadataBase: https://webcipta.my.id`) plus JSON-LD (`@graph` with `ProfessionalService`/LocalBusiness + `WebSite`) injected via a `<script type="application/ld+json">`.
+- `app/page.tsx` and `app/portfolio/page.tsx` each set their own `alternates.canonical` (do not rely on root layout canonical — it does not safely propagate per-route).
+- `app/robots.ts` and `app/sitemap.ts` — Next.js App Router metadata routes; sitemap includes `/` and `/portfolio`.
+- `app/icon.svg` — favicon (fixes prior 404s on non-existent icon files).
+- `components/hero.tsx` — headline wrapped in a real `<h1>` (all inner text-effect wrappers use `<span>`, not `<div>`, since heading elements must only contain phrasing content) with an `sr-only` keyword-rich phrase; visible location label is "Lampung" (was "Jakarta" — a NAP inconsistency, since footer/contact info are Bandar Lampung).
+- `components/navbar.tsx` — mobile menu phone number matches the real number used elsewhere (`0853-6619-5381`); previously showed an unrelated placeholder number.
+- `components/faq.tsx` + `lib/faq-data.ts` — FAQ accordion section targeting long-tail/local queries, paired with `FAQPage` JSON-LD in `app/page.tsx`. FAQ content lives in `lib/faq-data.ts` (plain module, not the `"use client"` component file) — Turbopack/Next.js does not safely expose a "use client" module's plain data exports to server components, so shared data must live in a separate non-client file.
+- `components/portfolio.tsx` / `app/portfolio/portfolio-client.tsx` — project thumbnails are CSS `background-image` divs (not `<img>`); given `role="img"` + `aria-label` for image/alt-text signal.
+- No dedicated OG image (1200×630) exists yet — flagged as a follow-up if social-share previews matter.
+- Off-codebase levers not addressed here (matter significantly for local "...di lampung" ranking): Google Business Profile setup/optimization, backlink building, review acquisition. No one can guarantee a #1 ranking — these are outside what code changes can control.
+
 ## Design System (Updated)
 - Background: `oklch(0.07 0.005 240)` — very deep blue-black for more depth and richness
 - Card: `oklch(0.11 0.005 240)` — slightly warm dark card

@@ -85,6 +85,8 @@ export function Portfolio() {
                 {/* Background image */}
                 {project.image && (
                   <div
+                    role="img"
+                    aria-label={`${project.title} — ${project.client}`}
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url(${project.image})` }}
                   />

@@ -111,7 +111,7 @@ export function Hero() {
             </span>
           </div>
           <div className="hidden sm:flex items-center gap-4 text-[9px] tracking-[0.2em] uppercase text-muted-foreground/30">
-            <span>Jakarta</span>
+            <span>Lampung</span>
             <span className="w-4 h-px bg-border/25" />
             <span>Est. 2020</span>
           </div>
@@ -119,10 +119,13 @@ export function Hero() {
 
         {/* ─── Hero headline ─── */}
         <div className="flex-1 flex flex-col justify-center min-h-0">
-          <div className="relative mb-6 sm:mb-8 md:mb-10">
+          <h1 className="relative mb-6 sm:mb-8 md:mb-10">
+            <span className="sr-only">
+              Jasa Pembuatan Website Profesional di Lampung &amp; Seluruh Indonesia — webCipta Digital Agency
+            </span>
 
             {/* KAMI — left, outline */}
-            <div className="overflow-hidden leading-none">
+            <span className="block overflow-hidden leading-none">
               <span
                 className="block text-left"
                 style={{
@@ -137,10 +140,10 @@ export function Hero() {
               >
                 KAMI
               </span>
-            </div>
+            </span>
 
             {/* CIPTAKAN — right, solid white */}
-            <div className="overflow-hidden leading-none">
+            <span className="block overflow-hidden leading-none">
               <span
                 className="block text-right text-foreground"
                 style={{
@@ -153,10 +156,10 @@ export function Hero() {
               >
                 CIPTAKAN
               </span>
-            </div>
+            </span>
 
             {/* DIGITAL — left, gradient */}
-            <div className="overflow-hidden leading-none">
+            <span className="block overflow-hidden leading-none">
               <span
                 className="block text-left bg-gradient-to-r from-primary via-cyan-400 to-emerald-300 bg-clip-text text-transparent"
                 style={{
@@ -169,10 +172,10 @@ export function Hero() {
               >
                 DIGITAL
               </span>
-            </div>
+            </span>
 
             {/* EXPERIENCE — right, outline accent */}
-            <div className="overflow-hidden leading-none">
+            <span className="block overflow-hidden leading-none">
               <span
                 className="block text-right"
                 style={{
@@ -187,27 +190,27 @@ export function Hero() {
               >
                 EXPERIENCE
               </span>
-            </div>
+            </span>
+          </h1>
 
-            {/* Stats row */}
-            <div
-              className={`flex items-center gap-3 sm:gap-6 mt-7 sm:mt-9 transition-all duration-700 delay-700 ${phase >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-            >
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border/30 to-transparent" />
-              <div className="flex items-center gap-4 sm:gap-7">
-                {stats.map((stat, i) => (
-                  <div key={i} className="flex flex-col items-center gap-0.5">
-                    <span className="text-base sm:text-xl md:text-2xl font-black text-foreground tracking-tight leading-none">
-                      <AnimatedCounter value={stat.value} suffix={stat.suffix} duration={2000 + i * 150} />
-                    </span>
-                    <span className="text-[7px] sm:text-[9px] text-muted-foreground/40 tracking-[0.15em] uppercase">
-                      {stat.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <div className="h-px flex-1 bg-gradient-to-l from-transparent via-border/30 to-transparent" />
+          {/* Stats row */}
+          <div
+            className={`flex items-center gap-3 sm:gap-6 mt-7 sm:mt-9 transition-all duration-700 delay-700 ${phase >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+          >
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border/30 to-transparent" />
+            <div className="flex items-center gap-4 sm:gap-7">
+              {stats.map((stat, i) => (
+                <div key={i} className="flex flex-col items-center gap-0.5">
+                  <span className="text-base sm:text-xl md:text-2xl font-black text-foreground tracking-tight leading-none">
+                    <AnimatedCounter value={stat.value} suffix={stat.suffix} duration={2000 + i * 150} />
+                  </span>
+                  <span className="text-[7px] sm:text-[9px] text-muted-foreground/40 tracking-[0.15em] uppercase">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
             </div>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-border/30 to-transparent" />
           </div>
 
           {/* ─── Action row ─── */}
@@ -215,12 +218,12 @@ export function Hero() {
             className={`flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-6 sm:mb-8 transition-all duration-700 delay-[850ms] ${phase >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Membangun{" "}
+              Jasa pembuatan{" "}
               <span className="text-foreground/85 font-medium">website</span>,{" "}
               <span className="text-foreground/85 font-medium">mobile app</span>{" "}
               &amp;{" "}
               <span className="text-foreground/85 font-medium">UI/UX</span>{" "}
-              yang memberikan hasil nyata.
+              di Lampung &amp; seluruh Indonesia yang memberikan hasil nyata.
             </p>
 
             <div className="flex items-center gap-3 sm:ml-auto flex-shrink-0">

@@ -232,7 +232,7 @@ export function Navbar() {
             </a>
             <div className="flex items-center justify-between text-[11px] text-muted-foreground/40">
               <span>hello@webcipta.com</span>
-              <span>+62 812-3456-7890</span>
+              <span>0853-6619-5381</span>
             </div>
           </div>
         </div>
