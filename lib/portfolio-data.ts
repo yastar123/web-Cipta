@@ -512,4 +512,19 @@ export const projects = [
     image: "/portofolio-32.png",
     liveUrl: "https://38-103-170-185.sslip.io/",
   },
+  {
+    title: "SNMP Monitoring System",
+    category: "website",
+    client: "CWE Network",
+    year: "2025",
+    description:
+      "Platform monitoring jaringan WiFi berbasis SNMP secara real-time. Memantau status online/offline Access Point, statistik traffic & bandwidth, alert otomatis saat perangkat down, dan koneksi VPN L2TP/IPSec untuk 25 Access Point di 3 lokasi.",
+    tags: ["SNMP", "Node.js", "React", "IoT", "Network Monitoring"],
+    gradient: "from-blue-700 via-blue-500 to-cyan-500",
+    metric: "25",
+    metricLabel: "Access Points",
+    featured: true,
+    image: "/portofolio-36.jpg",
+    liveUrl: "",
+  },
 ];
