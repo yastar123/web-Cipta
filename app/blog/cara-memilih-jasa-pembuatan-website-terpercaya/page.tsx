@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, XCircle } from "lucide-react"
 const SITE_URL = "https://webcipta.my.id"
 
 export const metadata: Metadata = {
-  title: "7 Cara Memilih Jasa Pembuatan Website Terpercaya | webCipta",
+  title: "7 Cara Memilih Jasa Pembuatan Website Terpercaya",
   description:
     "Jangan sampai tertipu! Pelajari 7 kriteria penting memilih jasa pembuatan website terpercaya di Indonesia — dari portofolio nyata, kontrak, hingga red flag yang harus dihindari.",
   keywords: [

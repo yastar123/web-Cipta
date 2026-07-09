@@ -121,9 +121,11 @@ export function Hero() {
         <div className="flex-1 flex flex-col justify-center min-h-0">
           <h1 className="relative mb-6 sm:mb-8 md:mb-10">
             <span className="sr-only">
-              Jasa Pembuatan Website Profesional di Lampung &amp; Seluruh Indonesia — webCipta Digital Agency
+              Jasa Pembuatan Website Profesional Lampung &amp; Indonesia
             </span>
 
+            {/* Decorative animated wordmark — hidden from assistive tech & crawlers, sr-only text above is the real H1 content */}
+            <span aria-hidden="true">
             {/* KAMI — left, outline */}
             <span className="block overflow-hidden leading-none">
               <span
@@ -190,6 +192,7 @@ export function Hero() {
               >
                 EXPERIENCE
               </span>
+            </span>
             </span>
           </h1>
 

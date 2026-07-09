@@ -5,7 +5,7 @@ import { ArrowRight, Search, TrendingUp, CheckCircle2, Zap } from "lucide-react"
 const SITE_URL = "https://webcipta.my.id"
 
 export const metadata: Metadata = {
-  title: "Cara Meningkatkan SEO Website agar Halaman 1 Google Indonesia 2025 | webCipta",
+  title: "Cara Meningkatkan SEO Website agar Halaman 1 Google Indonesia 2025",
   description:
     "Panduan SEO praktis untuk website Indonesia 2025. Riset keyword berbahasa Indonesia, optimasi on-page, local SEO Google Maps, backlink building, Core Web Vitals — semua lengkap dalam satu panduan.",
   keywords: [
@@ -119,7 +119,7 @@ export default function ArticleSEOIndonesia() {
             <span className="text-xs text-muted-foreground">5 Juni 2025 · 10 menit baca</span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter leading-[1.0] mb-6">
-            Cara Meningkatkan SEO Website agar Muncul di Halaman 1 Google Indonesia (2025)
+            Cara Meningkatkan SEO Website agar Halaman 1 Google (2025)
           </h1>
           <p className="text-muted-foreground text-base leading-relaxed mb-10">
             90% klik Google jatuh ke halaman pertama. Jika website Anda tidak ada di sana, Anda kehilangan pelanggan setiap hari kepada kompetitor. Berikut 8 strategi SEO praktis yang terbukti bekerja untuk website bisnis Indonesia.

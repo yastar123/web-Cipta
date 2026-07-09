@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, MapPin, Phone, Mail, Star } from "lucide-reac
 const SITE_URL = "https://webcipta.my.id"
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Website Bandar Lampung Profesional | webCipta",
+  title: "Jasa Pembuatan Website Bandar Lampung Profesional",
   description:
     "Jasa pembuatan website profesional di Bandar Lampung — webCipta. Company profile, toko online, landing page, aplikasi mobile. Harga mulai Rp 3 juta, konsultasi gratis, pengerjaan cepat!",
   keywords: [
@@ -217,6 +217,50 @@ export default function BandarLampungPage() {
                   >
                     Mulai Sekarang
                   </a>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Why us */}
+          <section className="py-16 md:py-20 px-4 sm:px-8 max-w-5xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter mb-2">
+              Kenapa Pilih webCipta di Bandar Lampung?
+            </h2>
+            <p className="text-muted-foreground text-sm mb-10 max-w-2xl leading-relaxed">
+              Sebagai jasa pembuatan website yang berbasis dan berpengalaman langsung dengan pelaku usaha di Bandar Lampung, kami memahami kebutuhan bisnis lokal — mulai dari UMKM, toko retail,
+              hingga instansi pendidikan. Berikut alasan klien kami di Bandar Lampung mempercayakan proyek digital mereka kepada webCipta.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { title: "Tim Lokal, Respons Cepat", desc: "Konsultasi bisa dilakukan langsung tanpa hambatan zona waktu atau bahasa, dengan respons proposal dalam 24 jam." },
+                { title: "Harga Transparan", desc: "Tidak ada biaya tersembunyi. Setiap paket sudah mencantumkan cakupan fitur, estimasi waktu, dan revisi." },
+                { title: "Website Cepat & SEO-Friendly", desc: "Dibangun dengan teknologi modern (Next.js) sehingga loading cepat dan mudah ditemukan di Google." },
+                { title: "Garansi Purna Jual", desc: "Dukungan teknis pasca-peluncuran untuk memastikan website tetap berjalan optimal." },
+              ].map((f) => (
+                <div key={f.title} className="rounded-xl border border-border/15 bg-card/20 p-5">
+                  <h3 className="font-bold text-foreground text-sm mb-1.5">{f.title}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section className="py-16 md:py-20 px-4 sm:px-8 max-w-5xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter mb-10">
+              Pertanyaan Umum
+            </h2>
+            <div className="space-y-6 max-w-3xl">
+              {[
+                { q: "Berapa lama proses pembuatan website di Bandar Lampung?", a: "Tergantung jenis website. Landing page selesai dalam 3–7 hari, company profile 1–2 minggu, dan toko online 3–6 minggu, tergantung kompleksitas fitur yang dibutuhkan." },
+                { q: "Apakah bisa konsultasi tatap muka di Bandar Lampung?", a: "Bisa. Selain konsultasi online via WhatsApp, kami juga melayani pertemuan langsung dengan klien di area Bandar Lampung sesuai kesepakatan jadwal." },
+                { q: "Apakah harga sudah termasuk domain dan hosting?", a: "Paket Landing Page sudah termasuk domain dan hosting selama 1 tahun pertama. Untuk paket lain, kami bantu rekomendasikan penyedia sesuai kebutuhan trafik dan anggaran." },
+                { q: "Apakah website yang dibuat sudah SEO-friendly?", a: "Ya, semua website yang kami kerjakan dioptimasi dari sisi teknis (kecepatan, struktur data, mobile-friendly) sehingga lebih mudah terindeks dan bersaing di hasil pencarian Google." },
+              ].map((item) => (
+                <div key={item.q} className="border-b border-border/15 pb-6">
+                  <h3 className="font-bold text-foreground text-sm mb-2">{item.q}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{item.a}</p>
                 </div>
               ))}
             </div>

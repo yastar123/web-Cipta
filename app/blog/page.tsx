@@ -5,7 +5,7 @@ import { ArrowRight, Clock } from "lucide-react"
 const SITE_URL = "https://webcipta.my.id"
 
 export const metadata: Metadata = {
-  title: "Blog Tips Website, SEO & Digital Marketing | webCipta",
+  title: "Blog Tips Website, SEO & Digital Marketing",
   description:
     "Artikel tips dan panduan seputar jasa pembuatan website, SEO, digital marketing, harga website, dan teknologi dari tim webCipta — digital agency profesional di Lampung & Indonesia.",
   keywords: ["blog website", "tips pembuatan website", "panduan seo indonesia", "harga jasa website 2025", "tips digital marketing"],
@@ -106,9 +106,26 @@ export default function BlogPage() {
           <h1 className="text-4xl sm:text-5xl font-black tracking-tighter mb-3">
             Blog <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">webCipta</span>
           </h1>
-          <p className="text-muted-foreground text-sm mb-12 max-w-xl">
+          <p className="text-muted-foreground text-sm mb-6 max-w-2xl leading-relaxed">
             Tips, panduan, dan insight seputar jasa pembuatan website, SEO, digital marketing, dan teknologi — dari tim webCipta untuk bisnis Indonesia.
+            Setiap artikel ditulis berdasarkan pengalaman kami mengerjakan 150+ proyek website, toko online, dan aplikasi mobile untuk klien di Lampung dan seluruh Indonesia.
+            Tidak ada teori kosong — semua tips di sini bisa langsung Anda praktikkan, baik Anda pemilik bisnis yang baru mau punya website pertama, maupun yang sedang mempertimbangkan redesain atau migrasi platform.
           </p>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 mb-12">
+            {[
+              { label: "Panduan", desc: "Langkah demi langkah membangun aset digital, dari perencanaan hingga peluncuran." },
+              { label: "Tips", desc: "Cara memilih vendor, menghindari jebakan proyek mangkrak, dan negosiasi harga yang wajar." },
+              { label: "SEO", desc: "Strategi agar website Anda ditemukan calon pelanggan di halaman pertama Google." },
+              { label: "Teknologi", desc: "Pembahasan tools dan otomasi — bot, integrasi, dan stack modern untuk bisnis." },
+              { label: "Bisnis", desc: "Dampak kehadiran digital terhadap kepercayaan, penjualan, dan pertumbuhan brand." },
+            ].map((c) => (
+              <div key={c.label} className="rounded-xl border border-border/15 bg-card/20 p-4">
+                <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold mb-2 ${categoryColors[c.label] ?? "text-primary bg-primary/10"}`}>{c.label}</span>
+                <p className="text-xs text-muted-foreground leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
+          </div>
 
           <div className="grid sm:grid-cols-2 gap-5">
             {articles.map(article => (

@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react"
 const SITE_URL = "https://webcipta.my.id"
 
 export const metadata: Metadata = {
-  title: "Harga Jasa Pembuatan Website 2025: Panduan Lengkap | webCipta",
+  title: "Harga Jasa Pembuatan Website 2025: Panduan Lengkap",
   description:
     "Berapa harga jasa pembuatan website profesional di 2025? Panduan lengkap breakdown harga: landing page Rp 3 juta, company profile Rp 5-15 juta, toko online Rp 15-50 juta, web app Rp 50-100 juta+.",
   keywords: [
@@ -84,7 +84,7 @@ export default function ArticleHargaWebsite2025() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter leading-[1.0] mb-6">
-            Harga Jasa Pembuatan Website 2025: Panduan Lengkap untuk Bisnis Indonesia
+            Harga Jasa Pembuatan Website 2025: Panduan Lengkap
           </h1>
           <p className="text-muted-foreground text-base leading-relaxed mb-10">
             Salah satu pertanyaan paling sering yang kami terima: <em>"Berapa biaya pembuatan website profesional?"</em> Jawabannya tergantung banyak faktor — jenis website, kompleksitas fitur, dan kualitas pengerjaan. Artikel ini memberikan breakdown harga yang transparan dan realistis.

@@ -80,7 +80,6 @@ export const projects = [
     metricLabel: "Peserta",
     featured: true,
     image: "/portofolio-5.webp",
-    liveUrl: "https://epic.itera.ac.id/",
   },
   {
     title: "Survei Seiiki",
@@ -95,7 +94,6 @@ export const projects = [
     metricLabel: "Responden",
     featured: true,
     image: "/portofolio-6.webp",
-    liveUrl: "https://survei.seyiki.com/",
   },
   {
     title: "Docs Seiiki",
@@ -154,7 +152,6 @@ export const projects = [
     metricLabel: "",
     featured: false,
     image: "/portofolio-10.webp",
-    liveUrl: "https://pplikitera.com",
   },
   {
     title: "Website Penerimaan Mahasiswa Baru ITERA 2025",
@@ -198,7 +195,6 @@ export const projects = [
     metricLabel: "",
     featured: false,
     image: "/portofolio-13.webp",
-    liveUrl: "https://iot.seyiki.com/",
   },
   {
     title: "SaaS Business Analysis - PT Meita Gudang Distribusi",
