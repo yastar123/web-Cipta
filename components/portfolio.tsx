@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, ExternalLink, TrendingUp } from "lucide-react";
 import { FadeIn } from "./text-reveal";
 import { projects, categories } from "@/lib/portfolio-data";
@@ -84,11 +85,13 @@ export function Portfolio() {
               >
                 {/* Background image */}
                 {project.image && (
-                  <div
-                    role="img"
-                    aria-label={`${project.title} — ${project.client}`}
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${project.image})` }}
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} — ${project.client}`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover"
+                    loading={i < 2 ? "eager" : "lazy"}
                   />
                 )}
 

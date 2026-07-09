@@ -2,7 +2,7 @@
 const nextConfig = {
 
   images: {
-    unoptimized: true,
+    formats: ["image/webp"],
   },
   allowedDevOrigins: [
     "*.replit.dev",

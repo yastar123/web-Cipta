@@ -64,6 +64,22 @@ pnpm run start  # production start on port 5000
 - Newsletter form stacks vertically on mobile (flex-col sm:flex-row)
 - Tech stack marquee at bottom of hero uses reduced padding on mobile
 
+## SEO Audit Fixes (2026-07-09)
+Addressed items from third-party SEO audit report:
+- Title tag shortened to 53 chars, meta description to 158 chars (`app/layout.tsx`).
+- Added explicit `<meta charSet="utf-8">` in root layout head.
+- Added `public/favicon.ico` alongside `app/icon.svg` for broader crawler/browser support.
+- Split JSON-LD: added a standalone `Organization` entity (previously only `LocalBusiness`+`ProfessionalService` combined type existed, which some auditors don't parse as Organization).
+- Real address (Jatimulyo, Kec. Jati Agung, Lampung Selatan), Google Business Profile link, and Facebook page added to `sameAs`/`hasMap` in structured data, footer, and CTA contact card.
+- Footer social icons: removed dead placeholder links (Instagram/LinkedIn/GitHub/Twitter `href="#"`), kept only the real Facebook link with `target="_blank" rel="noopener noreferrer"`.
+- Added Google Analytics 4 (`G-MHM34E8Q8V`) via `next/script`, gated to production only.
+- Performance: converted 34 portfolio PNGs (24MB total) to compressed WebP (~1.7MB total), migrated portfolio grids (`components/portfolio.tsx`, `app/portfolio/portfolio-client.tsx`) from CSS `background-image` divs to `next/image` (lazy-loaded, responsive `sizes`), and removed `images.unoptimized: true` from `next.config.mjs` so Next's built-in image optimizer runs.
+
+### Not fixable from code (needs user/DNS action)
+- **Missing SPF/DMARC records**: DNS-level, must be added in the domain registrar's DNS panel (Domainesia, per the audit's nameserver lookup) — not something the app code controls.
+- **Contact email domain mismatch**: site is `webcipta.my.id` but contact email is `hello@webcipta.com` — a different domain. This can affect DMARC/SPF alignment; recommend using an address on the same domain as the site, or setting up SPF/DMARC on both domains.
+- Canonical vs. crawled-URL mismatch in the audit likely reflects a `www` → non-`www` redirect (canonical correctly points to the non-`www` root); confirm this is the intended primary domain.
+
 ## SEO
 Target keywords: "jasa pembuatan website", "jasa pembuatan website di lampung" (local SEO — business is based in Bandar Lampung, Indonesia).
 - `app/layout.tsx`: full `Metadata` (title template, description, keywords, OpenGraph, Twitter card, robots directives, `metadataBase: https://webcipta.my.id`) plus JSON-LD (`@graph` with `ProfessionalService`/LocalBusiness + `WebSite`) injected via a `<script type="application/ld+json">`.

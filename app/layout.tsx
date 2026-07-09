@@ -1,16 +1,19 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import './globals.css'
+
+const GA_MEASUREMENT_ID = 'G-MHM34E8Q8V'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 const SITE_URL = 'https://webcipta.my.id'
 const SITE_NAME = 'webCipta'
-const TITLE = 'Jasa Pembuatan Website Profesional di Lampung & Seluruh Indonesia | webCipta'
+const TITLE = 'Jasa Pembuatan Website Profesional Lampung | webCipta'
 const DESCRIPTION =
-  'webCipta — jasa pembuatan website profesional & aplikasi mobile terpercaya di Bandar Lampung, melayani seluruh Indonesia. Spesialis Next.js, React, UI/UX Design & SEO. 150+ proyek selesai, 50+ klien puas, harga transparan. Konsultasi gratis!'
+  'Jasa pembuatan website & aplikasi mobile profesional di Bandar Lampung, melayani seluruh Indonesia. Next.js, React, UI/UX, SEO. 150+ proyek, harga transparan.'
 const KEYWORDS = [
   // Core service — website
   'jasa pembuatan website',
@@ -81,7 +84,10 @@ export const metadata: Metadata = {
     languages: { 'id-ID': SITE_URL },
   },
   icons: {
-    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
     apple: [{ url: '/icon.svg', type: 'image/svg+xml' }],
   },
   verification: {
@@ -142,9 +148,9 @@ const jsonLd = {
       openingHours: 'Mo-Fr 09:00-18:00',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Bandar Lampung',
+        streetAddress: 'Jatimulyo, Kec. Jati Agung',
+        addressLocality: 'Lampung Selatan',
         addressRegion: 'Lampung',
-        postalCode: '35141',
         addressCountry: 'ID',
       },
       geo: {
@@ -157,9 +163,12 @@ const jsonLd = {
         { '@type': 'AdministrativeArea', name: 'Lampung' },
         { '@type': 'Country', name: 'Indonesia' },
       ],
+      hasMap: 'https://maps.app.goo.gl/b8XeJ2cJZoedXREw8',
       sameAs: [
         `https://wa.me/6285366195381`,
         `https://webcipta.my.id`,
+        'https://maps.app.goo.gl/b8XeJ2cJZoedXREw8',
+        'https://www.facebook.com/profile.php?id=61581944171394',
       ],
       aggregateRating: {
         '@type': 'AggregateRating',
@@ -284,6 +293,29 @@ const jsonLd = {
       numberOfEmployees: { '@type': 'QuantitativeValue', value: 5 },
     },
     {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#identity`,
+      name: 'webCipta',
+      alternateName: ['webCipta Digital Agency', 'Web Cipta'],
+      url: SITE_URL,
+      logo: `${SITE_URL}/icon.svg`,
+      image: `${SITE_URL}/og-image.jpg`,
+      email: 'hello@webcipta.com',
+      telephone: '+6285366195381',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Jatimulyo, Kec. Jati Agung',
+        addressLocality: 'Lampung Selatan',
+        addressRegion: 'Lampung',
+        addressCountry: 'ID',
+      },
+      sameAs: [
+        `https://wa.me/6285366195381`,
+        'https://maps.app.goo.gl/b8XeJ2cJZoedXREw8',
+        'https://www.facebook.com/profile.php?id=61581944171394',
+      ],
+    },
+    {
       '@type': 'WebSite',
       '@id': `${SITE_URL}/#website`,
       url: SITE_URL,
@@ -325,6 +357,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="bg-background">
+      <head>
+        <meta charSet="utf-8" />
+      </head>
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"
@@ -334,6 +369,22 @@ export default function RootLayout({
         <div className="noise-overlay" aria-hidden="true" />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   )

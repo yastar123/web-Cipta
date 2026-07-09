@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Mail, Phone, MapPin, Send, ArrowUp, Instagram, Linkedin, Github, Twitter } from "lucide-react"
+import { Mail, Phone, MapPin, Send, ArrowUp, Facebook } from "lucide-react"
 import { FadeIn } from "./text-reveal"
 import { useState } from "react"
 
@@ -28,10 +28,7 @@ const footerLinks = {
 const techStack = ["Next.js & React", "React Native", "Flutter", "Node.js", "Cloud & DevOps"]
 
 const socials = [
-  { label: "Instagram", icon: Instagram, href: "#" },
-  { label: "LinkedIn", icon: Linkedin, href: "#" },
-  { label: "GitHub", icon: Github, href: "#" },
-  { label: "Twitter", icon: Twitter, href: "#" },
+  { label: "Facebook", icon: Facebook, href: "https://www.facebook.com/profile.php?id=61581944171394" },
 ]
 
 export function Footer() {
@@ -71,7 +68,7 @@ export function Footer() {
               {[
                 { icon: Mail, text: "hello@webcipta.com", href: "mailto:hello@webcipta.com" },
                 { icon: Phone, text: "0853-6619-5381", href: "https://wa.me/6285366195381" },
-                { icon: MapPin, text: "Bandar Lampung, Indonesia" },
+                { icon: MapPin, text: "Jatimulyo, Kec. Jati Agung, Lampung Selatan, Lampung" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2.5">
                   <div className="flex h-6 w-6 items-center justify-center rounded-lg bg-primary/10">
@@ -185,6 +182,8 @@ export function Footer() {
               <a
                 key={s.label}
                 href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={s.label}
                 className="flex h-8 w-8 items-center justify-center rounded-lg border border-border/20 bg-card/30 text-muted-foreground/50 hover:text-foreground hover:border-border/50 hover:bg-card/60 transition-all duration-300 hover:scale-105"
               >

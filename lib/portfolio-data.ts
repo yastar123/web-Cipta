@@ -19,7 +19,7 @@ export const projects = [
     metric: "200+",
     metricLabel: "Sewaan/Bulan",
     featured: true,
-    image: "/portofolio-1.png",
+    image: "/portofolio-1.webp",
     liveUrl: "https://rental-ps-gray.vercel.app/",
   },
   {
@@ -34,7 +34,7 @@ export const projects = [
     metric: "150+",
     metricLabel: "Pesanan/Hari",
     featured: true,
-    image: "/portofolio-2.png",
+    image: "/portofolio-2.webp",
     liveUrl: "https://ayam-geprek-theta.vercel.app/",
   },
   {
@@ -49,7 +49,7 @@ export const projects = [
     metric: "80+",
     metricLabel: "Pelanggan/Minggu",
     featured: true,
-    image: "/portofolio-3.png",
+    image: "/portofolio-3.webp",
     liveUrl: "https://babershop-eight.vercel.app/",
   },
   {
@@ -64,7 +64,7 @@ export const projects = [
     metric: "1000+",
     metricLabel: "Siswa Aktif",
     featured: true,
-    image: "/portofolio-4.png",
+    image: "/portofolio-4.webp",
     liveUrl: "https://seyiki.com/",
   },
   {
@@ -79,7 +79,7 @@ export const projects = [
     metric: "500+",
     metricLabel: "Peserta",
     featured: true,
-    image: "/portofolio-5.png",
+    image: "/portofolio-5.webp",
     liveUrl: "https://epic.itera.ac.id/",
   },
   {
@@ -94,7 +94,7 @@ export const projects = [
     metric: "2000+",
     metricLabel: "Responden",
     featured: true,
-    image: "/portofolio-6.png",
+    image: "/portofolio-6.webp",
     liveUrl: "https://survei.seyiki.com/",
   },
   {
@@ -109,7 +109,7 @@ export const projects = [
     metric: "5000+",
     metricLabel: "Dokumen",
     featured: true,
-    image: "/portofolio-7.png",
+    image: "/portofolio-7.webp",
     liveUrl: "https://docs.seyiki.com/",
   },
   {
@@ -124,7 +124,7 @@ export const projects = [
     metric: "2000+",
     metricLabel: "Anggota Aktif",
     featured: true,
-    image: "/portofolio-8.png",
+    image: "/portofolio-8.webp",
     liveUrl: "https://www.km-itera.com/",
   },
   {
@@ -139,7 +139,7 @@ export const projects = [
     metric: "10K+",
     metricLabel: "Siswa",
     featured: true,
-    image: "/portofolio-9.png",
+    image: "/portofolio-9.webp",
     liveUrl: "https://candidate-college.vercel.app/",
   },
   {
@@ -153,7 +153,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-10.png",
+    image: "/portofolio-10.webp",
     liveUrl: "https://pplikitera.com",
   },
   {
@@ -167,7 +167,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-11.png",
+    image: "/portofolio-11.webp",
     liveUrl: "https://pplkitera.com",
   },
   {
@@ -182,7 +182,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-12.png",
+    image: "/portofolio-12.webp",
     liveUrl: "https://lhpp.seyiki.com/",
   },
   {
@@ -197,7 +197,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-13.png",
+    image: "/portofolio-13.webp",
     liveUrl: "https://iot.seyiki.com/",
   },
   {
@@ -212,7 +212,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-14.png",
+    image: "/portofolio-14.webp",
     liveUrl: "https://gudangdistribusi.com/home",
   },
   {
@@ -227,7 +227,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-15.png",
+    image: "/portofolio-15.webp",
   },
   {
     title: "Web Caffe POS (Multi-role)",
@@ -241,7 +241,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-16.png",
+    image: "/portofolio-16.webp",
     liveUrl: "https://web-caffe-pos-cabang-pos-kafe.vercel.app/login",
   },
   {
@@ -256,7 +256,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-17.png",
+    image: "/portofolio-17.webp",
     liveUrl: "https://mbg-api-server.vercel.app/login",
   },
   {
@@ -271,7 +271,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-18.png",
+    image: "/portofolio-18.webp",
     liveUrl: "http://pemira-km-itera.my.id/",
   },
   {
@@ -286,7 +286,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-19.png",
+    image: "/portofolio-19.webp",
   },
   {
     title: "Rental Alat Pesta",
@@ -300,7 +300,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-23.png",
+    image: "/portofolio-23.webp",
     liveUrl: "https://rental-alat-pesta.vercel.app/",
   },
   {
@@ -315,7 +315,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-24.png",
+    image: "/portofolio-24.webp",
   },
   {
     title: "Desktop Bot — Auto Login & Auto Claim",
@@ -329,7 +329,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-20.png",
+    image: "/portofolio-20.webp",
     liveUrl: "",
   },
   {
@@ -344,7 +344,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-21.png",
+    image: "/portofolio-21.webp",
     liveUrl: "https://pengunguman-kelulusan-sma.vercel.app/",
   },
   {
@@ -359,7 +359,7 @@ export const projects = [
     metric: "—",
     metricLabel: "",
     featured: false,
-    image: "/portofolio-25.png",
+    image: "/portofolio-25.webp",
     liveUrl: "https://agromonitoring.onrender.com/",
   },
   {
@@ -374,7 +374,7 @@ export const projects = [
     metric: "100%",
     metricLabel: "Uptime",
     featured: true,
-    image: "/portofolio-26.png",
+    image: "/portofolio-26.webp",
     liveUrl: "https://eskm.com",
   },
   {
@@ -389,7 +389,7 @@ export const projects = [
     metric: "3.64",
     metricLabel: "GPA / 4.00",
     featured: true,
-    image: "/portofolio-27.png",
+    image: "/portofolio-27.webp",
     liveUrl: "https://zaki-fathi-fahrizal.vercel.app/",
   },
   {
@@ -404,7 +404,7 @@ export const projects = [
     metric: "100+",
     metricLabel: "Destinasi",
     featured: true,
-    image: "/portofolio-28.png",
+    image: "/portofolio-28.webp",
     liveUrl: "https://travel-seven-sigma.vercel.app/",
   },
   {
@@ -419,7 +419,7 @@ export const projects = [
     metric: "6",
     metricLabel: "Sensor Live",
     featured: true,
-    image: "/portofolio-29.png",
+    image: "/portofolio-29.webp",
     liveUrl: "https://monitoring-kualitas-udara.onrender.com/",
   },
   {
@@ -434,7 +434,7 @@ export const projects = [
     metric: "Real-time",
     metricLabel: "Hasil Voting",
     featured: false,
-    image: "/portofolio-33.png",
+    image: "/portofolio-33.webp",
     liveUrl: "http://pemira-himatekia-itera.my.id/",
   },
   {
@@ -449,7 +449,7 @@ export const projects = [
     metric: "1000+",
     metricLabel: "Komik",
     featured: false,
-    image: "/portofolio-34.png",
+    image: "/portofolio-34.webp",
     liveUrl: "https://komikkuy.my.id/",
   },
   {
@@ -464,7 +464,7 @@ export const projects = [
     metric: "100%",
     metricLabel: "Responsif",
     featured: false,
-    image: "/portofolio-35.png",
+    image: "/portofolio-35.webp",
     liveUrl: "https://lavender-bloom-invites.vercel.app/",
   },
   {
@@ -479,7 +479,7 @@ export const projects = [
     metric: "500+",
     metricLabel: "Siswa",
     featured: true,
-    image: "/portofolio-31.png",
+    image: "/portofolio-31.webp",
     liveUrl: "https://smartcenterindonesia.com/",
   },
   {
@@ -494,7 +494,7 @@ export const projects = [
     metric: "Multi",
     metricLabel: "Provider",
     featured: false,
-    image: "/portofolio-30.png",
+    image: "/portofolio-30.webp",
     liveUrl: "https://ewalletnicklookupv2-1.onrender.com/",
   },
   {
@@ -509,7 +509,7 @@ export const projects = [
     metric: "Papua",
     metricLabel: "Barat",
     featured: false,
-    image: "/portofolio-32.png",
+    image: "/portofolio-32.webp",
     liveUrl: "https://38-103-170-185.sslip.io/",
   },
   {

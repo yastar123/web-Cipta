@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, ArrowUpRight, TrendingUp, Filter } from "lucide-react";
 import { projects, categories } from "@/lib/portfolio-data";
 
@@ -174,11 +175,13 @@ export function PortfolioClient() {
                 >
                   {/* Background image */}
                   {project.image && (
-                    <div
-                      role="img"
-                      aria-label={`${project.title} — ${project.client}`}
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{ backgroundImage: `url(${project.image})` }}
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} — ${project.client}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover"
+                      loading={i < 3 ? "eager" : "lazy"}
                     />
                   )}
 

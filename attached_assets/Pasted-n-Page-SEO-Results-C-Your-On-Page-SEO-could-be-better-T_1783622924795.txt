@@ -1,0 +1,441 @@
+n-Page SEO Results
+C
+Your On-Page SEO could be better
+
+The content signals on each page — title tag, meta description, headings, keyword usage and images — that tell search engines and visitors what the page is about. These are the easiest wins to control and edit directly.
+
+Title Tag
+Title tag is too long (76 chars).
+
+Jasa Pembuatan Website Profesional di Lampung & Seluruh Indonesia | webCipta
+
+Length : 76
+
+Title tags are a primary ranking factor. They tell search engines and users what your page is about. Well-optimized titles with target keywords can significantly improve click-through rates from search results.
+
+How to fix
+Meta Description
+Meta description is too long (241 chars).
+
+webCipta — jasa pembuatan website profesional & aplikasi mobile terpercaya di Bandar Lampung, melayani seluruh Indonesia. Spesialis Next.js, React, UI/UX Design & SEO. 150+ proyek selesai, 50+ klien puas, harga transparan. Konsultasi gratis!
+
+Length : 241
+
+A compelling meta description can significantly improve your click-through rate from search results. It's your chance to advertise your content directly in search results and persuade users to click.
+
+How to fix
+SERP Snippet Preview
+This preview represents a simulated search engine result built from your page’s metadata, including title tag, meta description, and URL structure. It helps visualize how your page may appear in organic listings, though search engines may dynamically alter snippets based on query intent, ranking signals, and content relevance.
+
+
+webcipta.my.id
+https://webcipta.my.id
+⋮
+Jasa Pembuatan Website Profesional di Lampung & Seluruh Indo...
+webCipta — jasa pembuatan website profesional & aplikasi mobile terpercaya di Bandar Lampung, melayani seluruh Indonesia. Spesialis Next.js, React, UI/UX Design...
+
+Hreflang
+No hreflang tags found (single-language site).
+
+For sites with multiple language or regional versions, hreflang ensures users see the correct version in search results. Without it, search engines may show the wrong language version or treat translations as duplicate content.
+
+Language
+Lang attribute is missing on <html> tag.
+
+The lang attribute improves accessibility for screen readers and helps search engines return language-specific results. It's a simple attribute that provides important context about your content.
+
+How to fix
+H1 Tag
+H1 tag is present and well-sized.
+
+Jasa Pembuatan Website Profesional di Lampung & Seluruh Indonesia — webCipta Digital AgencyKAMICIPTAKANDIGITALEXPERIENCE
+
+Length : 120
+
+H1 tags help search engines understand your page's main topic and keyword focus. Each page should have exactly one H1 that includes your primary target keyword.
+
+H2-H6 Header Tag Usage
+Your page is making use of multiple levels of Header Tags.
+
+Header Tag
+Frequency
+h2
+6
+h3
+16
+h4
+3
+h5
+0
+h6
+0
+Show Details
+Keyword Consistency
+Good keyword consistency across title, description, and headings.
+
+Individual Keywords
+Keyword
+Title
+Meta Description Tag
+Headings Tags
+Page Frequency
+jasa
+5
+website
+5
+pembuatan
+4
+webcipta
+4
+profesional
+3
+lampung
+3
+seluruh
+3
+indonesia
+3
+Phrases
+Phrase
+Title
+Meta Description Tag
+Headings Tags
+Page Frequency
+jasa pembuatan
+4
+pembuatan website
+4
+website profesional
+3
+seluruh indonesia
+3
+profesional lampung
+2
+lampung seluruh
+2
+indonesia webcipta
+2
+Word Count
+Comprehensive content (1802 words).
+
+1802
+
+Longer content (typically 500+ words, ideally 1000+) tends to rank better because it covers topics more comprehensively, naturally includes more keywords, and provides more value to users.
+
+Image Alt Text
+No images found on this page.
+
+Alt text is crucial for accessibility and image SEO. Search engines can't "see" images, so they rely on alt text to understand image content. It also helps images rank in Google Image Search, driving additional traffic.
+
+Canonical Tag
+Canonical points to a different URL
+
+Without canonical tags, search engines may index multiple URL variations of the same page, diluting ranking power. Google recommends all pages specify a canonical.
+
+How to fix
+Favicon
+Favicon data not available.
+
+Favicons improve brand recognition and help users quickly identify your site among multiple open tabs and bookmarks. They also appear in search results on some browsers and devices.
+
+Technical Results
+B
+Your Technical is good
+
+The behind-the-scenes signals that let search engines crawl and index your site cleanly — indexability (noindex / robots), HTTPS, redirects, canonical tags, sitemaps and more. Get these right and everything else has a solid foundation to build on.
+
+Noindex HTTP Header
+No blocking X-Robots-Tag header detected.
+
+A noindex directive in the X-Robots-Tag header will silently prevent search engines from indexing the page even if the HTML looks correct. This can block entire sections of a site from appearing in search results.
+
+Noindex Tag
+Your page is not using the Noindex Tag which prevents indexing.
+
+Accidentally leaving noindex on important pages destroys their SEO potential. This is a critical issue that must be fixed immediately for any page you want to rank.
+
+SSL Certificate
+Your website has SSL enabled.
+
+SSL is essential for protecting user data and building trust. Browsers warn users when visiting non-SSL sites. Google has made SSL a ranking factor.
+
+Robots.txt
+Robots.txt file found.
+
+https://www.webcipta.my.id/robots.txt
+User-Agent: *
+Allow: /
+
+Sitemap: https://webcipta.my.id/sitemap.xml
+XML Sitemap
+XML sitemap found with 18 URLs.
+
+https://webcipta.my.id/sitemap.xml
+18 URLs
+Show Details
+Charset UTF-8
+No charset declaration found.
+
+Incorrect or missing charset declarations can cause text to display incorrectly, especially for non-English content. UTF-8 is recommended by W3C and supports international SEO efforts.
+
+How to fix
+Analytics
+No analytics tools detected.
+
+No analytics tools detected.
+
+HTTPS Redirect
+Your page successfully redirects to a HTTPS (SSL secure) version.
+
+Sites without HTTPS are marked "Not Secure" in browsers, eroding trust and increasing bounce rates. Google has used HTTPS as a ranking signal since 2014.
+
+Robots.txt Blocking
+Robots.txt allows crawling of all 1 pages.
+
+A misconfigured robots.txt with "Disallow: /" blocks search engines from crawling your entire site, making it impossible to rank. Even partial blocks on important content can severely damage SEO.
+
+Deprecated HTML Tags
+No deprecated HTML tags found.
+
+DMARC Record
+No DMARC record found.
+
+Major email providers like Gmail and Outlook now require or strongly recommend DMARC for email deliverability. Without it, your legitimate emails may be marked as spam and your domain can be used for phishing.
+
+How to fix
+SPF Record
+No SPF record found.
+
+SPF records improve email deliverability and security. Without SPF, your emails are more likely to be marked as spam, and malicious actors can more easily send spoofed emails from your domain.
+
+How to fix
+DNS Nameservers
+2 nameserver(s) detected.
+
+DNS Servers
+
+nsx1.domainesia.com
+nsx2.domainesia.com
+HTTP/2
+HTTP/2 check not applicable for this page.
+
+HTTP/2 can dramatically improve page load times, especially for pages with many resources. Faster load times improve user experience and are a confirmed ranking factor.
+
+IP Address
+Server IP: 76.76.21.241
+
+76.76.21.241
+
+Knowing the server IP helps verify DNS configuration and identify the hosting provider or CDN being used.
+
+Web Server
+JavaScript Errors
+JavaScript error data not available.
+
+JavaScript errors can break critical features and prevent search engine crawlers from properly rendering and indexing your content. They signal poor code quality and can hurt rankings.
+
+Inline Styles
+No inline styles found.
+
+Links Results
+A+
+Your Links is excellent!
+
+How your pages link to each other and out to the wider web. Good linking spreads ranking authority to your most important pages and helps users and search engines navigate your site.
+
+Link Structure
+Healthy link structure: 51 links (75% internal).
+
+Proper link structure helps distribute PageRank throughout your site, improves crawlability, enhances user navigation, and signals topical relationships to search engines.
+
+Security Results
+A+
+Your Security is excellent!
+
+Whether your site protects visitors and their data — HTTPS encryption, secure response headers, and no exposed sensitive information. Security issues erode trust and can hurt rankings.
+
+Email Privacy
+No exposed email addresses found.
+
+Performance Results
+C
+Your Performance could be better
+
+How quickly your pages load and respond for real users. Speed and Core Web Vitals affect rankings, bounce rate and conversions — slow pages quietly cost you traffic and sales.
+
+Core Web Vitals
+1 Core Web Vital(s) need improvement.
+
+Core Web Vitals directly impact rankings and user experience. Pages with poor vitals may rank lower, lose traffic, and experience higher bounce rates.
+
+How to fix
+Load Time
+Page load time needs improvement (3.24s).
+
+3.24s
+
+Page speed is a confirmed ranking factor. Users abandon pages that take longer than 3 seconds to load. Every second of delay can reduce conversions by up to 20%. Fast sites rank better.
+
+How to fix
+Mobile Performance
+PageSpeed mobile data not available.
+
+Mobile-first indexing means Google primarily uses the mobile version of your site for ranking. A poor mobile score directly impacts rankings and frustrates the majority of users who browse on mobile.
+
+Compression
+Compression data not available.
+
+Compression reduces page size by 60-80%, significantly improving load times. It directly impacts Core Web Vitals and is one of the easiest performance wins available.
+
+Flash
+No Flash content detected.
+
+Flash content is invisible to search engines and inaccessible to mobile users. Adobe ended Flash support on December 31, 2020. Using Flash breaks your site for virtually all users.
+
+Image Optimization
+Image optimization data not available.
+
+Unoptimized images are the leading cause of slow page load times. Converting to modern formats like WebP provides 25-35% better compression than JPG/PNG with no visible quality loss.
+
+Page Size
+Page size data not available.
+
+Large page sizes directly increase load time, especially on mobile and slow connections. Google recommends keeping total page size under 3MB for optimal performance.
+
+Desktop Performance
+PageSpeed desktop data not available.
+
+A fast desktop experience reduces bounce rates, improves conversions, and provides a good user experience for desktop visitors. Desktop performance also contributes to overall performance assessment.
+
+Google AMP
+AMP detection data not available.
+
+AMP can improve mobile load times and increase visibility in Google's Top Stories carousel and mobile search features. However, it's optional and Google has reduced its special treatment since 2021.
+
+LLM Readability
+LLM readability data not available.
+
+As AI-powered search and AI answer engines grow, ensuring your content is readable by LLMs becomes increasingly important. Heavy JavaScript rendering may make your content invisible to AI crawlers.
+
+Minification
+Minification data not available.
+
+Minified files load faster, reducing page load time and improving Core Web Vitals. Minification typically reduces file sizes by 20-40%, which is an easy performance win.
+
+HTTP Requests
+Resource count data not available.
+
+Each HTTP request adds latency. Pages with many requests take longer to load, especially on high-latency connections. HTTP/2 mitigates this, but reducing requests still improves performance.
+
+Accessibility Results
+A+
+Your Accessibility is excellent!
+
+How usable your site is for everyone, including people using assistive technology — image alt text, form labels, colour contrast and semantic structure. Accessible sites reach more people and tend to be better-built overall.
+
+Mobile Viewport
+Viewport data not available.
+
+Without a proper viewport tag, mobile browsers render pages at desktop width and scale them down, making text tiny and requiring users to pinch-zoom. Google uses mobile-first indexing and penalizes non-mobile-friendly pages.
+
+Tap Target Size
+All tap targets meet minimum size requirements.
+
+0
+
+Small tap targets cause frustrating mis-taps on mobile devices, increasing bounce rates and hurting user experience. Google's mobile-friendliness assessment flags pages with too-small tap targets.
+
+Font Size
+All text uses readable font sizes.
+
+0
+
+Text smaller than 12px is difficult to read on mobile devices, forcing users to pinch-zoom. Google's mobile-first indexing considers mobile readability a ranking factor, and small fonts hurt accessibility.
+
+IFrame Usage
+No iframes found.
+
+0
+
+Search engines cannot reliably crawl iframe content, so important content inside iframes may not be indexed. Excessive iframes also increase page weight and reduce accessibility for users with assistive technologies.
+
+Structured Data Results
+F
+Your Structured Data needs significant improvement
+
+Schema.org markup that helps search engines understand your content and can unlock rich results — star ratings, FAQs, breadcrumbs and more — making your listings stand out in search.
+
+Identity Schema
+No Organization or Person schema found.
+
+Organization and Person schemas power Google's Knowledge Graph panels, display your logo in search results, connect your social profiles, and improve brand recognition — directly impacting E-E-A-T signals that influence rankings.
+
+How to fix
+Open Graph Tags
+Open Graph tag data not available.
+
+Without OG tags, social platforms generate unpredictable previews using whatever text and image they find on the page. Proper OG tags increase click-through rates from social shares by 200-400%.
+
+Facebook Page
+No Facebook page link found.
+
+A Facebook presence supports brand visibility, customer engagement, and can contribute to local SEO signals. Linking to your Facebook page from your website helps users find and follow you.
+
+How to fix
+Facebook Pixel
+No Facebook Pixel detected.
+
+Facebook Pixel helps measure the effectiveness of your Facebook advertising by tracking actions users take after clicking your ads, enabling smarter ad targeting and better ROI measurement.
+
+Instagram Profile
+No Instagram link found.
+
+Instagram is particularly valuable for visual brands, e-commerce, and consumer products. Linking to your Instagram helps users discover your visual content and builds social proof.
+
+How to fix
+LinkedIn Profile
+No LinkedIn link found.
+
+LinkedIn is essential for B2B companies and professional services. A LinkedIn presence builds professional credibility and helps with B2B lead generation and brand awareness.
+
+How to fix
+Twitter Card Tags
+Twitter Card tag data not available.
+
+Without Twitter Card tags, shared links appear as plain text URLs. With them, links display as rich cards with images and descriptions, significantly improving click-through rates and engagement.
+
+Twitter/X Account
+No Twitter/X link found.
+
+Twitter/X links help users discover your social presence and connect with your brand. A verified Twitter presence can also contribute to E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) signals.
+
+How to fix
+YouTube Activity
+No YouTube channel link found.
+
+An active YouTube channel with regular uploads improves brand visibility, drives traffic to your website through video descriptions, and can appear in Google search results alongside your website.
+
+YouTube Channel
+No YouTube channel link found.
+
+YouTube is the second-largest search engine. A YouTube channel linked from your site signals content investment, can drive referral traffic, and help your brand appear in both web and video search results.
+
+How to fix
+Google Business Profile
+No Google Business Profile link detected.
+
+A verified Google Business Profile is the single most important factor for local search visibility. It enables your business to appear in Google Maps and the Local Pack, which drives significant foot traffic and calls.
+
+How to fix
+Local Business Schema
+No LocalBusiness schema found.
+
+LocalBusiness schema enables Google to display your business information directly in search results (address, hours, phone, ratings), significantly increasing visibility and click-through rates for local searches.
+
+How to fix
+Local SEO Signals
+Phone number found but address is missing.
+
+For local businesses, displaying NAP (Name, Address, Phone) information is critical for ranking in local search results and Google Maps. Consistent contact details help verify your business identity with search engines.
+
+How to fix
