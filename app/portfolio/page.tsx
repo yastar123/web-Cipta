@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { PortfolioClient } from "./portfolio-client"
 
 export const metadata: Metadata = {
-  title: "Portfolio Jasa Pembuatan Website & Aplikasi | webCipta — 150+ Proyek",
+  title: "Portfolio Jasa Pembuatan Website & Aplikasi — 150+ Proyek",
   description:
     "Portfolio lengkap webCipta — 150+ proyek jasa pembuatan website, toko online, aplikasi mobile, dan UI/UX design untuk 50+ klien di seluruh Indonesia. Lihat karya nyata kami!",
   keywords: [

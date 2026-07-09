@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, Star, Clock, Shield, Zap } from "lucide-react
 const SITE_URL = "https://webcipta.my.id"
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Website Profesional Murah | webCipta",
+  title: "Jasa Pembuatan Website Profesional Murah",
   description:
     "Jasa pembuatan website profesional terpercaya di Indonesia. Harga mulai Rp 3 juta. Website cepat, SEO-friendly, mobile-responsive. 150+ proyek selesai. Konsultasi gratis!",
   keywords: [

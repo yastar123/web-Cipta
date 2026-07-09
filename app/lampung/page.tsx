@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, MapPin, Phone, Mail, Star } from "lucide-reac
 const SITE_URL = "https://webcipta.my.id"
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Website di Lampung Terpercaya | webCipta",
+  title: "Jasa Pembuatan Website di Lampung Terpercaya",
   description:
     "webCipta — jasa pembuatan website profesional di Lampung. Melayani Bandar Lampung, Metro, Pringsewu, Pesawaran & seluruh Lampung. 150+ proyek selesai. Harga mulai Rp 3 juta. Konsultasi gratis!",
   keywords: [

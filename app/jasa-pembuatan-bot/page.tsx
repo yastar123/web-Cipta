@@ -6,7 +6,7 @@ const SITE_URL = "https://webcipta.my.id"
 const WA = "https://wa.me/6285366195381?text=Halo%20webCipta%2C%20saya%20ingin%20konsultasi%20jasa%20pembuatan%20bot."
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Bot Telegram, WhatsApp & Discord Profesional | webCipta",
+  title: "Jasa Pembuatan Bot Telegram, WhatsApp & Discord",
   description:
     "Jasa pembuatan bot Telegram, WhatsApp, Discord, dan web scraping profesional di Indonesia. Bot otomatis untuk bisnis, customer service, notifikasi, dan otomasi. Harga mulai Rp 2 juta. Konsultasi gratis!",
   keywords: [

@@ -5,7 +5,7 @@ import { ArrowRight, Bot, CheckCircle2, Clock } from "lucide-react"
 const SITE_URL = "https://webcipta.my.id"
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Bot Telegram & WhatsApp untuk Bisnis 2025 | webCipta",
+  title: "Jasa Pembuatan Bot Telegram & WhatsApp Bisnis",
   description:
     "Panduan lengkap jasa pembuatan bot Telegram dan WhatsApp untuk bisnis di Indonesia 2025. Fungsi bot, harga, cara kerja, dan manfaat otomasi untuk menghemat waktu dan meningkatkan penjualan.",
   keywords: [

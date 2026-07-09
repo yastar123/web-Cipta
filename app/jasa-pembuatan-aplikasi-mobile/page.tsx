@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, Smartphone, Bell, Wifi, Store } from "lucide-
 const SITE_URL = "https://webcipta.my.id"
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Aplikasi Mobile Android iOS Profesional | webCipta",
+  title: "Jasa Pembuatan Aplikasi Mobile Android iOS",
   description:
     "Jasa pembuatan aplikasi mobile Android dan iOS profesional. React Native & Flutter cross-platform. Harga mulai Rp 20 juta. Publish ke Play Store & App Store. Konsultasi gratis!",
   keywords: [

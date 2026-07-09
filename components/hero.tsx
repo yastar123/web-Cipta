@@ -119,13 +119,12 @@ export function Hero() {
 
         {/* ─── Hero headline ─── */}
         <div className="flex-1 flex flex-col justify-center min-h-0">
-          <h1 className="relative mb-6 sm:mb-8 md:mb-10">
-            <span className="sr-only">
-              Jasa Pembuatan Website Profesional Lampung &amp; Indonesia
-            </span>
+          <h1 className="sr-only">
+            Jasa Pembuatan Website Profesional Lampung &amp; Indonesia
+          </h1>
 
-            {/* Decorative animated wordmark — hidden from assistive tech & crawlers, sr-only text above is the real H1 content */}
-            <span aria-hidden="true">
+          {/* Decorative animated wordmark — purely visual, hidden from assistive tech & crawlers. The h1 above carries the real heading text. */}
+          <div className="relative mb-6 sm:mb-8 md:mb-10" aria-hidden="true">
             {/* KAMI — left, outline */}
             <span className="block overflow-hidden leading-none">
               <span
@@ -193,8 +192,7 @@ export function Hero() {
                 EXPERIENCE
               </span>
             </span>
-            </span>
-          </h1>
+          </div>
 
           {/* Stats row */}
           <div

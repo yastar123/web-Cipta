@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react"
 const SITE_URL = "https://webcipta.my.id"
 
 export const metadata: Metadata = {
-  title: "Harga Jasa Pembuatan Website 2025: Panduan Lengkap",
+  title: "Harga Jasa Pembuatan Website 2025",
   description:
     "Berapa harga jasa pembuatan website profesional di 2025? Panduan lengkap breakdown harga: landing page Rp 3 juta, company profile Rp 5-15 juta, toko online Rp 15-50 juta, web app Rp 50-100 juta+.",
   keywords: [

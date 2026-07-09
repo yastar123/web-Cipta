@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, TrendingUp, Users, Globe, Star } from "lucide
 const SITE_URL = "https://webcipta.my.id"
 
 export const metadata: Metadata = {
-  title: "Kenapa Bisnis Wajib Punya Website Company Profile di 2025 | webCipta",
+  title: "Kenapa Bisnis Wajib Punya Website Company Profile",
   description:
     "81% konsumen riset online sebelum membeli. Tanpa website company profile profesional, bisnis Anda kehilangan kepercayaan dan pelanggan setiap hari. Pelajari manfaat, isi, dan harga website company profile.",
   keywords: [

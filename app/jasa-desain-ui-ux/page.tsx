@@ -6,7 +6,7 @@ const SITE_URL = "https://webcipta.my.id"
 const WA = "https://wa.me/6285366195381?text=Halo%20webCipta%2C%20saya%20ingin%20konsultasi%20jasa%20desain%20UI%20UX."
 
 export const metadata: Metadata = {
-  title: "Jasa Desain UI/UX Profesional Website & Aplikasi | webCipta",
+  title: "Jasa Desain UI/UX Profesional Website & Aplikasi",
   description:
     "Jasa desain UI/UX profesional untuk website dan aplikasi mobile di Indonesia. Figma design system, user research, wireframe, prototyping, dan usability testing. Harga mulai Rp 3 juta. Konsultasi gratis!",
   keywords: [

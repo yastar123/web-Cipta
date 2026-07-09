@@ -6,7 +6,7 @@ const SITE_URL = "https://webcipta.my.id"
 const WA = "https://wa.me/6285366195381?text=Halo%20webCipta%2C%20saya%20dari%20Jakarta%20dan%20ingin%20konsultasi%20jasa%20pembuatan%20website."
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Website Jakarta Profesional Murah | webCipta",
+  title: "Jasa Pembuatan Website Jakarta Profesional Murah",
   description:
     "Jasa pembuatan website di Jakarta profesional dan terpercaya. Harga mulai Rp 3 juta, proses 100% online. Website cepat, SEO-friendly, mobile-responsive. 150+ proyek selesai. Konsultasi gratis!",
   keywords: [

@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, ShoppingCart, CreditCard, Package, BarChart3 
 const SITE_URL = "https://webcipta.my.id"
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Toko Online Profesional Murah | webCipta",
+  title: "Jasa Pembuatan Toko Online Profesional Murah",
   description:
     "Jasa pembuatan toko online profesional di Indonesia. E-commerce lengkap: produk, keranjang, pembayaran digital (QRIS, GoPay, OVO), manajemen stok. Harga mulai Rp 15 juta. Konsultasi gratis!",
   keywords: [

@@ -5,7 +5,7 @@ import { ArrowRight, Search, TrendingUp, CheckCircle2, Zap } from "lucide-react"
 const SITE_URL = "https://webcipta.my.id"
 
 export const metadata: Metadata = {
-  title: "Cara Meningkatkan SEO Website agar Halaman 1 Google Indonesia 2025",
+  title: "Cara Meningkatkan SEO Website Indonesia 2025",
   description:
     "Panduan SEO praktis untuk website Indonesia 2025. Riset keyword berbahasa Indonesia, optimasi on-page, local SEO Google Maps, backlink building, Core Web Vitals — semua lengkap dalam satu panduan.",
   keywords: [

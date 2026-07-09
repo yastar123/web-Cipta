@@ -6,7 +6,7 @@ const SITE_URL = "https://webcipta.my.id"
 const WA = "https://wa.me/6285366195381?text=Halo%20webCipta%2C%20saya%20ingin%20konsultasi%20jasa%20pembuatan%20landing%20page."
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Landing Page Profesional High-Converting | webCipta",
+  title: "Jasa Pembuatan Landing Page High-Converting",
   description:
     "Jasa pembuatan landing page profesional high-converting di Indonesia. Desain persuasif, CRO-optimized, loading super cepat. Harga mulai Rp 3 juta. Tingkatkan konversi iklan Anda. Konsultasi gratis!",
   keywords: [
