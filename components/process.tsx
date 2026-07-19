@@ -103,7 +103,7 @@ export function Process() {
                 <span className="block text-foreground">Cara Kami</span>
                 <span
                   className="block"
-                  style={{ WebkitTextStroke: "1.5px oklch(0.97 0 0 / 0.2)", color: "transparent" }}
+                  style={{ WebkitTextStroke: "1.5px oklch(0.05 0.008 240 / 0.4)", color: "transparent" }}
                 >
                   Bekerja
                 </span>

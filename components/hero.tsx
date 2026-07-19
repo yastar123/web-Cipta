@@ -4,9 +4,11 @@ import { useEffect, useRef, useState } from "react"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { AnimatedCounter } from "./animated-counter"
 
-const techStack = [
-  "React", "Next.js", "TypeScript", "Node.js", "React Native",
-  "Flutter", "PostgreSQL", "MongoDB", "AWS", "Vercel", "Figma", "TailwindCSS",
+const clientLogos = [
+  "/client-1.png", "/client-2.png", "/client-3.png", "/client-4.png", "/client-5.png",
+  "/client-6.png", "/client-7.png", "/client-8.png", "/client-9.png", "/client-10.png",
+  "/client-11.png", "/client-12.png", "/client-13.png", "/client-14.png", "/client-15.png",
+  "/client-16.png", "/client-17.png", "/client-18.png",
 ]
 
 const stats = [
@@ -132,7 +134,7 @@ export function Hero() {
                 style={{
                   ...lineStyle(0.05),
                   fontSize: "clamp(48px, 11.5vw, 168px)",
-                  WebkitTextStroke: "1.5px oklch(0.97 0 0 / 0.18)",
+                  WebkitTextStroke: "1.5px oklch(0.05 0.008 240 / 0.4)",
                   color: "transparent",
                   fontWeight: 900,
                   letterSpacing: "-0.04em",
@@ -262,20 +264,31 @@ export function Hero() {
 
         {/* ─── Tech strip ─── */}
         <div
-          className={`-mx-4 sm:-mx-8 lg:-mx-14 xl:-mx-20 border-t border-border/10 bg-card/20 backdrop-blur-xl h-9 sm:h-10 flex items-center overflow-hidden transition-all duration-700 delay-[950ms] ${loaded ? "opacity-100" : "opacity-0"}`}
+          className={`-mx-4 sm:-mx-8 lg:-mx-14 xl:-mx-20 border-t border-border/10 bg-white/50 backdrop-blur-xl h-20 sm:h-24 flex items-center overflow-hidden transition-all duration-700 delay-[950ms] ${loaded ? "opacity-100" : "opacity-0"}`}
         >
           <div
             className="flex animate-marquee whitespace-nowrap"
             style={{ animationDuration: "35s" }}
           >
-            {[...techStack, ...techStack, ...techStack, ...techStack].map((tech, i) => (
-              <span
+            {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((logo, i) => (
+              <div
                 key={i}
-                className="flex items-center gap-2 px-4 text-[9px] sm:text-[10px] font-medium text-muted-foreground/30 hover:text-muted-foreground/55 transition-colors cursor-default whitespace-nowrap"
+                className="flex items-center justify-center gap-4 px-8 cursor-default whitespace-nowrap"
               >
-                <span className="w-0.5 h-0.5 rounded-full bg-primary/35 flex-shrink-0" />
-                {tech}
-              </span>
+                <img
+                  src={logo}
+                  alt={`Client logo ${i + 1}`}
+                  className="h-14 sm:h-16 w-auto object-contain"
+                  style={{ maxWidth: '120px' }}
+                  onError={(e) => {
+                    console.error('Failed to load image:', logo);
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                  onLoad={(e) => {
+                    console.log('Loaded image:', logo);
+                  }}
+                />
+              </div>
             ))}
           </div>
         </div>

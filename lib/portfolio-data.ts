@@ -523,4 +523,19 @@ export const projects = [
     image: "/portofolio-36.jpg",
     liveUrl: "",
   },
+  {
+    title: "Marketplace PT Aerova",
+    category: "website",
+    client: "PT Aerova",
+    year: "2025",
+    description:
+      "Website marketplace lengkap dengan integrasi payment gateway. Menampilkan katalog produk, keranjang belanja, checkout aman, dan manajemen pesanan yang terintegrasi.",
+    tags: ["Next.js", "Payment Gateway", "Marketplace", "PostgreSQL", "TailwindCSS"],
+    gradient: "from-emerald-500 via-green-500 to-teal-600",
+    metric: "100%",
+    metricLabel: "Payment Integrated",
+    featured: true,
+    image: "/portofolio-37.png",
+    liveUrl: "",
+  },
 ];

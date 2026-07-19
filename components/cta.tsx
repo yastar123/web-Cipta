@@ -64,7 +64,7 @@ export function CTA() {
               <span className="block text-foreground">Mulai Proyek</span>
               <span
                 className="block"
-                style={{ WebkitTextStroke: "1.5px oklch(0.97 0 0 / 0.18)", color: "transparent" }}
+                style={{ WebkitTextStroke: "1.5px oklch(0.05 0.008 240 / 0.4)", color: "transparent" }}
               >
                 Impian Anda
               </span>
