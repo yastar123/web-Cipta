@@ -1,58 +1,78 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { ArrowRight, ArrowUpRight } from "lucide-react"
-import { AnimatedCounter } from "./animated-counter"
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { AnimatedCounter } from "./animated-counter";
 
 const clientLogos = [
-  "/client-1.png", "/client-2.png", "/client-3.png", "/client-4.png", "/client-5.png",
-  "/client-6.png", "/client-7.png", "/client-8.png", "/client-9.png", "/client-10.png",
-  "/client-11.png", "/client-12.png", "/client-13.png", "/client-14.png", "/client-15.png",
-  "/client-16.png", "/client-17.png", "/client-18.png",
-]
+  "/client-1.png",
+  "/client-2.png",
+  "/client-3.png",
+  "/client-4.png",
+  "/client-5.png",
+  "/client-6.png",
+  "/client-7.png",
+  "/client-8.png",
+  "/client-9.png",
+  "/client-10.png",
+  "/client-11.png",
+  "/client-12.png",
+  "/client-13.png",
+  "/client-14.png",
+  "/client-15.png",
+  "/client-16.png",
+  "/client-17.png",
+  "/client-18.png",
+  "/client-19.png",
+];
 
 const stats = [
   { value: 150, suffix: "+", label: "Proyek" },
-  { value: 50,  suffix: "+", label: "Klien" },
-  { value: 98,  suffix: "%", label: "Kepuasan" },
-  { value: 5,   suffix: "",  label: "Tahun" },
-]
+  { value: 50, suffix: "+", label: "Klien" },
+  { value: 98, suffix: "%", label: "Kepuasan" },
+  { value: 5, suffix: "", label: "Tahun" },
+];
 
 export function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 })
-  const [scrollY, setScrollY] = useState(0)
-  const [loaded, setLoaded] = useState(false)
-  const [phase, setPhase] = useState(0)
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
+  const [scrollY, setScrollY] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const [phase, setPhase] = useState(0);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setLoaded(true), 60)
-    const t2 = setTimeout(() => setPhase(1), 200)
-    const t3 = setTimeout(() => setPhase(2), 900)
-    const onScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", onScroll, { passive: true })
+    const t1 = setTimeout(() => setLoaded(true), 60);
+    const t2 = setTimeout(() => setPhase(1), 200);
+    const t3 = setTimeout(() => setPhase(2), 900);
+    const onScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
-      clearTimeout(t1); clearTimeout(t2); clearTimeout(t3)
-      window.removeEventListener("scroll", onScroll)
-    }
-  }, [])
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
   useEffect(() => {
-    const el = containerRef.current
-    if (!el) return
+    const el = containerRef.current;
+    if (!el) return;
     const onMove = (e: MouseEvent) => {
-      const r = el.getBoundingClientRect()
-      setMousePos({ x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height })
-    }
-    el.addEventListener("mousemove", onMove)
-    return () => el.removeEventListener("mousemove", onMove)
-  }, [])
+      const r = el.getBoundingClientRect();
+      setMousePos({
+        x: (e.clientX - r.left) / r.width,
+        y: (e.clientY - r.top) / r.height,
+      });
+    };
+    el.addEventListener("mousemove", onMove);
+    return () => el.removeEventListener("mousemove", onMove);
+  }, []);
 
   const lineStyle = (delay: number) => ({
     transform: loaded ? "translateY(0)" : "translateY(105%)",
     transition: `transform 1.0s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s`,
     display: "block",
-  })
+  });
 
   return (
     <section
@@ -60,26 +80,35 @@ export function Hero() {
       className="relative min-h-[100svh] flex flex-col overflow-hidden"
     >
       {/* ─── Layered background ─── */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
+      <div
+        className="absolute inset-0 pointer-events-none overflow-hidden"
+        aria-hidden
+      >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_55%_at_50%_-5%,oklch(0.13_0.07_200)_0%,transparent_60%)]" />
         <div
           className="absolute rounded-full hidden md:block"
           style={{
-            width: 900, height: 900,
+            width: 900,
+            height: 900,
             left: `calc(${mousePos.x * 100}% - 450px)`,
             top: `calc(${mousePos.y * 100}% - 450px)`,
-            background: "radial-gradient(circle, oklch(0.72 0.18 195 / 0.07) 0%, transparent 55%)",
+            background:
+              "radial-gradient(circle, oklch(0.72 0.18 195 / 0.07) 0%, transparent 55%)",
             transform: `translateY(${scrollY * 0.04}px)`,
             transition: "left 3s ease-out, top 3s ease-out",
           }}
         />
         <div
           className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/[0.04] rounded-full blur-[150px]"
-          style={{ transform: `translate(30%, -40%) translateY(${scrollY * 0.07}px)` }}
+          style={{
+            transform: `translate(30%, -40%) translateY(${scrollY * 0.07}px)`,
+          }}
         />
         <div
           className="absolute bottom-0 left-0 w-[450px] h-[450px] bg-primary/[0.04] rounded-full blur-[120px]"
-          style={{ transform: `translate(-25%, 30%) translateY(${scrollY * -0.03}px)` }}
+          style={{
+            transform: `translate(-25%, 30%) translateY(${scrollY * -0.03}px)`,
+          }}
         />
         <div
           className="absolute inset-0 opacity-[0.015]"
@@ -87,7 +116,8 @@ export function Hero() {
             backgroundImage:
               "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
             backgroundSize: "72px 72px",
-            maskImage: "radial-gradient(ellipse 80% 55% at 50% 0%, black, transparent)",
+            maskImage:
+              "radial-gradient(ellipse 80% 55% at 50% 0%, black, transparent)",
           }}
         />
       </div>
@@ -205,7 +235,11 @@ export function Hero() {
               {stats.map((stat, i) => (
                 <div key={i} className="flex flex-col items-center gap-0.5">
                   <span className="text-base sm:text-xl md:text-2xl font-black text-foreground tracking-tight leading-none">
-                    <AnimatedCounter value={stat.value} suffix={stat.suffix} duration={2000 + i * 150} />
+                    <AnimatedCounter
+                      value={stat.value}
+                      suffix={stat.suffix}
+                      duration={2000 + i * 150}
+                    />
                   </span>
                   <span className="text-[7px] sm:text-[9px] text-muted-foreground/40 tracking-[0.15em] uppercase">
                     {stat.label}
@@ -225,8 +259,8 @@ export function Hero() {
               <span className="text-foreground/85 font-medium">website</span>,{" "}
               <span className="text-foreground/85 font-medium">mobile app</span>{" "}
               &amp;{" "}
-              <span className="text-foreground/85 font-medium">UI/UX</span>{" "}
-              di Lampung &amp; seluruh Indonesia yang memberikan hasil nyata.
+              <span className="text-foreground/85 font-medium">UI/UX</span> di
+              Lampung &amp; seluruh Indonesia yang memberikan hasil nyata.
             </p>
 
             <div className="flex items-center gap-3 sm:ml-auto flex-shrink-0">
@@ -235,7 +269,9 @@ export function Hero() {
                 className="group relative inline-flex items-center gap-2 rounded-full overflow-hidden px-5 sm:px-6 h-10 sm:h-11 text-xs sm:text-sm font-semibold hover:scale-[1.04] hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 flex-shrink-0"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-primary via-cyan-400 to-emerald-500" />
-                <span className="relative text-primary-foreground font-bold">Mulai Proyek</span>
+                <span className="relative text-primary-foreground font-bold">
+                  Mulai Proyek
+                </span>
                 <ArrowRight className="relative h-3.5 w-3.5 text-primary-foreground group-hover:translate-x-0.5 transition-transform flex-shrink-0" />
               </a>
               <a
@@ -259,7 +295,9 @@ export function Hero() {
           <div className="flex h-6 w-3.5 items-start justify-center rounded-full border border-border/20 pt-1 flex-shrink-0">
             <div className="w-px h-1.5 rounded-full bg-primary animate-bounce" />
           </div>
-          <span className="text-[9px] tracking-[0.28em] uppercase text-muted-foreground/25">Scroll</span>
+          <span className="text-[9px] tracking-[0.28em] uppercase text-muted-foreground/25">
+            Scroll
+          </span>
         </div>
 
         {/* ─── Tech strip ─── */}
@@ -270,7 +308,12 @@ export function Hero() {
             className="flex animate-marquee whitespace-nowrap"
             style={{ animationDuration: "35s" }}
           >
-            {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((logo, i) => (
+            {[
+              ...clientLogos,
+              ...clientLogos,
+              ...clientLogos,
+              ...clientLogos,
+            ].map((logo, i) => (
               <div
                 key={i}
                 className="flex items-center justify-center gap-4 px-8 cursor-default whitespace-nowrap"
@@ -279,13 +322,13 @@ export function Hero() {
                   src={logo}
                   alt={`Client logo ${i + 1}`}
                   className="h-14 sm:h-16 w-auto object-contain"
-                  style={{ maxWidth: '120px' }}
+                  style={{ maxWidth: "120px" }}
                   onError={(e) => {
-                    console.error('Failed to load image:', logo);
-                    (e.target as HTMLImageElement).style.display = 'none';
+                    console.error("Failed to load image:", logo);
+                    (e.target as HTMLImageElement).style.display = "none";
                   }}
                   onLoad={(e) => {
-                    console.log('Loaded image:', logo);
+                    console.log("Loaded image:", logo);
                   }}
                 />
               </div>
@@ -294,5 +337,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

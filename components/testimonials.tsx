@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react"
-import { FadeIn } from "./text-reveal"
+import { useState, useEffect } from "react";
+import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { FadeIn } from "./text-reveal";
 
 const testimonials = [
   {
@@ -12,7 +12,8 @@ const testimonials = [
     avatar: "AR",
     rating: 5,
     text: "webCipta benar-benar mengubah bisnis kami. Conversion rate naik 180% dalam 3 bulan pertama. Tim mereka responsif, profesional, dan selalu memberikan hasil terbaik.",
-    metric: "+180%", metricLabel: "Conversion Rate",
+    metric: "+180%",
+    metricLabel: "Conversion Rate",
     gradient: "from-cyan-500 to-blue-600",
     color: "oklch(0.72 0.18 195)",
   },
@@ -23,7 +24,8 @@ const testimonials = [
     avatar: "SD",
     rating: 5,
     text: "Sebagai startup healthtech, kami butuh partner yang benar-benar mengerti kebutuhan kami. webCipta tidak hanya deliver on-time, tapi juga memberikan saran strategic yang sangat valuable.",
-    metric: "50K+", metricLabel: "Active Users",
+    metric: "50K+",
+    metricLabel: "Active Users",
     gradient: "from-emerald-500 to-teal-600",
     color: "oklch(0.65 0.18 160)",
   },
@@ -34,7 +36,8 @@ const testimonials = [
     avatar: "BS",
     rating: 5,
     text: "UI/UX design dari webCipta benar-benar kelas dunia. Tim kami yang awalnya skeptis sekarang malah jadi yang paling antusias menggunakan dashboard baru tersebut.",
-    metric: "+65%", metricLabel: "Team Efficiency",
+    metric: "+65%",
+    metricLabel: "Team Efficiency",
     gradient: "from-violet-500 to-purple-600",
     color: "oklch(0.55 0.22 290)",
   },
@@ -45,43 +48,60 @@ const testimonials = [
     avatar: "RK",
     rating: 5,
     text: "Proses kerja mereka sangat transparan. Setiap sprint ada demo, setiap issue langsung di-handle. Produk yang dihasilkan melebihi ekspektasi kami.",
-    metric: "25K+", metricLabel: "Students",
+    metric: "25K+",
+    metricLabel: "Students",
     gradient: "from-orange-500 to-amber-600",
     color: "oklch(0.72 0.18 50)",
   },
-]
+];
 
-const logos = ["Tokopedia", "Gojek", "Traveloka", "Bukalapak", "OVO", "GoPay", "Livin'", "Dana"]
+const logos = [
+  "Tokopedia",
+  "Gojek",
+  "Traveloka",
+  "Bukalapak",
+  "OVO",
+  "GoPay",
+  "Livin'",
+  "Dana",
+];
 
 export function Testimonials() {
-  const [active, setActive] = useState(0)
-  const [auto, setAuto] = useState(true)
-  const [isAnimating, setIsAnimating] = useState(false)
+  const [active, setActive] = useState(0);
+  const [auto, setAuto] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    if (!auto) return
+    if (!auto) return;
     const t = setInterval(() => {
-      setIsAnimating(true)
+      setIsAnimating(true);
       setTimeout(() => {
-        setActive((p) => (p + 1) % testimonials.length)
-        setIsAnimating(false)
-      }, 200)
-    }, 5500)
-    return () => clearInterval(t)
-  }, [auto])
+        setActive((p) => (p + 1) % testimonials.length);
+        setIsAnimating(false);
+      }, 200);
+    }, 5500);
+    return () => clearInterval(t);
+  }, [auto]);
 
   const goTo = (i: number) => {
-    setAuto(false)
-    setIsAnimating(true)
-    setTimeout(() => { setActive(i); setIsAnimating(false) }, 200)
-  }
-  const prev = () => goTo((active - 1 + testimonials.length) % testimonials.length)
-  const next = () => goTo((active + 1) % testimonials.length)
+    setAuto(false);
+    setIsAnimating(true);
+    setTimeout(() => {
+      setActive(i);
+      setIsAnimating(false);
+    }, 200);
+  };
+  const prev = () =>
+    goTo((active - 1 + testimonials.length) % testimonials.length);
+  const next = () => goTo((active + 1) % testimonials.length);
 
-  const t = testimonials[active]
+  const t = testimonials[active];
 
   return (
-    <section id="testimonial" className="py-20 md:py-28 lg:py-36 relative overflow-hidden">
+    <section
+      id="testimonial"
+      className="py-20 md:py-28 lg:py-36 relative overflow-hidden"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-card/25 via-background to-card/25" />
 
       {/* Large decorative quote mark */}
@@ -94,7 +114,6 @@ export function Testimonials() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-8 lg:px-14 xl:px-20">
-
         {/* Header */}
         <FadeIn className="mb-12 md:mb-16">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
@@ -110,14 +129,18 @@ export function Testimonials() {
                 <span className="block text-foreground">Apa Kata</span>
                 <span
                   className="block"
-                  style={{ WebkitTextStroke: "1.5px oklch(0.05 0.008 240 / 0.4)", color: "transparent" }}
+                  style={{
+                    WebkitTextStroke: "1.5px oklch(0.05 0.008 240 / 0.4)",
+                    color: "transparent",
+                  }}
                 >
                   Klien Kami
                 </span>
               </h2>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Kepercayaan klien adalah aset terbesar kami — dengan angka nyata di baliknya.
+              Kepercayaan klien adalah aset terbesar kami — dengan angka nyata
+              di baliknya.
             </p>
           </div>
         </FadeIn>
@@ -128,7 +151,9 @@ export function Testimonials() {
             {/* Top gradient line */}
             <div
               className="absolute top-0 left-0 right-0 h-[2px] transition-all duration-700"
-              style={{ background: `linear-gradient(90deg, transparent, ${t.color}, transparent)` }}
+              style={{
+                background: `linear-gradient(90deg, transparent, ${t.color}, transparent)`,
+              }}
             />
             {/* Ambient glow */}
             <div
@@ -144,12 +169,17 @@ export function Testimonials() {
                 <div className="lg:col-span-3 flex flex-col">
                   {/* Stars + badge */}
                   <div className="flex items-center gap-4 mb-6 sm:mb-8">
-                    <div className={`flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br ${t.gradient} opacity-70 flex-shrink-0`}>
+                    <div
+                      className={`flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br ${t.gradient} opacity-70 flex-shrink-0`}
+                    >
                       <Quote className="h-4 w-4 text-white" />
                     </div>
                     <div className="flex gap-1">
                       {[...Array(t.rating)].map((_, j) => (
-                        <Star key={j} className="h-3.5 w-3.5 text-amber-400 fill-amber-400" />
+                        <Star
+                          key={j}
+                          className="h-3.5 w-3.5 text-amber-400 fill-amber-400"
+                        />
                       ))}
                     </div>
                   </div>
@@ -171,8 +201,12 @@ export function Testimonials() {
                       {t.avatar}
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                      <p className="text-xs text-muted-foreground/60">{t.role} · {t.company}</p>
+                      <p className="text-sm font-semibold text-foreground">
+                        {t.name}
+                      </p>
+                      <p className="text-xs text-muted-foreground/60">
+                        {t.role} · {t.company}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -180,19 +214,27 @@ export function Testimonials() {
                 {/* Metric side */}
                 <div className="lg:col-span-2 flex flex-col gap-5">
                   {/* Metric card */}
-                  <div className={`relative rounded-2xl bg-gradient-to-br ${t.gradient} p-6 sm:p-7 overflow-hidden flex-1 flex flex-col justify-between`}>
+                  <div
+                    className={`relative rounded-2xl bg-gradient-to-br ${t.gradient} p-6 sm:p-7 overflow-hidden flex-1 flex flex-col justify-between`}
+                  >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.15)_0%,transparent_60%)]" />
                     <div className="relative z-10">
-                      <p className="text-white/60 text-[9px] font-bold uppercase tracking-[0.25em] mb-3">Hasil Nyata</p>
+                      <p className="text-white/60 text-[9px] font-bold uppercase tracking-[0.25em] mb-3">
+                        Hasil Nyata
+                      </p>
                       <p
                         className="text-white font-black tracking-tighter leading-none mb-1"
                         style={{ fontSize: "clamp(36px, 5vw, 64px)" }}
                       >
                         {t.metric}
                       </p>
-                      <p className="text-white/75 text-sm font-medium">{t.metricLabel}</p>
+                      <p className="text-white/75 text-sm font-medium">
+                        {t.metricLabel}
+                      </p>
                       <div className="mt-4 pt-4 border-t border-white/15">
-                        <p className="text-white/40 text-[10px]">dalam 90 hari pertama</p>
+                        <p className="text-white/40 text-[10px]">
+                          dalam 90 hari pertama
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -247,10 +289,16 @@ export function Testimonials() {
                       {item.avatar}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-xs font-semibold text-foreground/80 truncate">{item.name}</p>
-                      <p className="text-[10px] text-muted-foreground/50 truncate">{item.role} · {item.company}</p>
+                      <p className="text-xs font-semibold text-foreground/80 truncate">
+                        {item.name}
+                      </p>
+                      <p className="text-[10px] text-muted-foreground/50 truncate">
+                        {item.role} · {item.company}
+                      </p>
                     </div>
-                    <span className={`flex-shrink-0 text-xs font-black bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>
+                    <span
+                      className={`flex-shrink-0 text-xs font-black bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}
+                    >
                       {item.metric}
                     </span>
                   </div>
@@ -261,26 +309,7 @@ export function Testimonials() {
               </FadeIn>
             ))}
         </div>
-
-        {/* Logos */}
-        <FadeIn delay={200}>
-          <div className="rounded-2xl border border-border/10 bg-card/15 backdrop-blur-sm p-6 md:p-8">
-            <p className="text-center text-[9px] font-bold text-muted-foreground/30 uppercase tracking-[0.3em] mb-6">
-              Dipercaya oleh perusahaan terkemuka
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 md:gap-12">
-              {logos.map((logo) => (
-                <span
-                  key={logo}
-                  className="text-xs sm:text-sm font-black text-muted-foreground/15 hover:text-muted-foreground/45 transition-all duration-300 cursor-default tracking-wide hover:scale-105"
-                >
-                  {logo}
-                </span>
-              ))}
-            </div>
-          </div>
-        </FadeIn>
       </div>
     </section>
-  )
+  );
 }
