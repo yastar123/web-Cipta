@@ -559,4 +559,19 @@ export const projects = [
     image: "/portofolio-38.png",
     liveUrl: "https://www.cndinteriorbali.my.id/",
   },
+  {
+    title: "Aplikasi Pencatatan Keuangan Masjid Attawabin",
+    category: "website",
+    client: "Masjid Attawabin",
+    year: "2026",
+    description:
+      "Aplikasi pencatatan keuangan masjid untuk RT 5 RW 22 Ngaglik, Sleman, dibuat dengan Google Apps Script untuk mempermudah pengelolaan donasi dan pengeluaran.",
+    tags: ["Google Apps Script", "GAS", "Google Sheets", "Automasi"],
+    gradient: "from-green-500 via-teal-500 to-cyan-600",
+    metric: "Masjid",
+    metricLabel: "Pencatatan Keuangan",
+    featured: false,
+    image: "/portofolio-39.png",
+    liveUrl: "https://surl.li/gdhijj",
+  },
 ];
