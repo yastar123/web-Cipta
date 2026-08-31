@@ -24,6 +24,11 @@ const clientLogos = [
   "/client-17.png",
   "/client-18.png",
   "/client-19.png",
+  "/client-20.png",
+  "/client-21.png",
+  "/client-22.png",
+  "/client-23.png",
+  "/client-24.png",
 ];
 
 const stats = [
