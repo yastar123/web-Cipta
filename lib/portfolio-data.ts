@@ -640,4 +640,19 @@ export const projects = [
     image: "/portofolio-43.png",
     liveUrl: "",
   },
+  {
+    title: "Sistem Bimbel Smart Center Indonesia",
+    category: "website",
+    client: "Smart Center Indonesia, Pekanbaru",
+    year: "2026",
+    description:
+      "Platform pembelajaran online untuk bimbingan belajar Smart Center Indonesia dengan fitur pendaftaran, jadwal kelas, materi belajar, dan kebutuhan siswa yang lebih terstruktur.",
+    tags: ["Learning Management System", "Bimbel", "Next.js", "TailwindCSS"],
+    gradient: "from-blue-600 via-cyan-500 to-teal-500",
+    metric: "500+",
+    metricLabel: "Siswa",
+    featured: true,
+    image: "/portofolio-44.png",
+    liveUrl: "https://smartcenterindonesia.com/",
+  },
 ];
