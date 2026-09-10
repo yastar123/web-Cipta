@@ -29,6 +29,7 @@ const clientLogos = [
   "/client-22.png",
   "/client-23.png",
   "/client-24.png",
+  "/client-25.jpg",
 ];
 
 const stats = [
@@ -310,7 +311,7 @@ export function Hero() {
           className={`-mx-4 sm:-mx-8 lg:-mx-14 xl:-mx-20 border-t border-border/10 bg-white/50 backdrop-blur-xl h-20 sm:h-24 flex items-center overflow-hidden transition-all duration-700 delay-[950ms] ${loaded ? "opacity-100" : "opacity-0"}`}
         >
           <div
-            className="flex animate-marquee whitespace-nowrap"
+            className="flex animate-marquee-rev whitespace-nowrap"
             style={{ animationDuration: "35s" }}
           >
             {[
@@ -326,6 +327,41 @@ export function Hero() {
                 <img
                   src={logo}
                   alt={`Client logo ${i + 1}`}
+                  className="h-14 sm:h-16 w-auto object-contain"
+                  style={{ maxWidth: "120px" }}
+                  onError={(e) => {
+                    console.error("Failed to load image:", logo);
+                    (e.target as HTMLImageElement).style.display = "none";
+                  }}
+                  onLoad={(e) => {
+                    console.log("Loaded image:", logo);
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div
+          className={`-mx-4 sm:-mx-8 lg:-mx-14 xl:-mx-20 border-t border-border/10 bg-white/50 backdrop-blur-xl h-20 sm:h-24 flex items-center overflow-hidden transition-all duration-700 delay-[1050ms] ${loaded ? "opacity-100" : "opacity-0"}`}
+        >
+          <div
+            className="flex animate-marquee whitespace-nowrap"
+            style={{ animationDuration: "35s" }}
+          >
+            {[
+              ...[...clientLogos].reverse(),
+              ...[...clientLogos].reverse(),
+              ...[...clientLogos].reverse(),
+              ...[...clientLogos].reverse(),
+            ].map((logo, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-center gap-4 px-8 cursor-default whitespace-nowrap"
+              >
+                <img
+                  src={logo}
+                  alt={`Client logo ${25 - (i % clientLogos.length)}`}
                   className="h-14 sm:h-16 w-auto object-contain"
                   style={{ maxWidth: "120px" }}
                   onError={(e) => {
