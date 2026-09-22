@@ -30,6 +30,8 @@ const clientLogos = [
   "/client-23.png",
   "/client-24.png",
   "/client-25.jpg",
+  "/cllient-26.png",
+  "/cllient-27.png",
 ];
 
 const stats = [

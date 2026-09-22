@@ -688,4 +688,33 @@ export const projects = [
     featured: true,
     image: "/portofolio-46.png",
   },
+  {
+    title: "Marpice — E-commerce Produk Kecantikan",
+    category: "website",
+    client: "Marpice",
+    year: "2026",
+    description:
+      "Website e-commerce untuk usaha Marpice yang menjual produk kecantikan dengan katalog produk, pengalaman belanja, dan tampilan elegan.",
+    tags: ["E-commerce", "Beauty", "Next.js", "TailwindCSS"],
+    gradient: "from-rose-300 via-orange-200 to-amber-100",
+    metric: "Beauty",
+    metricLabel: "E-commerce",
+    featured: true,
+    image: "/portofolio-47.png",
+  },
+  {
+    title: "Nanami Kitchen — F&B Website",
+    category: "website",
+    client: "Nanami Kitchen",
+    year: "2026",
+    description:
+      "Website F&B untuk Nanami Kitchen, salah satu usaha di Afrika Selatan, dengan pengalaman pemesanan makanan yang praktis dan mobile-friendly.",
+    tags: ["F&B", "Food Ordering", "Mobile-first", "Next.js"],
+    gradient: "from-amber-700 via-orange-500 to-yellow-400",
+    metric: "South Africa",
+    metricLabel: "F&B Business",
+    featured: true,
+    image: "/portofolio-48.png",
+    liveUrl: "https://app.nanamikitchen.com/",
+  },
 ];
