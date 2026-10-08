@@ -8,7 +8,6 @@ import { projects, categories } from "@/lib/portfolio-data";
 
 export function PortfolioClient() {
   const [active, setActive] = useState("all");
-  const [hovered, setHovered] = useState<number | null>(null);
   const [page, setPage] = useState(1);
   const itemsPerPage = 15;
 
@@ -163,106 +162,62 @@ export function PortfolioClient() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
               {paginated.map((project, i) => (
-                <div
+                <article
                   key={project.title}
-                  className="group relative rounded-2xl overflow-hidden cursor-pointer"
+                  className="group overflow-hidden rounded-2xl border border-border/20 bg-card/70 shadow-sm transition-shadow duration-300 hover:shadow-lg hover:shadow-primary/5"
                   style={{
-                    height: "clamp(230px, 26vw, 320px)",
                     animation: `fade-up 0.5s ease-out ${Math.min(i, 5) * 60}ms both`,
                   }}
-                  onMouseEnter={() => setHovered(i)}
-                  onMouseLeave={() => setHovered(null)}
                 >
-                  {/* Background image */}
-                  {project.image && (
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} — ${project.client}`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover"
-                      loading={i < 3 ? "eager" : "lazy"}
-                    />
-                  )}
-
-                  {/* Pattern */}
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[length:20px_20px] opacity-30" />
-                  {/* Dark overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                  {/* Hover shimmer */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent transition-opacity duration-500 ${hovered === i ? "opacity-100" : "opacity-0"}`}
-                  />
-
-                  {/* Content */}
-                  <div className="absolute inset-0 p-5 sm:p-6 flex flex-col justify-between">
-                    {/* Top */}
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="flex gap-1.5 flex-wrap min-w-0">
-                        <span className="px-2.5 py-1 rounded-full bg-black/30 backdrop-blur-sm text-white/80 text-[10px] font-semibold border border-white/10 flex-shrink-0">
-                          {project.year}
-                        </span>
-                        <span className="px-2.5 py-1 rounded-full bg-black/30 backdrop-blur-sm text-white/80 text-[10px] font-semibold max-w-[110px] truncate border border-white/10">
-                          {project.client}
-                        </span>
-                      </div>
-                      {project.liveUrl ? (
+                  <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                    {project.image && (
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} — ${project.client}`}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading={i < 3 ? "eager" : "lazy"}
+                      />
+                    )}
+                    {project.liveUrl && (
                         <a
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm border border-white/20 transition-all duration-500 ${hovered === i ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 rotate-45"}`}
+                          aria-label={`Lihat ${project.title}`}
+                          className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/40 bg-black/35 text-white backdrop-blur-sm transition-colors hover:bg-black/60"
                         >
-                          <ArrowUpRight className="h-4 w-4 text-white" />
+                          <ArrowUpRight className="h-4 w-4" />
                         </a>
-                      ) : (
-                        <div
-                          className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm border border-white/20 transition-all duration-500 ${hovered === i ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 rotate-45"}`}
-                        >
-                          <ArrowUpRight className="h-4 w-4 text-white" />
-                        </div>
-                      )}
+                    )}
+                  </div>
+
+                  <div className="p-5 sm:p-6">
+                    <div className="mb-3 flex flex-wrap items-center gap-2 text-xs font-medium text-foreground">
+                      <span>{project.year}</span>
+                      <span aria-hidden="true">·</span>
+                      <span>{project.client}</span>
+                    </div>
+                    <h3 className="mb-3 text-lg font-black leading-tight tracking-tight text-foreground sm:text-xl">
+                      {project.title}
+                    </h3>
+
+                    <div className="mb-3 flex items-center gap-2 text-foreground">
+                      <TrendingUp className="h-4 w-4 flex-shrink-0 text-primary" />
+                      <span className="text-base font-black">
+                        {project.metric}
+                      </span>
+                      <span className="text-sm text-foreground">
+                        {project.metricLabel}
+                      </span>
                     </div>
 
-                    {/* Bottom */}
-                    <div>
-                      <div
-                        className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-black/40 backdrop-blur-sm border border-white/10 mb-3 transition-all duration-500 ${hovered === i ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
-                      >
-                        <TrendingUp className="h-3 w-3 text-white/70 flex-shrink-0" />
-                        <span className="text-sm font-black text-white">
-                          {project.metric}
-                        </span>
-                        <span className="text-white/50 text-[10px]">
-                          {project.metricLabel}
-                        </span>
-                      </div>
-                      <h3
-                        className={`font-black text-white tracking-tight leading-tight mb-2 transition-transform duration-500 ${hovered === i ? "translate-x-0.5" : "translate-x-0"}`}
-                        style={{ fontSize: "clamp(15px, 1.9vw, 22px)" }}
-                      >
-                        {project.title}
-                      </h3>
-                      <p
-                        className={`text-white/65 text-xs leading-relaxed mb-2.5 line-clamp-2 transition-all duration-500 ${hovered === i ? "opacity-100" : "opacity-70"}`}
-                      >
-                        {project.description}
-                      </p>
-                      <div
-                        className={`flex flex-wrap gap-1 transition-all duration-500 ${hovered === i ? "opacity-100" : "opacity-0"}`}
-                      >
-                        {project.tags.slice(0, 3).map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2 py-0.5 rounded-full bg-black/40 text-white text-[9px] sm:text-[10px] font-medium border border-white/10"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                    <p className="text-sm leading-relaxed text-foreground">
+                      {project.description}
+                    </p>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
 
