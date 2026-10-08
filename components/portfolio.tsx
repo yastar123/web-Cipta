@@ -1,23 +1,24 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, ExternalLink, TrendingUp } from "lucide-react";
 import { FadeIn } from "./text-reveal";
-import { projects, categories } from "@/lib/portfolio-data";
+import { projects } from "@/lib/portfolio-data";
 
-const featured = projects.filter((p) => p.featured);
+const homepageProjectImages = [
+  "/portofolio-36.jpg",
+  "/portofolio-37.png",
+  "/portofolio-38.png",
+  "/portofolio-40.png",
+  "/portofolio-41.png",
+  "/portofolio-42.png",
+];
+const homepageProjects = projects.filter((project) =>
+  homepageProjectImages.includes(project.image ?? ""),
+);
 
 export function Portfolio() {
-  const [active, setActive] = useState("all");
-  const [hovered, setHovered] = useState<number | null>(null);
-
-  const filtered =
-    active === "all"
-      ? projects.slice(0, 6)
-      : projects.filter((p) => p.category === active).slice(0, 6);
-
   return (
     <section
       id="portfolio"
@@ -49,140 +50,58 @@ export function Portfolio() {
           </div>
         </FadeIn>
 
-        {/* ── Filters ── */}
-        <FadeIn delay={80} className="flex flex-wrap gap-2 mb-6 sm:mb-8">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActive(cat.id)}
-              className={`relative px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 overflow-hidden ${
-                active === cat.id
-                  ? "text-primary-foreground shadow-lg shadow-primary/20"
-                  : "bg-card/30 text-muted-foreground border border-border/20 hover:border-primary/30 hover:text-foreground backdrop-blur-sm"
-              }`}
-            >
-              {active === cat.id && (
-                <span className="absolute inset-0 bg-gradient-to-r from-primary to-emerald-500" />
-              )}
-              <span className="relative">{cat.label}</span>
-            </button>
-          ))}
-        </FadeIn>
-
         {/* ── Masonry-style grid ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {filtered.map((project, i) => (
+          {homepageProjects.map((project, i) => (
             <FadeIn key={project.title} delay={i * 70}>
-              <div
-                className="group relative rounded-2xl overflow-hidden cursor-pointer"
-                style={{
-                  height: project.featured
-                    ? "clamp(240px, 30vw, 400px)"
-                    : "clamp(200px, 24vw, 300px)",
-                }}
-                onMouseEnter={() => setHovered(i)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                {/* Background image */}
-                {project.image && (
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} — ${project.client}`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    className="object-cover"
-                    loading={i < 2 ? "eager" : "lazy"}
-                  />
-                )}
-
-                {/* Pattern overlay */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:20px_20px] opacity-30" />
-
-                {/* Progressive dark overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-
-                {/* Hover shimmer */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent transition-opacity duration-500 ${hovered === i ? "opacity-100" : "opacity-0"}`}
-                />
-
-                {/* ── Content ── */}
-                <div className="absolute inset-0 p-5 sm:p-6 flex flex-col justify-between">
-                  {/* Top: year + client + arrow */}
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex gap-1.5 flex-wrap">
-                      <span className="px-2.5 py-1 rounded-full bg-black/30 backdrop-blur-sm text-white/80 text-[10px] font-semibold tracking-wide border border-white/10">
-                        {project.year}
-                      </span>
-                      <span className="px-2.5 py-1 rounded-full bg-black/30 backdrop-blur-sm text-white/80 text-[10px] font-semibold max-w-[120px] truncate border border-white/10">
-                        {project.client}
-                      </span>
-                    </div>
-                    {project.liveUrl ? (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm border border-white/20 transition-all duration-500 ${hovered === i ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 rotate-45"}`}
-                      >
-                        <ArrowUpRight className="h-4 w-4 text-white" />
-                      </a>
-                    ) : (
-                      <div
-                        className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm border border-white/20 transition-all duration-500 ${hovered === i ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 rotate-45"}`}
-                      >
-                        <ArrowUpRight className="h-4 w-4 text-white" />
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Bottom: title + metric + tags */}
-                  <div>
-                    {/* Metric badge */}
-                    <div
-                      className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/40 backdrop-blur-sm border border-white/10 mb-3 transition-all duration-500 ${hovered === i ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+              <article className="group overflow-hidden rounded-2xl border border-border/20 bg-card/70 shadow-sm transition-shadow duration-300 hover:shadow-lg hover:shadow-primary/5">
+                <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                  {project.image && (
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} — ${project.client}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading={i < 2 ? "eager" : "lazy"}
+                    />
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Lihat ${project.title}`}
+                      className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/40 bg-black/35 text-white backdrop-blur-sm transition-colors hover:bg-black/60"
                     >
-                      <TrendingUp className="h-3.5 w-3.5 text-white/70 flex-shrink-0" />
-                      <span className="text-base font-black text-white">
-                        {project.metric}
-                      </span>
-                      <span className="text-white/50 text-[10px] font-medium">
-                        {project.metricLabel}
-                      </span>
-                    </div>
-
-                    <h3
-                      className={`font-black text-white tracking-tight leading-tight mb-2 transition-transform duration-500 ${hovered === i ? "translate-x-1" : "translate-x-0"}`}
-                      style={{
-                        fontSize: project.featured
-                          ? "clamp(20px, 2.8vw, 34px)"
-                          : "clamp(16px, 2.2vw, 24px)",
-                      }}
-                    >
-                      {project.title}
-                    </h3>
-
-                    <p
-                      className={`text-white/65 text-xs leading-relaxed mb-3 line-clamp-2 transition-all duration-500 ${hovered === i ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
-                    >
-                      {project.description}
-                    </p>
-
-                    <div
-                      className={`flex flex-wrap gap-1.5 transition-all duration-500 ${hovered === i ? "opacity-100" : "opacity-0"}`}
-                    >
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-0.5 rounded-full bg-black/40 text-white text-[9px] sm:text-[10px] font-medium border border-white/10 backdrop-blur-sm"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                      <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  )}
                 </div>
-              </div>
+
+                <div className="p-5 sm:p-6">
+                  <div className="mb-3 flex flex-wrap items-center gap-2 text-xs font-medium text-foreground">
+                    <span>{project.year}</span>
+                    <span aria-hidden="true">·</span>
+                    <span>{project.client}</span>
+                  </div>
+                  <h3 className="mb-3 text-lg font-black leading-tight tracking-tight text-foreground sm:text-xl">
+                    {project.title}
+                  </h3>
+
+                  <div className="mb-3 flex items-center gap-2 text-foreground">
+                    <TrendingUp className="h-4 w-4 flex-shrink-0 text-primary" />
+                    <span className="text-base font-black">{project.metric}</span>
+                    <span className="text-sm text-foreground">
+                      {project.metricLabel}
+                    </span>
+                  </div>
+
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {project.description}
+                  </p>
+                </div>
+              </article>
             </FadeIn>
           ))}
         </div>
