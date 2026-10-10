@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowRight, CheckCircle2, XCircle } from "lucide-react"
 
-const SITE_URL = "https://webcipta.my.id"
+const SITE_URL = "https://www.webcipta.my.id"
 
 export const metadata: Metadata = {
   title: "7 Cara Memilih Jasa Pembuatan Website Terpercaya",

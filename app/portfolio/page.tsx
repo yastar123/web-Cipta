@@ -11,12 +11,12 @@ export const metadata: Metadata = {
     "portofolio web developer lampung",
     "portfolio digital agency indonesia",
   ],
-  alternates: { canonical: "https://webcipta.my.id/portfolio" },
+  alternates: { canonical: "https://www.webcipta.my.id/portfolio" },
   openGraph: {
     title: "Portfolio Jasa Pembuatan Website & Aplikasi | webCipta — 150+ Proyek",
     description: "150+ proyek website, toko online, aplikasi mobile & UI/UX dari webCipta. Lihat portfolio lengkap kami.",
-    url: "https://webcipta.my.id/portfolio",
-    images: [{ url: "https://webcipta.my.id/og-image.jpg", width: 1200, height: 630 }],
+    url: "https://www.webcipta.my.id/portfolio",
+    images: [{ url: "https://www.webcipta.my.id/og-image.jpg", width: 1200, height: 630 }],
   },
 }
 
@@ -28,13 +28,13 @@ const breadcrumbJsonLd = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://webcipta.my.id/",
+      item: "https://www.webcipta.my.id/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Portfolio",
-      item: "https://webcipta.my.id/portfolio",
+      item: "https://www.webcipta.my.id/portfolio",
     },
   ],
 }

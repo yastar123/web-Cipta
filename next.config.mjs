@@ -22,6 +22,7 @@ const nextConfig = {
     "*.kirk.replit.dev",
     "*.pike.replit.dev",
     "*.repl.co",
+    "127.0.0.1",
     ...(process.env.REPLIT_DEV_DOMAIN ? [process.env.REPLIT_DEV_DOMAIN] : []),
   ],
 }

@@ -9,7 +9,7 @@ const GA_MEASUREMENT_ID = 'G-MHM34E8Q8V'
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
-const SITE_URL = 'https://webcipta.my.id'
+const SITE_URL = 'https://www.webcipta.my.id'
 const SITE_NAME = 'webCipta'
 const TITLE = 'Jasa Pembuatan Website Profesional Lampung | webCipta'
 const DESCRIPTION =
@@ -79,10 +79,6 @@ export const metadata: Metadata = {
   creator: 'webCipta',
   publisher: 'webCipta',
   category: 'technology',
-  alternates: {
-    canonical: SITE_URL,
-    languages: { 'id-ID': SITE_URL },
-  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '32x32' },
@@ -166,7 +162,7 @@ const jsonLd = {
       hasMap: 'https://maps.app.goo.gl/b8XeJ2cJZoedXREw8',
       sameAs: [
         `https://wa.me/6285366195381`,
-        `https://webcipta.my.id`,
+        `https://www.webcipta.my.id`,
         'https://maps.app.goo.gl/b8XeJ2cJZoedXREw8',
         'https://www.facebook.com/profile.php?id=61581944171394',
       ],

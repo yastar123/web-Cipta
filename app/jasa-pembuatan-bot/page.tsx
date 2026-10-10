@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowRight, CheckCircle2, Bot, Zap, MessageSquare, Clock } from "lucide-react"
 
-const SITE_URL = "https://webcipta.my.id"
+const SITE_URL = "https://www.webcipta.my.id"
 const WA = "https://wa.me/6285366195381?text=Halo%20webCipta%2C%20saya%20ingin%20konsultasi%20jasa%20pembuatan%20bot."
 
 export const metadata: Metadata = {

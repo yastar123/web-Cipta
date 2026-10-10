@@ -5,25 +5,25 @@ import { FadeIn } from "./text-reveal";
 
 const testimonials = [
   {
-    image: "/testimoni-1.png",
+    image: "/testimoni-1.webp",
     label: "Review Klien #1",
     caption:
       "Testimoni nyata untuk hasil desain interior profesional dari tim kami.",
   },
   {
-    image: "/testimoni-2.png",
+    image: "/testimoni-2.webp",
     label: "Review Klien #2",
     caption:
       "Kesan dan pesan langsung dari klien yang puas bekerja sama dengan kami.",
   },
   {
-    image: "/testimoni-3.png",
+    image: "/testimoni-3.webp",
     label: "Review Klien #3",
     caption:
       "Visual testimoni yang menonjolkan kualitas layanan dan hasil akhir.",
   },
   {
-    image: "/testimoni-4.png",
+    image: "/testimoni-4.webp",
     label: "Review Klien #4",
     caption:
       "Testimoni sebagai bukti bahwa klien kami mendapatkan pengalaman terbaik.",
@@ -91,6 +91,8 @@ export function Services() {
                     src={item.image}
                     alt={item.label}
                     className="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </button>

@@ -25,7 +25,6 @@ components/
   testimonials.tsx  # Auto-rotating testimonial carousel with client logos
   cta.tsx           # Contact section with form
   footer.tsx        # Newsletter + links grid + social icons
-  cursor.tsx        # Custom mouse cursor (desktop only)
   magnetic-button.tsx # Mouse-follow magnetic effect
   parallax.tsx      # Parallax scroll + mouse parallax layer
   tilt-card.tsx     # 3D tilt effect on hover with glare
@@ -55,7 +54,7 @@ pnpm run start  # production start on port 5000
 
 ## UI/UX Notes
 - Dark theme only (no light/dark toggle)
-- Custom cursor visible on desktop (pointer:fine) only
+- Native browser cursor is used; no custom cursor animation.
 - Floating parallax icons in hero hidden on mobile/tablet (xl+ only) to prevent overlap
 - All sections have responsive padding: mobile (py-20) → tablet (md:py-28) → desktop (lg:py-36+)
 - Portfolio cards use min-height to prevent content overflow on small screens
@@ -78,13 +77,13 @@ Addressed items from third-party SEO audit report:
 ### Not fixable from code (needs user/DNS action)
 - **Missing SPF/DMARC records**: DNS-level, must be added in the domain registrar's DNS panel (Domainesia, per the audit's nameserver lookup) — not something the app code controls.
 - **Contact email domain mismatch**: site is `webcipta.my.id` but contact email is `hello@webcipta.com` — a different domain. This can affect DMARC/SPF alignment; recommend using an address on the same domain as the site, or setting up SPF/DMARC on both domains.
-- Canonical vs. crawled-URL mismatch in the audit likely reflects a `www` → non-`www` redirect (canonical correctly points to the non-`www` root); confirm this is the intended primary domain.
+- The primary canonical host is now `https://www.webcipta.my.id/`; ensure the production DNS/hosting redirects the non-`www` host to `www` so both variants resolve consistently.
 
 ## SEO
 Target keywords: "jasa pembuatan website", "jasa pembuatan website di lampung" (local SEO — business is based in Bandar Lampung, Indonesia).
-- `app/layout.tsx`: full `Metadata` (title template, description, keywords, OpenGraph, Twitter card, robots directives, `metadataBase: https://webcipta.my.id`) plus JSON-LD (`@graph` with `ProfessionalService`/LocalBusiness + `WebSite`) injected via a `<script type="application/ld+json">`.
-- `app/page.tsx` and `app/portfolio/page.tsx` each set their own `alternates.canonical` (do not rely on root layout canonical — it does not safely propagate per-route).
-- `app/robots.ts` and `app/sitemap.ts` — Next.js App Router metadata routes; sitemap includes `/` and `/portfolio`.
+- `app/layout.tsx`: full `Metadata` (title template, description, keywords, OpenGraph, Twitter card, robots directives, `metadataBase: https://www.webcipta.my.id`) plus JSON-LD (`@graph` with `ProfessionalService`/LocalBusiness + `WebSite`) injected via a `<script type="application/ld+json">`.
+- Each page sets its own `alternates.canonical` so subpages retain their own canonical paths; the canonical host is `www.webcipta.my.id`.
+- `app/robots.ts` and `app/sitemap.ts` — Next.js App Router metadata routes; the sitemap and robots sitemap reference use the `www` host.
 - `app/icon.svg` — favicon (fixes prior 404s on non-existent icon files).
 - `components/hero.tsx` — headline wrapped in a real `<h1>` (all inner text-effect wrappers use `<span>`, not `<div>`, since heading elements must only contain phrasing content) with an `sr-only` keyword-rich phrase; visible location label is "Lampung" (was "Jakarta" — a NAP inconsistency, since footer/contact info are Bandar Lampung).
 - `components/navbar.tsx` — mobile menu phone number matches the real number used elsewhere (`0853-6619-5381`); previously showed an unrelated placeholder number.

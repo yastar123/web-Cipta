@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowRight, Search, TrendingUp, CheckCircle2, Zap } from "lucide-react"
 
-const SITE_URL = "https://webcipta.my.id"
+const SITE_URL = "https://www.webcipta.my.id"
 
 export const metadata: Metadata = {
   title: "Cara Meningkatkan SEO Website Indonesia 2025",

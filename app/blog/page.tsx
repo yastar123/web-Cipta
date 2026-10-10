@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowRight, Clock } from "lucide-react"
 
-const SITE_URL = "https://webcipta.my.id"
+const SITE_URL = "https://www.webcipta.my.id"
 
 export const metadata: Metadata = {
   title: "Blog Tips Website, SEO & Digital Marketing",

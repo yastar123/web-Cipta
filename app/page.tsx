@@ -7,7 +7,6 @@ import { Testimonials } from "@/components/testimonials";
 import { FAQ } from "@/components/faq";
 import { faqs as faqData } from "@/lib/faq-data";
 import { Footer } from "@/components/footer";
-import { CustomCursor } from "@/components/cursor";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { MarqueeBandLarge } from "@/components/marquee-band";
@@ -23,7 +22,6 @@ export default function Home() {
   return (
     <>
       <ScrollProgress />
-      <CustomCursor />
       <WhatsAppFloat />
       <main className="min-h-screen bg-background overflow-x-hidden">
         <Navbar />

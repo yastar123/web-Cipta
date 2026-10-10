@@ -5,35 +5,35 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { AnimatedCounter } from "./animated-counter";
 
 const clientLogos = [
-  "/client-1.png",
-  "/client-2.png",
-  "/client-3.png",
-  "/client-4.png",
-  "/client-5.png",
-  "/client-6.png",
-  "/client-7.png",
-  "/client-8.png",
-  "/client-9.png",
-  "/client-10.png",
-  "/client-11.png",
-  "/client-12.png",
-  "/client-13.png",
-  "/client-14.png",
-  "/client-15.png",
-  "/client-16.png",
-  "/client-17.png",
-  "/client-18.png",
-  "/client-19.png",
-  "/client-20.png",
-  "/client-21.png",
-  "/client-22.png",
-  "/client-23.png",
-  "/client-24.png",
-  "/client-25.jpg",
-  "/cllient-26.png",
-  "/cllient-27.png",
-  "/cllient-28.png",
-  "/cllient-29.png",
+  "/client-1.webp",
+  "/client-2.webp",
+  "/client-3.webp",
+  "/client-4.webp",
+  "/client-5.webp",
+  "/client-6.webp",
+  "/client-7.webp",
+  "/client-8.webp",
+  "/client-9.webp",
+  "/client-10.webp",
+  "/client-11.webp",
+  "/client-12.webp",
+  "/client-13.webp",
+  "/client-14.webp",
+  "/client-15.webp",
+  "/client-16.webp",
+  "/client-17.webp",
+  "/client-18.webp",
+  "/client-19.webp",
+  "/client-20.webp",
+  "/client-21.webp",
+  "/client-22.webp",
+  "/client-23.webp",
+  "/client-24.webp",
+  "/client-25.webp",
+  "/cllient-26.webp",
+  "/cllient-27.webp",
+  "/cllient-28.webp",
+  "/cllient-29.webp",
 ];
 
 const stats = [
@@ -321,8 +321,6 @@ export function Hero() {
             {[
               ...clientLogos,
               ...clientLogos,
-              ...clientLogos,
-              ...clientLogos,
             ].map((logo, i) => (
               <div
                 key={i}
@@ -330,15 +328,14 @@ export function Hero() {
               >
                 <img
                   src={logo}
-                  alt={`Client logo ${i + 1}`}
+                  alt=""
                   className="h-14 sm:h-16 w-auto object-contain"
                   style={{ maxWidth: "120px" }}
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     console.error("Failed to load image:", logo);
                     (e.target as HTMLImageElement).style.display = "none";
-                  }}
-                  onLoad={(e) => {
-                    console.log("Loaded image:", logo);
                   }}
                 />
               </div>
@@ -354,10 +351,7 @@ export function Hero() {
             style={{ animationDuration: "35s" }}
           >
             {[
-              ...[...clientLogos].reverse(),
-              ...[...clientLogos].reverse(),
-              ...[...clientLogos].reverse(),
-              ...[...clientLogos].reverse(),
+              ...[...clientLogos, ...clientLogos].reverse(),
             ].map((logo, i) => (
               <div
                 key={i}
@@ -365,15 +359,14 @@ export function Hero() {
               >
                 <img
                   src={logo}
-                  alt={`Client logo ${25 - (i % clientLogos.length)}`}
+                  alt=""
                   className="h-14 sm:h-16 w-auto object-contain"
                   style={{ maxWidth: "120px" }}
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     console.error("Failed to load image:", logo);
                     (e.target as HTMLImageElement).style.display = "none";
-                  }}
-                  onLoad={(e) => {
-                    console.log("Loaded image:", logo);
                   }}
                 />
               </div>
