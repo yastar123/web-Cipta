@@ -204,6 +204,12 @@
 .animate-glow          { animation: glow 3s ease-in-out infinite; }
 .animate-marquee       { animation: marquee linear infinite; }
 .animate-marquee-rev   { animation: marquee-reverse linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-rev {
+    animation: none !important;
+  }
+}
 .animate-pulse-glow    { animation: pulse-glow 2.5s ease-in-out infinite; }
 .animate-spin-slow     { animation: spin-slow 20s linear infinite; }
 .animate-fade-up       { animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards; }

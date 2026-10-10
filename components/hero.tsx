@@ -3,38 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { AnimatedCounter } from "./animated-counter";
-
-const clientLogos = [
-  "/client-1.webp",
-  "/client-2.webp",
-  "/client-3.webp",
-  "/client-4.webp",
-  "/client-5.webp",
-  "/client-6.webp",
-  "/client-7.webp",
-  "/client-8.webp",
-  "/client-9.webp",
-  "/client-10.webp",
-  "/client-11.webp",
-  "/client-12.webp",
-  "/client-13.webp",
-  "/client-14.webp",
-  "/client-15.webp",
-  "/client-16.webp",
-  "/client-17.webp",
-  "/client-18.webp",
-  "/client-19.webp",
-  "/client-20.webp",
-  "/client-21.webp",
-  "/client-22.webp",
-  "/client-23.webp",
-  "/client-24.webp",
-  "/client-25.webp",
-  "/cllient-26.webp",
-  "/cllient-27.webp",
-  "/cllient-28.webp",
-  "/cllient-29.webp",
-];
+import { ClientLogoCarousel } from "./client-logo-carousel";
 
 const stats = [
   { value: 150, suffix: "+", label: "Proyek" },
@@ -310,69 +279,9 @@ export function Hero() {
           </span>
         </div>
 
-        {/* ─── Tech strip ─── */}
-        <div
-          className={`-mx-4 sm:-mx-8 lg:-mx-14 xl:-mx-20 border-t border-border/10 bg-white/50 backdrop-blur-xl h-20 sm:h-24 flex items-center overflow-hidden transition-all duration-700 delay-[950ms] ${loaded ? "opacity-100" : "opacity-0"}`}
-        >
-          <div
-            className="flex animate-marquee-rev whitespace-nowrap"
-            style={{ animationDuration: "35s" }}
-          >
-            {[
-              ...clientLogos,
-              ...clientLogos,
-            ].map((logo, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-center gap-4 px-8 cursor-default whitespace-nowrap"
-              >
-                <img
-                  src={logo}
-                  alt=""
-                  className="h-14 sm:h-16 w-auto object-contain"
-                  style={{ maxWidth: "120px" }}
-                  loading="lazy"
-                  decoding="async"
-                  onError={(e) => {
-                    console.error("Failed to load image:", logo);
-                    (e.target as HTMLImageElement).style.display = "none";
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div
-          className={`-mx-4 sm:-mx-8 lg:-mx-14 xl:-mx-20 border-t border-border/10 bg-white/50 backdrop-blur-xl h-20 sm:h-24 flex items-center overflow-hidden transition-all duration-700 delay-[1050ms] ${loaded ? "opacity-100" : "opacity-0"}`}
-        >
-          <div
-            className="flex animate-marquee whitespace-nowrap"
-            style={{ animationDuration: "35s" }}
-          >
-            {[
-              ...[...clientLogos, ...clientLogos].reverse(),
-            ].map((logo, i) => (
-              <div
-                key={i}
-                className="flex items-center justify-center gap-4 px-8 cursor-default whitespace-nowrap"
-              >
-                <img
-                  src={logo}
-                  alt=""
-                  className="h-14 sm:h-16 w-auto object-contain"
-                  style={{ maxWidth: "120px" }}
-                  loading="lazy"
-                  decoding="async"
-                  onError={(e) => {
-                    console.error("Failed to load image:", logo);
-                    (e.target as HTMLImageElement).style.display = "none";
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+      </div>
+      <div className="relative z-10 px-4 sm:px-8 lg:px-14 xl:px-20">
+        <ClientLogoCarousel />
       </div>
     </section>
   );
