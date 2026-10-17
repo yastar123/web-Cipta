@@ -13,6 +13,8 @@ const homepageProjectImages = [
   "/portofolio-40.png",
   "/portofolio-41.png",
   "/portofolio-42.png",
+  "/portofolio-52.png",
+  "/portofolio-53.png",
 ];
 const homepageProjects = projects.filter((project) =>
   homepageProjectImages.includes(project.image ?? ""),

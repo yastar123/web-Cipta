@@ -759,4 +759,33 @@ export const projects = [
     featured: true,
     image: "/portofolio-51.png",
   },
+  {
+    title: "TitipKirim — Platform WhatsApp Blast",
+    category: "website",
+    client: "TitipKirim",
+    year: "2026",
+    description:
+      "Platform kampanye WhatsApp untuk membantu bisnis mengelola dan menjalankan aktivitas broadcast pesan kepada pelanggan.",
+    tags: ["WhatsApp Blast", "Campaign Platform", "Marketing", "Web App"],
+    gradient: "from-green-600 via-emerald-500 to-teal-500",
+    metric: "WhatsApp",
+    metricLabel: "Campaign Platform",
+    featured: true,
+    image: "/portofolio-52.png",
+    liveUrl: "https://bolheblast.my.id/",
+  },
+  {
+    title: "Shopee Lite — E-commerce",
+    category: "website",
+    client: "Shopee Lite",
+    year: "2026",
+    description:
+      "Website e-commerce ringan dengan pengalaman katalog dan belanja yang terinspirasi dari layout marketplace Shopee, dirancang agar nyaman digunakan di berbagai perangkat.",
+    tags: ["E-commerce", "Marketplace UI", "Mobile-first", "Website"],
+    gradient: "from-orange-500 via-red-500 to-rose-500",
+    metric: "E-commerce",
+    metricLabel: "Marketplace Website",
+    featured: true,
+    image: "/portofolio-53.png",
+  },
 ];
