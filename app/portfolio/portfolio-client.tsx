@@ -3,7 +3,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ArrowUpRight, TrendingUp, Filter } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  ChevronLeft,
+  ChevronRight,
+  TrendingUp,
+  Filter,
+} from "lucide-react";
 import { projects, categories } from "@/lib/portfolio-data";
 
 export function PortfolioClient() {
@@ -226,26 +233,33 @@ export function PortfolioClient() {
 
             {/* Pagination controls */}
             {filtered.length > itemsPerPage && (
-              <div className="mt-6 flex items-center justify-between">
-                <div className="text-sm text-muted-foreground">
+              <div className="mt-6 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="text-xs text-muted-foreground sm:text-sm">
                   Menampilkan {Math.min(startIndex + 1, filtered.length)}–
                   {Math.min(startIndex + paginated.length, filtered.length)}{" "}
                   dari {filtered.length} proyek
                 </div>
-                <div className="flex items-center gap-2">
+                <nav
+                  aria-label="Navigasi halaman portofolio"
+                  className="flex w-full items-center justify-between gap-1 sm:w-auto sm:gap-2"
+                >
                   <button
                     onClick={() => setPage((p) => Math.max(1, p - 1))}
                     disabled={page === 1}
-                    className={`px-3 py-1 rounded-full border border-border/20 bg-card/20 text-sm ${page === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-primary/5"}`}
+                    aria-label="Halaman sebelumnya"
+                    className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border/20 bg-card/20 sm:h-auto sm:w-auto sm:px-3 sm:py-1 sm:text-sm ${page === 1 ? "cursor-not-allowed opacity-50" : "hover:bg-primary/5"}`}
                   >
-                    Sebelumnya
+                    <ChevronLeft className="h-4 w-4 sm:hidden" />
+                    <span className="hidden sm:inline">Sebelumnya</span>
                   </button>
-                  <div className="inline-flex items-center gap-1">
+                  <div className="flex items-center gap-1">
                     {Array.from({ length: totalPages }).map((_, idx) => (
                       <button
                         key={idx}
                         onClick={() => setPage(idx + 1)}
-                        className={`px-3 py-1 rounded-full text-sm border ${page === idx + 1 ? "bg-primary text-primary-foreground border-primary" : "bg-card/20 border-border/20"}`}
+                        aria-label={`Halaman ${idx + 1}`}
+                        aria-current={page === idx + 1 ? "page" : undefined}
+                        className={`h-9 min-w-9 rounded-full border px-2 text-sm sm:h-auto sm:min-w-0 sm:px-3 sm:py-1 ${page === idx + 1 ? "border-primary bg-primary text-primary-foreground" : "border-border/20 bg-card/20"}`}
                       >
                         {idx + 1}
                       </button>
@@ -254,11 +268,13 @@ export function PortfolioClient() {
                   <button
                     onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                     disabled={page === totalPages}
-                    className={`px-3 py-1 rounded-full border border-border/20 bg-card/20 text-sm ${page === totalPages ? "opacity-50 cursor-not-allowed" : "hover:bg-primary/5"}`}
+                    aria-label="Halaman berikutnya"
+                    className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border/20 bg-card/20 sm:h-auto sm:w-auto sm:px-3 sm:py-1 sm:text-sm ${page === totalPages ? "cursor-not-allowed opacity-50" : "hover:bg-primary/5"}`}
                   >
-                    Berikutnya
+                    <ChevronRight className="h-4 w-4 sm:hidden" />
+                    <span className="hidden sm:inline">Berikutnya</span>
                   </button>
-                </div>
+                </nav>
               </div>
             )}
 
