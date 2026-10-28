@@ -11,8 +11,11 @@ export function PortfolioClient() {
   const [page, setPage] = useState(1);
   const itemsPerPage = 15;
 
+  const recentProjects = [...projects].reverse();
   const filtered =
-    active === "all" ? projects : projects.filter((p) => p.category === active);
+    active === "all"
+      ? recentProjects
+      : recentProjects.filter((p) => p.category === active);
 
   useEffect(() => {
     setPage(1);

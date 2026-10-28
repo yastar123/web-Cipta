@@ -2,7 +2,17 @@
 
 import { memo, useEffect, useRef, useState } from "react";
 
-const LOGO_STRIP = "/client-logos-strip.webp";
+const CLIENT_LOGOS = Array.from({ length: 36 }, (_, index) => {
+  const clientNumber = index + 1;
+  const filename =
+    clientNumber <= 25
+      ? `client-${clientNumber}.webp`
+      : clientNumber <= 29
+        ? `cllient-${clientNumber}.webp`
+        : `cllient-${clientNumber}.png`;
+
+  return `/${filename}`;
+});
 
 function ClientLogoCarouselView() {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -37,22 +47,17 @@ function ClientLogoCarouselView() {
       }}
       aria-hidden="true"
     >
-      <img
-        src={LOGO_STRIP}
-        alt=""
-        className="h-14 w-auto max-w-none shrink-0 select-none sm:h-16"
-        loading="lazy"
-        decoding="async"
-        draggable={false}
-      />
-      <img
-        src={LOGO_STRIP}
-        alt=""
-        className="h-14 w-auto max-w-none shrink-0 select-none sm:h-16"
-        loading="lazy"
-        decoding="async"
-        draggable={false}
-      />
+      {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((src, index) => (
+        <img
+          key={`${src}-${index}`}
+          src={src}
+          alt=""
+          className="h-14 w-auto max-w-none shrink-0 select-none sm:h-16"
+          loading="eager"
+          decoding="async"
+          draggable={false}
+        />
+      ))}
     </div>
   );
 
