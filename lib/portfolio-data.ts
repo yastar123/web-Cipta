@@ -856,4 +856,32 @@ export const projects = [
     featured: true,
     image: "/portofolio-57.png",
   },
+  {
+    title: "Dashboard Beasiswa SDM Sawit",
+    category: "website",
+    client: "Program Beasiswa SDM Perkebunan Kelapa Sawit",
+    year: "2026",
+    description:
+      "Dashboard pengelolaan Program Beasiswa SDM Perkebunan Kelapa Sawit (Beasiswa SDM Sawit).",
+    tags: ["Dashboard", "Beasiswa", "Perkebunan Kelapa Sawit", "Web App"],
+    gradient: "from-emerald-800 via-teal-700 to-lime-600",
+    metric: "Beasiswa",
+    metricLabel: "SDM Sawit",
+    featured: true,
+    image: "/portofolio-58.png",
+  },
+  {
+    title: "ShareWa — WhatsApp Workspace",
+    category: "website",
+    client: "ShareWa",
+    year: "2026",
+    description:
+      "Platform manajemen pesan WhatsApp profesional. Bergabung, hubungkan perangkat, dan dapatkan penghasilan tambahan.",
+    tags: ["WhatsApp", "Manajemen Pesan", "Platform", "Web App"],
+    gradient: "from-emerald-600 via-green-500 to-teal-400",
+    metric: "WhatsApp",
+    metricLabel: "Messaging Platform",
+    featured: true,
+    image: "/portofolio-59.png",
+  },
 ];
