@@ -38,7 +38,7 @@ function ClientLogoCarouselView() {
 
   const renderTrack = (reverse: boolean) => (
     <div
-      className={`flex h-full w-max shrink-0 whitespace-nowrap ${
+      className={`flex h-full w-max shrink-0 gap-8 whitespace-nowrap sm:gap-10 ${
         reverse ? "animate-marquee-rev" : "animate-marquee"
       }`}
       style={{
