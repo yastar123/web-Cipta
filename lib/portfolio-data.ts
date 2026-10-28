@@ -884,4 +884,25 @@ export const projects = [
     featured: true,
     image: "/portofolio-59.png",
   },
+  {
+    title: "CREVORA — Creative Studio",
+    category: "website",
+    client: "CREVORA",
+    year: "2026",
+    description:
+      "Website studio kreatif berbasis di Windhoek, Namibia, yang menawarkan social media marketing dan branding, brand identity dan visual, creative content dan motion video pendek, serta solusi web dan digital berorientasi konversi.",
+    tags: [
+      "Creative Studio",
+      "Social Media Marketing",
+      "Brand Identity",
+      "Creative Content",
+      "Motion Video",
+      "Web & Digital Solutions",
+    ],
+    gradient: "from-violet-600 via-fuchsia-500 to-rose-500",
+    metric: "Creative",
+    metricLabel: "Studio & Digital Solutions",
+    featured: true,
+    image: "/portofolio-60.png",
+  },
 ];
